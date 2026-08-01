@@ -1,0 +1,10 @@
+# Raw/publication abstract data are deliberately kept out of the public repository.
+data/raw/
+data/publications.json
+
+# Local QA artifacts
+tests/screenshots/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

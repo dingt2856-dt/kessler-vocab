@@ -1,0 +1,374 @@
+﻿corpusId,year,title,journal,doi,pmid,source
+BK0001,2026,Amino acid and viral binding by the high-affinity Cationic Amino acid Transporter 1 (CAT1) from Mus musculus.,Nature communications,10.1038/s41467-026-69421-0,41698924,MED
+BK0002,2026,Analytical challenges for mapping non-canonical and non-protein ubiquitin/Ubl modifications by mass spectrometry.,Expert review of proteomics,10.1080/14789450.2026.2624128,41601186,MED
+BK0003,2026,Multidimensional proteomics and explainable AI feature selection identify cross-platform lung cancer molecular signature in blood plasma.,Communications medicine,10.1038/s43856-026-01701-8,42249069,MED
+BK0004,2026,Pervasive phenotypic effects of FBXO42 are promoted by regulation of PP4 phosphatase.,The EMBO journal,10.1038/s44318-025-00675-y,41484364,MED
+BK0005,2026,Spatial protein expression patterns across pathologically-associated fibers revealed molecular specialization in inclusion body myositis.,Cell communication and signaling : CCS,10.1186/s12964-026-02720-7,41723523,MED
+BK0006,2026,Towards light-coupled sample preparation for time-resolved cryoEM studies.,IUCrJ,10.1107/s2052252526005324,42366972,MED
+BK0007,2026,Ubiquitin E3 ligase KLHL6 brings exhausted T-cells back into action.,Immunity & inflammation,10.1007/s44466-026-00032-6,41797878,MED
+BK0008,2026,Urine Recirculation During Normothermic Kidney Preservation Improves Energy Balance Involving the Urea and Citric Acid Cycles.,Transplantation direct,10.1097/txd.0000000000001947,42110833,MED
+BK0009,2026,USP24 is a cross-reactive DUB targeting MOV10 to regulate IFN-I production.,Nature communications,10.1038/s41467-026-74490-2,42321163,MED
+BK0010,2025,A cytoplasmic motif in HLA-E that drives clathrin-mediated endocytosis and VCP-associated postendocytic trafficking.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.2514956122,41134633,MED
+BK0011,2025,A systems-based approach to uterine fibroids identifies differential splicing associated with abnormal uterine bleeding.,Communications medicine,10.1038/s43856-025-01051-x,40739398,MED
+BK0012,2025,Activity-based protein profiling reveals both canonical and novel ubiquitin pathway enzymes in Plasmodium.,PLoS pathogens,10.1371/journal.ppat.1013032,40249735,MED
+BK0013,2025,Driving Therapeutic Innovation in Neurodegenerative Disease With Hydrogen Deuterium eXchange Mass Spectrometry.,Molecular & cellular proteomics : MCP,10.1016/j.mcpro.2025.101017,40544994,MED
+BK0014,2025,Effect of a Laparoscopic Donor Nephrectomy in Healthy Living Kidney Donors on the Acute Phase Response Using Either Propofol or Sevoflurane Anesthesia.,International journal of molecular sciences,10.3390/ijms26115196,40508008,MED
+BK0015,2025,Long-persisting SARS-CoV-2 spike-specific CD4<sup>+</sup> T cells associated with mild disease and increased cytotoxicity post COVID-19.,Nature communications,10.1038/s41467-025-63711-9,41034205,MED
+BK0016,2025,Nuclear Protein Aggregates Disrupt RNA Processing and Alter Biomechanics in a Muscle Cell Model of OPMD.,Aging and disease,10.14336/ad.2025.0699,40901980,MED
+BK0017,2025,SLC45A4 is a pain gene encoding a neuronal polyamine transporter.,Nature,10.1038/s41586-025-09326-y,40836097,MED
+BK0018,2025,Structural Dynamics of the Ubiquitin Specific Protease USP30 in Complex with a Cyanopyrrolidine-Containing Covalent Inhibitor.,Journal of proteome research,10.1021/acs.jproteome.4c00618,39804742,MED
+BK0019,2025,Targeting G1-S-checkpoint-compromised cancers with cyclin A/B RxL inhibitors.,Nature,10.1038/s41586-025-09433-w,40836083,MED
+BK0020,2025,TDP-43 pathology is associated with divergent protein profiles in ALS brain and spinal cord.,Acta neuropathologica communications,10.1186/s40478-025-02084-y,40826370,MED
+BK0021,2025,The Developmental Environment Mediates Adult Seminal Proteome Allocation in Male Drosophila melanogaster.,Molecular ecology,10.1111/mec.70101,40948308,MED
+BK0022,2025,Transport and inhibition of the sphingosine-1-phosphate exporter SPNS2.,Nature communications,10.1038/s41467-025-55942-7,39820269,MED
+BK0023,2024,"Association of Indoleamine 2,3-Dioxygenase (IDO) Activity with Outcome after Cardiac Surgery in Adult Patients.",Metabolites,10.3390/metabo14060334,38921469,MED
+BK0024,2024,BLM and BRCA1-BARD1 coordinate complementary mechanisms of joint DNA molecule resolution.,Molecular cell,10.1016/j.molcel.2023.12.040,38266639,MED
+BK0025,2024,Covalent Fragment Screening and Optimization Identifies the Chloroacetohydrazide Scaffold as Inhibitors for Ubiquitin C-terminal Hydrolase L1.,Journal of medicinal chemistry,10.1021/acs.jmedchem.3c01661,38488146,MED
+BK0026,2024,Cyclin F-EXO1 axis controls cell cycle-dependent execution of double-strand break repair.,Science advances,10.1126/sciadv.ado0636,39121215,MED
+BK0027,2024,Data-independent acquisition proteomics of cerebrospinal fluid implicates endoplasmic reticulum and inflammatory mechanisms in amyotrophic lateral sclerosis.,Journal of neurochemistry,10.1111/jnc.16030,38087504,MED
+BK0028,2024,Deubiquitinases in muscle physiology and disorders.,Biochemical Society transactions,10.1042/bst20230562,38716888,MED
+BK0029,2024,Oncogenic mutations of KRAS modulate its turnover by the CUL3/LZTR1 E3 ligase complex.,Life science alliance,10.26508/lsa.202302245,38453365,MED
+BK0030,2024,Protocol to profile spatially resolved NLRP3 inflammasome complexes using APEX2-based proximity labeling.,STAR protocols,10.1016/j.xpro.2024.103417,39460941,MED
+BK0031,2024,Quantitative proteomics reveals CLR interactome in primary human cells.,The Journal of biological chemistry,10.1016/j.jbc.2024.107399,38777147,MED
+BK0032,2024,Targeted delivery of galunisertib using machine perfusion reduces fibrogenesis in an integrated ex vivo renal transplant and fibrogenesis model.,British journal of pharmacology,10.1111/bph.16220,37596999,MED
+BK0033,2024,Ubiquitylation of nucleic acids by DELTEX ubiquitin E3 ligase DTX3L.,EMBO reports,10.1038/s44319-024-00235-1,39242775,MED
+BK0034,2024,Unconventional human CD61 pairing with CD103 promotes TCR signaling and antigen-specific T cell cytotoxicity.,Nature immunology,10.1038/s41590-024-01802-3,38561495,MED
+BK0035,2023,Activity-Based Protein Profiling (ABPP) for Cellular Deubiquitinase (DUB) and Inhibitor Profiling at Deep and High-Throughput Levels.,"Methods in molecular biology (Clifton, N.J.)",10.1007/978-1-0716-2803-4_7,36350545,MED
+BK0036,2023,Biallelic FBXW7 knockout induces AKAP8-mediated DNA damage in neighbouring wildtype cells.,Cell death discovery,10.1038/s41420-023-01494-y,37386001,MED
+BK0037,2023,DEcancer: Machine learning framework tailored to liquid biopsy based cancer detection and biomarker signature selection.,iScience,10.1016/j.isci.2023.106610,37168566,MED
+BK0038,2023,Deep Proteomics Network and Machine Learning Analysis of Human Cerebrospinal Fluid in Japanese Encephalitis Virus Infection.,Journal of proteome research,10.1021/acs.jproteome.2c00563,37219084,MED
+BK0039,2023,Deep topographic proteomics of a human brain tumour.,Nature communications,10.1038/s41467-023-43520-8,38001067,MED
+BK0040,2023,SARS-CoV-2 mutations affect antigen processing by the proteasome to alter CD8<sup>+</sup> T cell responses.,Heliyon,10.1016/j.heliyon.2023.e20076,37842619,MED
+BK0041,2023,Structural basis for SMAC-mediated antagonism of caspase inhibition by the giant ubiquitin ligase BIRC6.,"Science (New York, N.Y.)",10.1126/science.ade8840,36758106,MED
+BK0042,2023,Structural Premise of Selective Deubiquitinase USP30 Inhibition by Small-Molecule Benzosulfonamides.,Molecular & cellular proteomics : MCP,10.1016/j.mcpro.2023.100609,37385347,MED
+BK0043,2023,Targeted Mass Spectrometry Reveals Interferon-Dependent Eicosanoid and Fatty Acid Alterations in Chronic Myeloid Leukaemia.,International journal of molecular sciences,10.3390/ijms242115513,37958498,MED
+BK0044,2023,USP16 is an ISG15 cross-reactive deubiquitinase that targets pro-ISG15 and ISGylated proteins involved in metabolism.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.2315163120,38055744,MED
+BK0045,2023,USP18 is an essential regulator of muscle cell differentiation and maturation.,Cell death & disease,10.1038/s41419-023-05725-z,37002195,MED
+BK0046,2022,ABPP-HT*-Deep Meets Fast for Activity-Based Profiling of Deubiquitylating Enzymes Using Advanced DIA Mass Spectrometry Methods.,International journal of molecular sciences,10.3390/ijms23063263,35328685,MED
+BK0047,2022,Cytoskeletal protein degradation in brain death donor kidneys associates with adverse posttransplant outcomes.,American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons,10.1111/ajt.16912,34878723,MED
+BK0048,2022,Disease-associated KBTBD4 mutations in medulloblastoma elicit neomorphic ubiquitylation activity to promote CoREST degradation.,Cell death and differentiation,10.1038/s41418-022-00983-4,35379950,MED
+BK0049,2022,Doxycycline Alters the Porcine Renal Proteome and Degradome during Hypothermic Machine Perfusion.,Current issues in molecular biology,10.3390/cimb44020039,35723325,MED
+BK0050,2022,Hermansky-Pudlak syndrome type 1 causes impaired anti-microbial immunity and inflammation due to dysregulated immunometabolism.,Mucosal immunology,10.1038/s41385-022-00572-1,36302964,MED
+BK0051,2022,Integrated Plasma and Tissue Proteomics Reveals Attractin Release by Intraluminal Thrombus of Abdominal Aortic Aneurysms and Improves Aneurysm Growth Prediction in Humans.,Annals of surgery,10.1097/sla.0000000000004439,33065636,MED
+BK0052,2022,Integrative omics reveals subtle molecular perturbations following ischemic conditioning in a porcine kidney transplant model.,Clinical proteomics,10.1186/s12014-022-09343-3,35164671,MED
+BK0053,2022,Nilabh Shastri - Towards understanding classical and non-classical MHC-I antigen processing and presentation.,Cellular immunology,10.1016/j.cellimm.2022.104638,36371991,MED
+BK0054,2022,Targeting the Ubiquitylation and ISGylation Machinery for the Treatment of COVID-19.,Biomolecules,10.3390/biom12020300,35204803,MED
+BK0055,2022,The Mechano-Ubiquitinome of Articular Cartilage: Differential Ubiquitination and Activation of a Group of ER-Associated DUBs and ER Stress Regulators.,Molecular & cellular proteomics : MCP,10.1016/j.mcpro.2022.100419,36182100,MED
+BK0056,2021,ABPP-HT - High-Throughput Activity-Based Profiling of Deubiquitylating Enzyme Inhibitors in a Cellular Context.,Frontiers in chemistry,10.3389/fchem.2021.640105,33718328,MED
+BK0057,2021,Advancing mechanistic understanding and biomarker development in amyotrophic lateral sclerosis.,Expert review of proteomics,10.1080/14789450.2021.2004890,34758687,MED
+BK0058,2021,Altered ISGylation drives aberrant macrophage-dependent immune responses during SARS-CoV-2 infection.,Nature immunology,10.1038/s41590-021-01035-8,34663977,MED
+BK0059,2021,Chromatin accessibility governs the differential response of cancer and T cells to arginine starvation.,Cell reports,10.1016/j.celrep.2021.109101,33979616,MED
+BK0060,2021,Conformational plasticity of the ULK3 kinase domain.,The Biochemical journal,10.1042/bcj20210257,34190988,MED
+BK0061,2021,Defactinib inhibits PYK2 phosphorylation of IRF5 and reduces intestinal inflammation.,Nature communications,10.1038/s41467-021-27038-5,34795257,MED
+BK0062,2021,Deletion of the deISGylating enzyme USP18 enhances tumour cell antigenicity and radiosensitivity.,British journal of cancer,10.1038/s41416-020-01167-y,33214684,MED
+BK0063,2021,Detection and quantification of novel C-terminal TDP-43 fragments in ALS-TDP.,"Brain pathology (Zurich, Switzerland)",10.1111/bpa.12923,33300249,MED
+BK0064,2021,Drosophila Sex Peptide controls the assembly of lipid microcarriers in seminal fluid.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.2019622118,33495334,MED
+BK0065,2021,Dual role of ER stress in response to metabolic co-targeting and radiosensitivity in head and neck cancer cells.,Cellular and molecular life sciences : CMLS,10.1007/s00018-020-03704-7,33230565,MED
+BK0066,2021,Immunodominance complexity: lessons yet to be learned from dominant T cell responses to SARS-COV-2.,Current opinion in virology,10.1016/j.coviro.2021.08.009,34534732,MED
+BK0067,2021,Inflammasome activation controlled by the interplay between post-translational modifications: emerging drug target opportunities.,Cell communication and signaling : CCS,10.1186/s12964-020-00688-6,33627128,MED
+BK0068,2021,Network Analysis of the CSF Proteome Characterizes Convergent Pathways of Cellular Dysfunction in ALS.,Frontiers in neuroscience,10.3389/fnins.2021.642324,33815045,MED
+BK0069,2021,p97/VCP inhibition causes excessive MRE11-dependent DNA end resection promoting cell killing after ionizing radiation.,Cell reports,10.1016/j.celrep.2021.109153,34038735,MED
+BK0070,2021,"Proteomic analysis of machine perfusion solution from brain dead donor kidneys reveals that elevated complement, cytoskeleton and lipid metabolism proteins are associated with 1-year outcome.",Transplant international : official journal of the European Society for Organ Transplantation,10.1111/tri.13984,34448265,MED
+BK0071,2021,The Bloom syndrome complex senses RPA-coated single-stranded DNA to restart stalled replication forks.,Nature communications,10.1038/s41467-020-20818-5,33500419,MED
+BK0072,2021,"The chaperonin CCT8 controls proteostasis essential for T cell maturation, selection, and function.",Communications biology,10.1038/s42003-021-02203-0,34083746,MED
+BK0073,2021,The deubiquitinase TRABID stabilizes the K29/K48-specific E3 ubiquitin ligase HECTD1.,The Journal of biological chemistry,10.1074/jbc.ra120.015162,33853758,MED
+BK0074,2021,The deubiquitylase USP9X controls ribosomal stalling.,The Journal of cell biology,10.1083/jcb.202004211,33507233,MED
+BK0075,2021,Urine recirculation prolongs normothermic kidney perfusion via more optimal metabolic homeostasis-a proteomics study.,American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons,10.1111/ajt.16334,33021021,MED
+BK0076,2021,USP28 deletion and small-molecule inhibition destabilizes c-MYC and elicits regression of squamous cell lung carcinoma.,eLife,10.7554/elife.71596,34636321,MED
+BK0077,2020,A Functional Genomic Screen Identifies the Deubiquitinase USP11 as a Novel Transcriptional Regulator of ERα in Breast Cancer.,Cancer research,10.1158/0008-5472.can-20-0214,33004351,MED
+BK0078,2020,Amine oxidase 3 is a novel pro-inflammatory marker of oxidative stress in peritoneal endometriosis lesions.,Scientific reports,10.1038/s41598-020-58362-3,32001775,MED
+BK0079,2020,An ALS-linked mutation in TDP-43 disrupts normal protein interactions in the motor neuron response to oxidative stress.,Neurobiology of disease,10.1016/j.nbd.2020.105050,32800996,MED
+BK0080,2020,Broad and strong memory CD4<sup>+</sup> and CD8<sup>+</sup> T cells induced by SARS-CoV-2 in UK convalescent individuals following COVID-19.,Nature immunology,10.1038/s41590-020-0782-6,32887977,MED
+BK0081,2020,Characterization of exosomes in peritoneal fluid of endometriosis patients.,Fertility and sterility,10.1016/j.fertnstert.2019.09.032,32106990,MED
+BK0082,2020,CSF extracellular vesicle proteomics demonstrates altered protein homeostasis in amyotrophic lateral sclerosis.,Clinical proteomics,10.1186/s12014-020-09294-7,32821252,MED
+BK0083,2020,Cytoskeletal disorganization underlies PABPN1-mediated myogenic disability.,Scientific reports,10.1038/s41598-020-74676-8,33077830,MED
+BK0084,2020,Distinct contributions of DNA methylation and histone acetylation to the genomic occupancy of transcription factors.,Genome research,10.1101/gr.257576.119,32963030,MED
+BK0085,2020,Interaction mapping of endoplasmic reticulum ubiquitin ligases identifies modulators of innate immune signalling.,eLife,10.7554/elife.57306,32614325,MED
+BK0086,2020,"Male reproductive aging arises via multifaceted mating-dependent sperm and seminal proteome declines, but is postponable in <i>Drosophila</i>.",Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.2009053117,32611817,MED
+BK0087,2020,"Re-Evaluating the Mechanism of Action of α,β-Unsaturated Carbonyl DUB Inhibitors b-AP15 and VLX1570: A Paradigmatic Example of Unspecific Protein Cross-linking with Michael Acceptor Motif-Containing Drugs.",Journal of medicinal chemistry,10.1021/acs.jmedchem.0c00144,32109059,MED
+BK0088,2020,Subclinical effects of remote ischaemic conditioning in human kidney transplants revealed by quantitative proteomics.,Clinical proteomics,10.1186/s12014-020-09301-x,33292164,MED
+BK0089,2020,Supramolecular attack particles are autonomous killing entities released from cytotoxic T cells.,"Science (New York, N.Y.)",10.1126/science.aay9207,32381591,MED
+BK0090,2020,TEX264 coordinates p97- and SPRTN-mediated resolution of topoisomerase 1-DNA adducts.,Nature communications,10.1038/s41467-020-15000-w,32152270,MED
+BK0091,2020,Ubiquitomics: An Overview and Future.,Biomolecules,10.3390/biom10101453,33080838,MED
+BK0092,2020,USP30 sets a trigger threshold for PINK1-PARKIN amplification of mitochondrial ubiquitylation.,Life science alliance,10.26508/lsa.202000768,32636217,MED
+BK0093,2020,Value of lipocalin 2 as a potential biomarker for bacterial meningitis.,Clinical microbiology and infection : the official publication of the European Society of Clinical Microbiology and Infectious Diseases,10.1016/j.cmi.2020.07.006,32659386,MED
+BK0094,2019,A Novel Role for Triglyceride Metabolism in Foxp3 Expression.,Frontiers in immunology,10.3389/fimmu.2019.01860,31456800,MED
+BK0095,2019,Adaptation to HIF1α Deletion in Hypoxic Cancer Cells by Upregulation of GLUT14 and Creatine Metabolism.,Molecular cancer research : MCR,10.1158/1541-7786.mcr-18-0315,30885992,MED
+BK0096,2019,"An Activity-Based Probe Targeting Non-Catalytic, Highly Conserved Amino Acid Residues within Bromodomains.",Angewandte Chemie (International ed. in English),10.1002/anie.201807825,30589164,MED
+BK0097,2019,Ataxin-3 Links NOD2 and TLR2 Mediated Innate Immune Sensing and Metabolism in Myeloid Cells.,Frontiers in immunology,10.3389/fimmu.2019.01495,31379806,MED
+BK0098,2019,BMP signaling inhibition in <i>Drosophila</i> secondary cells remodels the seminal proteome and self and rival ejaculate functions.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1914491116,31740617,MED
+BK0099,2019,Capturing the dynamics of genome replication on individual ultra-long nanopore sequence reads.,Nature methods,10.1038/s41592-019-0394-y,31011185,MED
+BK0100,2019,Cathepsin L Regulates Metabolic Networks Controlling Rapid Cell Growth and Proliferation.,Molecular & cellular proteomics : MCP,10.1074/mcp.ra119.001392,31010818,MED
+BK0101,2019,Colonic epithelial cell diversity in health and inflammatory bowel disease.,Nature,10.1038/s41586-019-0992-y,30814735,MED
+BK0102,2019,Composition and structure of synaptic ectosomes exporting antigen receptor linked to functional CD40 ligand from helper T cells.,eLife,10.7554/elife.47528,31469364,MED
+BK0103,2019,Comprehensive Landscape of Active Deubiquitinating Enzymes Profiled by Advanced Chemoproteomics.,Frontiers in chemistry,10.3389/fchem.2019.00592,31555637,MED
+BK0104,2019,Deacetylation Inhibition Reverses PABPN1-Dependent Muscle Wasting.,iScience,10.1016/j.isci.2019.01.024,30739015,MED
+BK0105,2019,"Design, Synthesis and Characterization of Covalent KDM5 Inhibitors.",Angewandte Chemie (International ed. in English),10.1002/anie.201810179,30431220,MED
+BK0106,2019,Divergent allocation of sperm and the seminal proteome along a competition gradient in Drosophila melanogaster .,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1906149116,31431535,MED
+BK0107,2019,E2F1 proteolysis via SCF-cyclin F underlies synthetic lethality between cyclin F loss and Chk1 inhibition.,The EMBO journal,10.15252/embj.2018101443,31424118,MED
+BK0108,2019,Human Platelet Protein Ubiquitylation and Changes following GPVI Activation.,Thrombosis and haemostasis,10.1055/s-0038-1676344,30597505,MED
+BK0109,2019,Improved profiling of polyamines using two-dimensional gas chromatography mass spectrometry.,Talanta,10.1016/j.talanta.2019.02.062,30952244,MED
+BK0110,2019,MDC1 Interacts with TOPBP1 to Maintain Chromosomal Stability during Mitosis.,Molecular cell,10.1016/j.molcel.2019.02.014,30898438,MED
+BK0111,2019,Molecular insights into an ancient form of Paget's disease of bone.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1820556116,31036632,MED
+BK0112,2019,Nitric Oxide Modulates Metabolic Remodeling in Inflammatory Macrophages through TCA Cycle Regulation and Itaconate Accumulation.,Cell reports,10.1016/j.celrep.2019.06.018,31269442,MED
+BK0113,2019,Proteomics analysis of the matrisome from MC38 experimental mouse liver metastases.,American journal of physiology. Gastrointestinal and liver physiology,10.1152/ajpgi.00014.2019,31545917,MED
+BK0114,2019,Quantitative Proteomics Identification of Seminal Fluid Proteins in Male <i>Drosophila melanogaster</i>.,Molecular & cellular proteomics : MCP,10.1074/mcp.ra118.000831,30287546,MED
+BK0115,2019,Regulation of the endosomal SNX27-retromer by OTULIN.,Nature communications,10.1038/s41467-019-12309-z,31541095,MED
+BK0116,2019,Subclinical Changes in Deceased Donor Kidney Proteomes Are Associated With 12-month Allograft Function Posttransplantation-A Preliminary Study.,Transplantation,10.1097/tp.0000000000002358,30157158,MED
+BK0117,2019,The ER membrane protein complex promotes biogenesis of sterol-related enzymes maintaining cholesterol homeostasis.,Journal of cell science,10.1242/jcs.223453,30578317,MED
+BK0118,2019,USP32 regulates late endosomal transport and recycling through deubiquitylation of Rab7.,Nature communications,10.1038/s41467-019-09437-x,30926795,MED
+BK0119,2018,53BP1 cooperation with the REV7-shieldin complex underpins DNA structure-specific NHEJ.,Nature,10.1038/s41586-018-0362-1,30046110,MED
+BK0120,2018,A robust mass spectrometry method for rapid profiling of erythrocyte ghost membrane proteomes.,Clinical proteomics,10.1186/s12014-018-9190-4,29588628,MED
+BK0121,2018,A variant NuRD complex containing PWWP2A/B excludes MBD2/3 to regulate transcription at active genes.,Nature communications,10.1038/s41467-018-06235-9,30228260,MED
+BK0122,2018,Cerebrospinal fluid macrophage biomarkers in amyotrophic lateral sclerosis.,Annals of neurology,10.1002/ana.25143,29331073,MED
+BK0123,2018,Colorectal cancer liver metastatic growth depends on PAD4-driven citrullination of the extracellular matrix.,Nature communications,10.1038/s41467-018-07306-7,30429478,MED
+BK0124,2018,Development and validation of response markers to predict survival and pleurodesis success in patients with malignant pleural effusion (PROMISE): a multicohort analysis.,The Lancet. Oncology,10.1016/s1470-2045(18)30294-8,29908990,MED
+BK0125,2018,Discrimination Between Human Leukocyte Antigen Class I-Bound and Co-Purified HIV-Derived Peptides in Immunopeptidomics Workflows.,Frontiers in immunology,10.3389/fimmu.2018.00912,29780384,MED
+BK0126,2018,FBXL13 directs the proteolysis of CEP192 to regulate centrosome homeostasis and cell migration.,EMBO reports,10.15252/embr.201744799,29348145,MED
+BK0127,2018,FBXL19 recruits CDK-Mediator to CpG islands of developmental genes priming them for activation during lineage commitment.,eLife,10.7554/elife.37084,29809150,MED
+BK0128,2018,Glutamate receptor δ2 serum antibodies in pediatric opsoclonus myoclonus ataxia syndrome.,Neurology,10.1212/wnl.0000000000006035,30045961,MED
+BK0129,2018,Growth hormone receptor-deficient pigs resemble the pathophysiology of human Laron syndrome and reveal altered activation of signaling cascades in the liver.,Molecular metabolism,10.1016/j.molmet.2018.03.006,29678421,MED
+BK0130,2018,Identification of UHRF2 as a novel DNA interstrand crosslink sensor protein.,PLoS genetics,10.1371/journal.pgen.1007643,30335751,MED
+BK0131,2018,"Immune Control of <i>Burkholderia pseudomallei</i>--Common, High-Frequency T-Cell Responses to a Broad Repertoire of Immunoprevalent Epitopes.",Frontiers in immunology,10.3389/fimmu.2018.00484,29616023,MED
+BK0132,2018,Immunopeptidomic Profiling of HLA-A2-Positive Triple Negative Breast Cancer Identifies Potential Immunotherapy Target Antigens.,Proteomics,10.1002/pmic.201700465,29786170,MED
+BK0133,2018,Itaconate is an anti-inflammatory metabolite that activates Nrf2 via alkylation of KEAP1.,Nature,10.1038/nature25986,29590092,MED
+BK0134,2018,Mapping protein interactions of sodium channel Na<sub>V</sub>1.7 using epitope-tagged gene-targeted mice.,The EMBO journal,10.15252/embj.201796692,29335280,MED
+BK0135,2018,Modeling lethal X-linked genetic disorders in pigs with ensured fertility.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1715940115,29311328,MED
+BK0136,2018,Proteo-metabolomics reveals compensation between ischemic and non-injured contralateral kidneys after reperfusion.,Scientific reports,10.1038/s41598-018-26804-8,29867102,MED
+BK0137,2018,Proteomic profiling of the brain of mice with experimental cerebral malaria.,Journal of proteomics,10.1016/j.jprot.2017.06.002,28602553,MED
+BK0138,2018,Proteomic profiling of the plasma of Gambian children with cerebral malaria.,Malaria journal,10.1186/s12936-018-2487-y,30249265,MED
+BK0139,2018,Statistical Learning and Spelling: Older Prephonological Spellers Produce More Wordlike Spellings Than Younger Prephonological Spellers.,Child development,10.1111/cdev.12893,28686300,MED
+BK0140,2018,Strong xenoprotective function by single-copy transgenes placed sequentially at a permissive locus.,Xenotransplantation,10.1111/xen.12382,29359453,MED
+BK0141,2018,Tetrahydrobiopterin modulates ubiquitin conjugation to UBC13/UBE2N and proteasome activity by S-nitrosation.,Scientific reports,10.1038/s41598-018-32481-4,30254268,MED
+BK0142,2018,The deubiquitylating enzyme UCHL3 regulates Ku80 retention at sites of DNA damage.,Scientific reports,10.1038/s41598-018-36235-0,30559450,MED
+BK0143,2018,The Jumonji-C oxygenase JMJD7 catalyzes (3S)-lysyl hydroxylation of TRAFAC GTPases.,Nature chemical biology,10.1038/s41589-018-0071-y,29915238,MED
+BK0144,2018,The N-terminal domain of a tick evasin is critical for chemokine binding and neutralization and confers specific binding activity to other evasins.,The Journal of biological chemistry,10.1074/jbc.ra117.000487,29487134,MED
+BK0145,2018,UFLC-Derived CSF Extracellular Vesicle Origin and Proteome.,Proteomics,10.1002/pmic.201800257,30411858,MED
+BK0146,2018,β-TrCP- and Casein Kinase II-Mediated Degradation of Cyclin F Controls Timely Mitotic Progression.,Cell reports,10.1016/j.celrep.2018.08.076,30257202,MED
+BK0147,2017,A Linear Diubiquitin-Based Probe for Efficient and Selective Detection of the Deubiquitinating Enzyme OTULIN.,Cell chemical biology,10.1016/j.chembiol.2017.08.006,28919039,MED
+BK0148,2017,A novel role for endothelial tetrahydrobiopterin in mitochondrial redox balance.,Free radical biology & medicine,10.1016/j.freeradbiomed.2017.01.012,28104455,MED
+BK0149,2017,"A novel workflow combining plaque imaging, plaque and plasma proteomics identifies biomarkers of human coronary atherosclerotic plaque disruption.",Clinical proteomics,10.1186/s12014-017-9157-x,28642677,MED
+BK0150,2017,A quantitative label-free analysis of the extracellular proteome of human supraspinatus tendon reveals damage to the pericellular and elastic fibre niches in torn and aged tissue.,PloS one,10.1371/journal.pone.0177656,28542244,MED
+BK0151,2017,Association of Distinct Fine Specificities of Anti-Citrullinated Peptide Antibodies With Elevated Immune Responses to Prevotella intermedia in a Subgroup of Patients With Rheumatoid Arthritis and Periodontitis.,"Arthritis & rheumatology (Hoboken, N.J.)",10.1002/art.40227,29084415,MED
+BK0152,2017,Biochemical and Mass Spectrometry-Based Approaches to Profile SUMOylation in Human Cells.,"Methods in molecular biology (Clifton, N.J.)",10.1007/978-1-4939-6439-0_10,27778286,MED
+BK0153,2017,CBP/p300 Bromodomains Regulate Amyloid-like Protein Aggregation upon Aberrant Lysine Acetylation.,Cell chemical biology,10.1016/j.chembiol.2016.11.009,27989401,MED
+BK0154,2017,Debridement and implant retention in the management of hip periprosthetic joint infection: outcomes following guided and rapid treatment at a single centre.,The bone & joint journal,10.1302/0301-620x.99b3.bjj-2016-0609.r1,28249972,MED
+BK0155,2017,Development of a T-cell Receptor Mimic Antibody against Wild-Type p53 for Cancer Immunotherapy.,Cancer research,10.1158/0008-5472.can-16-3247,28363997,MED
+BK0156,2017,Discovery of a Highly Selective Cell-Active Inhibitor of the Histone Lysine Demethylases KDM2/7.,Angewandte Chemie (International ed. in English),10.1002/anie.201706788,28976073,MED
+BK0157,2017,Discovery of a Selective Allosteric Inhibitor Targeting Macrodomain 2 of Polyadenosine-Diphosphate-Ribose Polymerase 14.,ACS chemical biology,10.1021/acschembio.7b00445,28991428,MED
+BK0158,2017,E3 Ligase cIAP2 Mediates Downregulation of MRE11 and Radiosensitization in Response to HDAC Inhibition in Bladder Cancer.,Cancer research,10.1158/0008-5472.can-16-3232,28363998,MED
+BK0159,2017,Expanding Proteome Coverage with CHarge Ordered Parallel Ion aNalysis (CHOPIN) Combined with Broad Specificity Proteolysis.,Journal of proteome research,10.1021/acs.jproteome.6b00915,28164708,MED
+BK0160,2017,Fumarate Hydratase Deletion in Pancreatic β Cells Leads to Progressive Diabetes.,Cell reports,10.1016/j.celrep.2017.08.093,28954230,MED
+BK0161,2017,Hand Compartment Syndrome Due to N -acetylcysteine Extravasation.,Clinical practice and cases in emergency medicine,10.5811/cpcem.2017.9.35152,29849372,MED
+BK0162,2017,Linker Histone H1.2 Directs Genome-wide Chromatin Association of the Retinoblastoma Tumor Suppressor Protein and Facilitates Its Function.,Cell reports,10.1016/j.celrep.2017.05.053,28614707,MED
+BK0163,2017,Mechanisms by which Porphyromonas gingivalis evades innate immunity.,PloS one,10.1371/journal.pone.0182164,28771533,MED
+BK0164,2017,miR-193a-3p interaction with HMGB1 downregulates human endothelial cell proliferation and migration.,Scientific reports,10.1038/srep44137,28276476,MED
+BK0165,2017,Molecular basis of USP7 inhibition by selective small-molecule inhibitors.,Nature,10.1038/nature24451,29045389,MED
+BK0166,2017,"Optimizing 2D gas chromatography mass spectrometry for robust tissue, serum and urine metabolite profiling.",Talanta,10.1016/j.talanta.2017.01.003,28153317,MED
+BK0167,2017,PCGF6-PRC1 suppresses premature differentiation of mouse embryonic stem cells by regulating germ cell-related genes.,eLife,10.7554/elife.21064,28304275,MED
+BK0168,2017,Phosphorylation Induces Structural Changes in the Autographa californica Nucleopolyhedrovirus P10 Protein.,Journal of virology,10.1128/jvi.00002-17,28424279,MED
+BK0169,2017,Protein arginine methylation: a prominent modification and its demethylation.,Cellular and molecular life sciences : CMLS,10.1007/s00018-017-2515-z,28364192,MED
+BK0170,2017,Snapin promotes HIV-1 transmission from dendritic cells by dampening TLR8 signaling.,The EMBO journal,10.15252/embj.201695364,28923824,MED
+BK0171,2017,The Munich MIDY Pig Biobank - A unique resource for studying organ crosstalk in diabetes.,Molecular metabolism,10.1016/j.molmet.2017.06.004,28752056,MED
+BK0172,2017,The Not-So-Good Prognosis of Streptococcal Periprosthetic Joint Infection Managed by Implant Retention: The Results of a Large Multicenter Study.,Clinical infectious diseases : an official publication of the Infectious Diseases Society of America,10.1093/cid/cix227,28369296,MED
+BK0173,2017,The Toxicology Investigators Consortium Case Registry-the 2016 Experience.,Journal of medical toxicology : official journal of the American College of Medical Toxicology,10.1007/s13181-017-0627-3,28766237,MED
+BK0174,2017,The why and how of amino acid analytics in cancer diagnostics and therapy.,Journal of biotechnology,10.1016/j.jbiotec.2016.12.001,27932276,MED
+BK0175,2016,Citrullination-acetylation interplay guides E2F-1 activity during the inflammatory response.,Science advances,10.1126/sciadv.1501257,26989780,MED
+BK0176,2016,Defining the HLA class I-associated viral antigen repertoire from HIV-1-infected human cells.,European journal of immunology,10.1002/eji.201545890,26467324,MED
+BK0177,2016,Deubiquitinase Usp8 regulates α-synuclein clearance and modifies its toxicity in Lewy body disease.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1523597113,27444016,MED
+BK0178,2016,DNA-PKcs and PARP1 Bind to Unresected Stalled DNA Replication Forks Where They Recruit XRCC1 to Mediate Repair.,Cancer research,10.1158/0008-5472.can-15-0608,26603896,MED
+BK0179,2016,"DUBbing Cancer: Deubiquitylating Enzymes Involved in Epigenetics, DNA Damage and the Cell Cycle As Therapeutic Targets.",Frontiers in genetics,10.3389/fgene.2016.00133,27516771,MED
+BK0180,2016,"Functional analysis of AEBP2, a PRC2 Polycomb protein, reveals a Trithorax phenotype in embryonic development and in ESCs.","Development (Cambridge, England)",10.1242/dev.123935,27317809,MED
+BK0181,2016,Identification of an immunodominant peptide from citrullinated tenascin-C as a major target for autoantibodies in rheumatoid arthritis.,Annals of the rheumatic diseases,10.1136/annrheumdis-2015-208495,26659718,MED
+BK0182,2016,Integrative Phosphoproteomics Links IL-23R Signaling with Metabolic Adaptation in Lymphocytes.,Scientific reports,10.1038/srep24491,27080861,MED
+BK0183,2016,Lineage-Specific Differences between the gp120 Inner Domain Layer 3 of Human Immunodeficiency Virus and That of Simian Immunodeficiency Virus.,Journal of virology,10.1128/jvi.01215-16,27535053,MED
+BK0184,2016,Metalloprotease SPRTN/DVC1 Orchestrates Replication-Coupled DNA-Protein Crosslink Repair.,Molecular cell,10.1016/j.molcel.2016.09.032,27871366,MED
+BK0185,2016,Palaeoproteomic evidence identifies archaic hominins associated with the Châtelperronian at the Grotte du Renne.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1605834113,27638212,MED
+BK0186,2016,Plasma degradome affected by variable storage of human blood.,Clinical proteomics,10.1186/s12014-016-9126-9,27708557,MED
+BK0187,2016,Posttranslational mutagenesis: A chemical strategy for exploring protein side-chain diversity.,"Science (New York, N.Y.)",10.1126/science.aag1465,27708059,MED
+BK0188,2016,Protein sequences bound to mineral surfaces persist into deep time.,eLife,10.7554/elife.17092,27668515,MED
+BK0189,2016,Proteomic changes in response to crystal formation in Drosophila Malpighian tubules.,Fly,10.1080/19336934.2016.1171947,27064297,MED
+BK0190,2016,RYBP stimulates PRC1 to shape chromatin-based communication between Polycomb repressive complexes.,eLife,10.7554/elife.18591,27705745,MED
+BK0191,2016,Salt-Inducible Kinase 2 Couples Ovarian Cancer Cell Metabolism with Survival at the Adipocyte-Rich Metastatic Niche.,Cancer cell,10.1016/j.ccell.2016.06.020,27478041,MED
+BK0192,2016,SCF (Fbxl17) ubiquitylation of Sufu regulates Hedgehog signaling and medulloblastoma development.,The EMBO journal,10.15252/embj.201593374,27234298,MED
+BK0193,2016,Selective Binding of AIRAPL Tandem UIMs to Lys48-Linked Tri-Ubiquitin Chains.,"Structure (London, England : 1993)",10.1016/j.str.2015.12.017,26876100,MED
+BK0194,2016,"SPATA2 Links CYLD to LUBAC, Activates CYLD, and Controls LUBAC Signaling.",Molecular cell,10.1016/j.molcel.2016.08.001,27591049,MED
+BK0195,2016,Structure of the Human Protein Kinase ZAK in Complex with Vemurafenib.,ACS chemical biology,10.1021/acschembio.6b00043,26999302,MED
+BK0196,2016,TLR Adaptor Protein MYD88 Mediates Sensitivity to HDAC Inhibitors via a Cytokine-Dependent Mechanism.,Cancer research,10.1158/0008-5472.can-16-0504,27733371,MED
+BK0197,2016,Using an Integrated -Omics Approach to Identify Key Cellular Processes That Are Disturbed in the Kidney After Brain Death.,American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons,10.1111/ajt.13626,26602379,MED
+BK0198,2015,Adiponectin as a link between type 2 diabetes and vascular NADPH oxidase activity in the human arterial wall: the regulatory role of perivascular adipose tissue.,Diabetes,10.2337/db14-1011,25552596,MED
+BK0199,2015,Ancient proteins resolve the evolutionary history of Darwin's South American ungulates.,Nature,10.1038/nature14249,25799987,MED
+BK0200,2015,Autophagy limits proliferation and glycolytic metabolism in acute myeloid leukemia.,Cell death discovery,10.1038/cddiscovery.2015.8,26568842,MED
+BK0201,2015,CDA directs metabolism of epigenetic nucleosides revealing a therapeutic window in cancer.,Nature,10.1038/nature14948,26200337,MED
+BK0202,2015,Cells deficient in base-excision repair reveal cancer hallmarks originating from adjustments to genetic instability.,Nucleic acids research,10.1093/nar/gkv222,25800737,MED
+BK0203,2015,Cofactor Strap regulates oxidative phosphorylation and mitochondrial p53 activity through ATP synthase.,Cell death and differentiation,10.1038/cdd.2014.135,25168243,MED
+BK0204,2015,Early Kinetics of the HLA Class I-Associated Peptidome of MVA.HIVconsv-Infected Cells.,Journal of virology,10.1128/jvi.03627-14,25810538,MED
+BK0205,2015,Expanding the yeast protein arginine methylome.,Proteomics,10.1002/pmic.201500032,26046779,MED
+BK0206,2015,Expression of citrulline and homocitrulline residues in the lungs of non-smokers and smokers: implications for autoimmunity in rheumatoid arthritis.,Arthritis research & therapy,10.1186/s13075-015-0520-x,25600626,MED
+BK0207,2015,Gel-aided sample preparation (GASP)--a simplified method for gel-assisted proteomic sample generation from protein extracts and intact cells.,Proteomics,10.1002/pmic.201400436,25515006,MED
+BK0208,2015,Hypoxia induces a lipogenic cancer cell phenotype via HIF1α-dependent and -independent pathways.,Oncotarget,10.18632/oncotarget.3058,25605240,MED
+BK0209,2015,Hypoxic regulation of RIOK3 is a major mechanism for cancer cell invasion and metastasis.,Oncogene,10.1038/onc.2014.396,25486436,MED
+BK0210,2015,Identification of distinct circulating exosomes in Parkinson's disease.,Annals of clinical and translational neurology,10.1002/acn3.175,25909081,MED
+BK0211,2015,OTUB1 de-ubiquitinating enzyme promotes prostate cancer cell invasion in vitro and tumorigenesis in vivo.,Molecular cancer,10.1186/s12943-014-0280-2,25623341,MED
+BK0212,2015,Regulation of SUMO2 target proteins by the proteasome in human cells exposed to replication stress.,Journal of proteome research,10.1021/pr500997p,25748227,MED
+BK0213,2015,The human otubain2-ubiquitin structure provides insights into the cleavage specificity of poly-ubiquitin-linkages.,PloS one,10.1371/journal.pone.0115344,25590432,MED
+BK0214,2015,The mutant Moonwalker TRPC3 channel links calcium signaling to lipid metabolism in the developing cerebellum.,Human molecular genetics,10.1093/hmg/ddv150,25908616,MED
+BK0215,2015,The presence of prolines in the flanking region of an immunodominant HIV-2 gag epitope influences the quality and quantity of the epitope generated.,European journal of immunology,10.1002/eji.201545451,26018465,MED
+BK0216,2015,USP4 Auto-Deubiquitylation Promotes Homologous Recombination.,Molecular cell,10.1016/j.molcel.2015.09.019,26455393,MED
+BK0217,2014,Comparison of neutralizing antibody responses elicited from highly diverse polyvalent heterotrimeric HIV-1 gp140 cocktail immunogens versus a monovalent counterpart in rhesus macaques.,PloS one,10.1371/journal.pone.0114709,25490553,MED
+BK0218,2014,Critical role of endoplasmic reticulum aminopeptidase 1 in determining the length and sequence of peptides bound and presented by HLA-B27.,"Arthritis & rheumatology (Hoboken, N.J.)",10.1002/art.38249,24504800,MED
+BK0219,2014,Discovery and validation of biomarkers to guide clinical management of pneumonia in African children.,Clinical infectious diseases : an official publication of the Infectious Diseases Society of America,10.1093/cid/ciu202,24696240,MED
+BK0220,2014,Free IL-12p40 monomer is a polyfunctional adaptor for generating novel IL-12-like heterodimers extracellularly.,"Journal of immunology (Baltimore, Md. : 1950)",10.4049/jimmunol.1400159,24821971,MED
+BK0221,2014,Genetic control of differential acetylation in diabetic rats.,PloS one,10.1371/journal.pone.0094555,24743600,MED
+BK0222,2014,GOAT--a simple LC-MS/MS gradient optimization tool.,Proteomics,10.1002/pmic.201300524,24723505,MED
+BK0223,2014,Hydroxylation of the eukaryotic ribosomal decoding center affects translational accuracy.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1311750111,24550462,MED
+BK0224,2014,Jumonji domain containing protein 6 (Jmjd6) modulates splicing and specifically interacts with arginine-serine-rich (RS) domains of SR- and SR-like proteins.,Nucleic acids research,10.1093/nar/gku488,24914048,MED
+BK0225,2014,OGFOD1 catalyzes prolyl hydroxylation of RPS23 and is involved in translation control and stress granule formation.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1314482111,24550447,MED
+BK0226,2014,Optimal translational termination requires C4 lysyl hydroxylation of eRF1.,Molecular cell,10.1016/j.molcel.2013.12.028,24486019,MED
+BK0227,2014,Selective and reversible inhibitors of ubiquitin-specific protease 7: a patent evaluation (WO2013030218).,Expert opinion on therapeutic patents,10.1517/13543776.2014.882320,24456106,MED
+BK0228,2014,Signal-peptide-mediated translocation is regulated by a p97-AIRAPL complex.,The Biochemical journal,10.1042/bj20130710,24160817,MED
+BK0229,2014,The Succinated Proteome of FH-Mutant Tumours.,Metabolites,10.3390/metabo4030640,25105836,MED
+BK0230,2014,The treatment and outcome of peri-prosthetic infection of the ankle: a single cohort-centre experience of 34 cases.,The bone & joint journal,10.1302/0301-620x.96b6.33298,24891577,MED
+BK0231,2014,Variant PRC1 complex-dependent H2A ubiquitylation drives PRC2 recruitment and polycomb domain formation.,Cell,10.1016/j.cell.2014.05.004,24856970,MED
+BK0232,2013,A regulatory circuit that involves HR23B and HDAC6 governs the biological response to HDAC inhibitors.,Cell death and differentiation,10.1038/cdd.2013.47,23703321,MED
+BK0233,2013,Arginine methylation-dependent reader-writer interplay governs growth control by E2F-1.,Molecular cell,10.1016/j.molcel.2013.08.039,24076217,MED
+BK0234,2013,Deubiquitinating enzyme specificity for ubiquitin chain topology profiled by di-ubiquitin activity probes.,Chemistry & biology,10.1016/j.chembiol.2013.10.012,24290882,MED
+BK0235,2013,DNA modification under mild conditions by Suzuki-Miyaura cross-coupling for the generation of functional probes.,Angewandte Chemie (International ed. in English),10.1002/anie.201304038,23943570,MED
+BK0236,2013,Effective control of recalcitrant pruritus by bevacizumab: a possible role for vascular endothelial growth factor in chronic itch?,Acta dermato-venereologica,10.2340/00015555-1445,22930318,MED
+BK0237,2013,Inhibition of mitochondrial aconitase by succination in fumarate hydratase deficiency.,Cell reports,10.1016/j.celrep.2013.02.013,23499446,MED
+BK0238,2013,Learning to Use an Alphabetic Writing System.,Language learning and development : the official journal of the Society for Language Development,10.1080/15475441.2013.812016,24077986,MED
+BK0239,2013,PfHPRT: a new biomarker candidate of acute Plasmodium falciparum infection.,Journal of proteome research,10.1021/pr300858g,23339668,MED
+BK0240,2013,Processing of human toll-like receptor 7 by furin-like proprotein convertases is required for its accumulation and activity in endosomes.,Immunity,10.1016/j.immuni.2013.09.004,24138882,MED
+BK0241,2013,Protein profiling in hepatocellular carcinoma by label-free quantitative proteomics in two west African populations.,PloS one,10.1371/journal.pone.0068381,23935864,MED
+BK0242,2013,Proteomic analysis reveals a proteolytic feedback loop in murine seminal fluid.,The Prostate,10.1002/pros.22690,23765702,MED
+BK0243,2013,QuaNCAT: quantitating proteome dynamics in primary cells.,Nature methods,10.1038/nmeth.2401,23474466,MED
+BK0244,2013,Restoring p53 function in human melanoma cells by inhibiting MDM2 and cyclin B1/CDK1-phosphorylated nuclear iASPP.,Cancer cell,10.1016/j.ccr.2013.03.013,23623661,MED
+BK0245,2013,The polyserine domain of the lysyl-5 hydroxylase Jmjd6 mediates subnuclear localization.,The Biochemical journal,10.1042/bj20130529,23688307,MED
+BK0246,2013,The PR/SET domain zinc finger protein Prdm4 regulates gene expression in embryonic stem cells but plays a nonessential role in the developing mouse embryo.,Molecular and cellular biology,10.1128/mcb.00498-13,23918801,MED
+BK0247,2013,Tsc1 (hamartin) confers neuroprotection against ischemia by inducing autophagy.,Nature medicine,10.1038/nm.3097,23435171,MED
+BK0248,2013,Two birds with one stone: doing metabolomics with your proteomics kit.,Proteomics,10.1002/pmic.201300192,24155035,MED
+BK0249,2013,Ubiquitin - omics reveals novel networks and associations with human disease.,Current opinion in chemical biology,10.1016/j.cbpa.2012.12.024,23339974,MED
+BK0250,2012,A pivotal heme-transfer reaction intermediate in cytochrome c biogenesis.,The Journal of biological chemistry,10.1074/jbc.m111.313692,22121193,MED
+BK0251,2012,A small molecule inhibitor of ubiquitin-specific protease-7 induces apoptosis in multiple myeloma cells and overcomes bortezomib resistance.,Cancer cell,10.1016/j.ccr.2012.08.007,22975377,MED
+BK0252,2012,Arginine methylation controls growth regulation by E2F-1.,The EMBO journal,10.1038/emboj.2012.17,22327218,MED
+BK0253,2012,ATM-dependent downregulation of USP7/HAUSP by PPM1G activates p53 response to DNA damage.,Molecular cell,10.1016/j.molcel.2012.01.021,22361354,MED
+BK0254,2012,Detection of BK virus in urine from renal transplant subjects by mass spectrometry.,Clinical proteomics,10.1186/1559-0275-9-4,22537312,MED
+BK0255,2012,Detection of multiple autoantibodies in patients with ankylosing spondylitis using nucleic acid programmable protein arrays.,Molecular & cellular proteomics : MCP,10.1074/mcp.m9.00384,22311593,MED
+BK0256,2012,Detection of ubiquitin-proteasome enzymatic activities in cells: application of activity-based probes to inhibitor development.,Biochimica et biophysica acta,10.1016/j.bbamcr.2012.05.014,22613766,MED
+BK0257,2012,Discovery of candidate serum proteomic and metabolomic biomarkers in ankylosing spondylitis.,Molecular & cellular proteomics : MCP,10.1074/mcp.m111.013904,21997733,MED
+BK0258,2012,Fluorescence-based active site probes for profiling deubiquitinating enzymes.,Organic & biomolecular chemistry,10.1039/c2ob25258a,22453277,MED
+BK0259,2012,HIV-1 infection-induced apoptotic microparticles inhibit human DCs via CD44.,The Journal of clinical investigation,10.1172/jci64439,23160198,MED
+BK0260,2012,Human TNF-related apoptosis-inducing ligand-expressing dendritic cells from transgenic pigs attenuate human xenogeneic T cell responses.,Xenotransplantation,10.1111/j.1399-3089.2011.00688.x,22360752,MED
+BK0261,2012,Inactivation and inducible oncogenic mutation of p53 in gene targeted pigs.,PloS one,10.1371/journal.pone.0043323,23071491,MED
+BK0262,2012,KDM2B links the Polycomb Repressive Complex 1 (PRC1) to recognition of CpG islands.,eLife,10.7554/elife.00205,23256043,MED
+BK0263,2012,OS045. Multi-dimensional protein identification technology analysis of syncytiotrophoblast vesicles released from perfused preeclampsia placentas.,Pregnancy hypertension,10.1016/j.preghy.2012.04.046,26105259,MED
+BK0264,2012,Oxygenase-catalyzed ribosome hydroxylation occurs in prokaryotes and humans.,Nature chemical biology,10.1038/nchembio.1093,23103944,MED
+BK0265,2012,Phosphorylation of PNKP by ATM prevents its proteasomal degradation and enhances resistance to oxidative stress.,Nucleic acids research,10.1093/nar/gks909,23042680,MED
+BK0266,2012,Proteomic identification of host and parasite biomarkers in saliva from patients with uncomplicated Plasmodium falciparum malaria.,Malaria journal,10.1186/1475-2875-11-178,22640863,MED
+BK0267,2012,Sequential targeting of CFTR by BAC vectors generates a novel pig model of cystic fibrosis.,"Journal of molecular medicine (Berlin, Germany)",10.1007/s00109-011-0839-y,22170306,MED
+BK0268,2012,The FIH hydroxylase is a cellular peroxide sensor that modulates HIF transcriptional activity.,EMBO reports,10.1038/embor.2012.9,22310300,MED
+BK0269,2012,Ubiquitin ligase UBR3 regulates cellular levels of the essential DNA repair protein APE1 and is required for genome stability.,Nucleic acids research,10.1093/nar/gkr744,21933813,MED
+BK0270,2011,A photoreactive small-molecule probe for 2-oxoglutarate oxygenases.,Chemistry & biology,10.1016/j.chembiol.2011.03.007,21609845,MED
+BK0271,2011,Aberrant succination of proteins in fumarate hydratase-deficient mice and HLRCC patients is a robust biomarker of mutation status.,The Journal of pathology,10.1002/path.2932,21630274,MED
+BK0272,2011,Activity-based chemical proteomics accelerates inhibitor development for deubiquitylating enzymes.,Chemistry & biology,10.1016/j.chembiol.2011.08.018,22118674,MED
+BK0273,2011,Asparagine and aspartate hydroxylation of the cytoskeletal ankyrin family is catalyzed by factor-inhibiting hypoxia-inducible factor.,The Journal of biological chemistry,10.1074/jbc.m110.193540,21177872,MED
+BK0274,2011,Comparative evaluation of label-free SINQ normalized spectral index quantitation in the central proteomics facilities pipeline.,Proteomics,10.1002/pmic.201000800,21656681,MED
+BK0275,2011,Crystal structures of the endoplasmic reticulum aminopeptidase-1 (ERAP1) reveal the molecular basis for N-terminal peptide trimming.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.1101262108,21508329,MED
+BK0276,2011,Dia2 controls transcription by mediating assembly of the RSC complex.,PloS one,10.1371/journal.pone.0021172,21701592,MED
+BK0277,2011,Differential sensitivity of hypoxia inducible factor hydroxylation sites to hypoxia and hydroxylase inhibitors.,The Journal of biological chemistry,10.1074/jbc.m110.211110,21335549,MED
+BK0278,2011,E3 ligases determine ubiquitination site and conjugate type by enforcing specificity on E2 enzymes.,The Journal of biological chemistry,10.1074/jbc.m111.234559,21965653,MED
+BK0279,2011,Factor-inhibiting hypoxia-inducible factor (FIH) catalyses the post-translational hydroxylation of histidinyl residues within ankyrin repeat domains.,The FEBS journal,10.1111/j.1742-4658.2011.08022.x,21251231,MED
+BK0280,2011,Interplay between lysine methylation and Cdk phosphorylation in growth control by the retinoblastoma protein.,The EMBO journal,10.1038/emboj.2010.311,21119616,MED
+BK0281,2011,Label-free quantitative proteomics reveals differentially regulated proteins influencing urolithiasis.,Molecular & cellular proteomics : MCP,10.1074/mcp.m110.005686,21474797,MED
+BK0282,2011,Label-free quantitative proteomics reveals regulation of interferon-induced protein with tetratricopeptide repeats 3 (IFIT3) and 5'-3'-exoribonuclease 2 (XRN2) during respiratory syncytial virus infection.,Virology journal,10.1186/1743-422x-8-442,21933386,MED
+BK0283,2011,"Pharmacological targets in the ubiquitin system offer new ways of treating cancer, neurodegenerative disorders and infectious diseases.",Expert reviews in molecular medicine,10.1017/s1462399411002031,22088887,MED
+BK0284,2011,Photoactivable peptides for identifying enzyme-substrate and protein-protein interactions.,"Chemical communications (Cambridge, England)",10.1039/c0cc04457a,21152646,MED
+BK0285,2011,PTMs in conversation: activity and function of deubiquitinating enzymes regulated via post-translational modifications.,Cell biochemistry and biophysics,10.1007/s12013-011-9176-6,21480003,MED
+BK0286,2011,Quantitative mass spectrometry reveals dynamics of factor-inhibiting hypoxia-inducible factor-catalyzed hydroxylation.,The Journal of biological chemistry,10.1074/jbc.m111.262808,21808058,MED
+BK0287,2011,Renal cyst formation in Fh1-deficient mice is independent of the Hif/Phd pathway: roles for fumarate in KEAP1 succination and Nrf2 signaling.,Cancer cell,10.1016/j.ccr.2011.09.006,22014577,MED
+BK0288,2011,Studies on the reaction of nitric oxide with the hypoxia-inducible factor prolyl hydroxylase domain 2 (EGLN1).,Journal of molecular biology,10.1016/j.jmb.2011.04.075,21601578,MED
+BK0289,2011,The antiviral efficacy of HIV-specific CD8⁺ T-cells to a conserved epitope is heavily dependent on the infecting HIV-1 isolate.,PLoS pathogens,10.1371/journal.ppat.1001341,21589893,MED
+BK0290,2011,The chemoselective one-step alkylation and isolation of thiophosphorylated cdk2 substrates in the presence of native cysteine.,Chembiochem : a European journal of chemical biology,10.1002/cbic.201000528,21305681,MED
+BK0291,2011,The SOCS2 ubiquitin ligase complex regulates growth hormone receptor levels.,PloS one,10.1371/journal.pone.0025358,21980433,MED
+BK0292,2011,Urinary peptide profiling identifies a panel of putative biomarkers for diagnosing and staging endometriosis.,Fertility and sterility,10.1016/j.fertnstert.2010.11.066,21255776,MED
+BK0293,2011,USP47 is a deubiquitylating enzyme that regulates base excision repair by controlling steady-state levels of DNA polymerase β.,Molecular cell,10.1016/j.molcel.2011.02.016,21362556,MED
+BK0294,2010,Assessing the quality and reproducibility of a proteomic platform for clinical stroke biomarker discovery.,Translational stroke research,10.1007/s12975-010-0036-2,24323556,MED
+BK0295,2010,Challenges ahead for mass spectrometry and proteomics applications in epigenetics.,Epigenomics,10.2217/epi.09.37,22122752,MED
+BK0296,2010,Cks1 activates transcription by binding to the ubiquitylated proteasome.,Molecular and cellular biology,10.1128/mcb.00655-09,20516216,MED
+BK0297,2010,CPFP: a central proteomics facilities pipeline.,"Bioinformatics (Oxford, England)",10.1093/bioinformatics/btq081,20189941,MED
+BK0298,2010,Elevation of intact and proteolytic fragments of acute phase proteins constitutes the earliest systemic antiviral response in HIV-1 infection.,PLoS pathogens,10.1371/journal.ppat.1000893,20463814,MED
+BK0299,2010,Experience of islet isolation without neutral protease supplementation.,Islets,10.4161/isl.2.5.12602,21099325,MED
+BK0300,2010,Loss of autophagy in erythroid cells leads to defective removal of mitochondria and severe anemia in vivo.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.0913170107,20080761,MED
+BK0301,2010,Loss of the tumor suppressor CYLD enhances Wnt/beta-catenin signaling through K63-linked ubiquitination of Dvl.,Molecular cell,10.1016/j.molcel.2010.01.035,20227366,MED
+BK0302,2010,Matrix metalloproteinase-9 regulates tumor cell invasion through cleavage of protease nexin-1.,Cancer research,10.1158/0008-5472.can-10-0242,20736374,MED
+BK0303,2010,Mitochondrial proteome analysis reveals altered expression of voltage dependent anion channels in pancreatic β-cells exposed to high glucose.,Islets,10.4161/isl.2.5.12639,21099326,MED
+BK0304,2010,"Muscle wasting in aged, sarcopenic rats is associated with enhanced activity of the ubiquitin proteasome pathway.",The Journal of biological chemistry,10.1074/jbc.m110.129718,20940294,MED
+BK0305,2010,New mechanism for Notch signaling to endothelium at a distance by Delta-like 4 incorporation into exosomes.,Blood,10.1182/blood-2009-08-239228,20558614,MED
+BK0306,2010,Post-translational modification of the deubiquitinating enzyme otubain 1 modulates active RhoA levels and susceptibility to Yersinia invasion.,The FEBS journal,10.1111/j.1742-4658.2010.07665.x,20553488,MED
+BK0307,2010,Probing the proteasome cavity in three steps: bio-orthogonal photo-reactive suicide substrates.,"Chemical communications (Cambridge, England)",10.1039/c0cc03322g,20981375,MED
+BK0308,2010,Proteomic analysis of human adipose tissue after rosiglitazone treatment shows coordinated changes to promote glucose uptake.,"Obesity (Silver Spring, Md.)",10.1038/oby.2009.208,19556978,MED
+BK0309,2010,Small-molecule-based inhibition of histone demethylation in cells assessed by quantitative mass spectrometry.,Journal of proteome research,10.1021/pr100269b,20583823,MED
+BK0310,2010,Tyrosine dephosphorylation is required for Bak activation in apoptosis.,The EMBO journal,10.1038/emboj.2010.244,20959805,MED
+BK0311,2009,A broad screen for targets of immune complexes decorating arthritic joints highlights deposition of nucleosomes in rheumatoid arthritis.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.0908032106,19720992,MED
+BK0312,2009,Ankylosing spondylitis monocytes show upregulation of proteins involved in inflammation and the ubiquitin proteasome pathway.,Annals of the rheumatic diseases,10.1136/ard.2008.097204,18952638,MED
+BK0313,2009,Comparison of CID versus ETD based MS/MS fragmentation for the analysis of protein ubiquitination.,Journal of the American Society for Mass Spectrometry,10.1016/j.jasms.2009.04.023,19523847,MED
+BK0314,2009,In vitro binding of HFE to the cation-independent mannose-6 phosphate receptor.,"Blood cells, molecules & diseases",10.1016/j.bcmd.2009.03.010,19487139,MED
+BK0315,2009,"Jmjd6 catalyses lysyl-hydroxylation of U2AF65, a protein associated with RNA splicing.","Science (New York, N.Y.)",10.1126/science.1175865,19574390,MED
+BK0316,2009,Proteomics-based identification of novel factor inhibiting hypoxia-inducible factor (FIH) substrates indicates widespread asparaginyl hydroxylation of ankyrin repeat domain-containing proteins.,Molecular & cellular proteomics : MCP,10.1074/mcp.m800340-mcp200,18936059,MED
+BK0317,2009,Structural basis and specificity of human otubain 1-mediated deubiquitination.,The Biochemical journal,10.1042/bj20081318,18954305,MED
+BK0318,2009,Ubiquitin ligase ARF-BP1/Mule modulates base excision repair.,The EMBO journal,10.1038/emboj.2009.243,19713937,MED
+BK0319,2008,Arginine methylation regulates the p53 response.,Nature cell biology,10.1038/ncb1802,19011621,MED
+BK0320,2008,ATM and Chk2 kinase target the p53 cofactor Strap.,EMBO reports,10.1038/embor.2008.186,18833288,MED
+BK0321,2008,Novel MMP-9 substrates in cancer cells revealed by a label-free quantitative proteomics approach.,Molecular & cellular proteomics : MCP,10.1074/mcp.m800095-mcp200,18596065,MED
+BK0322,2008,Odin (ANKS1A) is a Src family kinase target in colorectal cancer cells.,Cell communication and signaling : CCS,10.1186/1478-811x-6-7,18844995,MED
+BK0323,2008,Ubiquitin and ubiquitin-like specific proteases targeted by infectious pathogens: Emerging patterns and molecular principles.,Biochimica et biophysica acta,10.1016/j.bbadis.2008.08.010,18817868,MED
+BK0324,2007,A cell-permeable inhibitor and activity-based probe for the caspase-like activity of the proteasome.,Bioorganic & medicinal chemistry letters,10.1016/j.bmcl.2007.03.092,17442566,MED
+BK0325,2007,A novel cytosolic class I antigen-processing pathway for endoplasmic-reticulum-targeted proteins.,EMBO reports,10.1038/sj.embor.7401065,17853904,MED
+BK0326,2007,Activation of the lectin DC-SIGN induces an immature dendritic cell phenotype triggering Rho-GTPase activity required for HIV-1 replication.,Nature immunology,10.1038/ni1470,17496896,MED
+BK0327,2007,Asparaginyl hydroxylation of the Notch ankyrin repeat domain by factor inhibiting hypoxia-inducible factor.,The Journal of biological chemistry,10.1074/jbc.m704102200,17573339,MED
+BK0328,2007,Interaction of hydroxylated collagen IV with the von hippel-lindau tumor suppressor.,The Journal of biological chemistry,10.1074/jbc.m611648200,17339318,MED
+BK0329,2007,Iron load and redox stress in skeletal muscle of aged rats.,Muscle & nerve,10.1002/mus.20808,17503500,MED
+BK0330,2007,Loss of Aire-dependent thymic expression of a peripheral tissue antigen renders it a target of autoimmunity.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.0700259104,17360567,MED
+BK0331,2007,Proteome changes induced by knock-down of the deubiquitylating enzyme HAUSP/USP7.,Journal of proteome research,10.1021/pr0702161,17927229,MED
+BK0332,2006,Activation of the lectin pathway by natural IgM in a model of ischemia/reperfusion injury.,"Journal of immunology (Baltimore, Md. : 1950)",10.4049/jimmunol.177.7.4727,16982912,MED
+BK0333,2006,Defining the T cell antigen proteome of wasp venom.,Clinical and experimental allergy : journal of the British Society for Allergy and Clinical Immunology,10.1111/j.1365-2222.2006.02569.x,17014436,MED
+BK0334,2006,Gene expression analysis of B-lymphoma cells resistant and sensitive to bortezomib.,British journal of haematology,10.1111/j.1365-2141.2006.06132.x,16846475,MED
+BK0335,2006,Identification of the target self-antigens in reperfusion injury.,The Journal of experimental medicine,10.1084/jem.20050390,16390934,MED
+BK0336,2006,Putting proteomics on target: activity-based profiling of ubiquitin and ubiquitin-like processing enzymes.,Expert review of proteomics,10.1586/14789450.3.2.213,16608434,MED
+BK0337,2006,Ultra-fast tandem mass spectrometry scanning combined with monolithic column liquid chromatography increases throughput in proteomic analysis.,Rapid communications in mass spectrometry : RCM,10.1002/rcm.2563,16773668,MED
+BK0338,2005,A deubiquitinating enzyme encoded by HSV-1 belongs to a family of cysteine proteases that is conserved across the family Herpesviridae.,Molecular cell,10.1016/j.molcel.2005.07.003,16109378,MED
+BK0339,2005,Activity probe for in vivo profiling of the specificity of proteasome inhibitor bortezomib.,Nature methods,10.1038/nmeth759,15846363,MED
+BK0340,2005,Bioorthogonal organic chemistry in living cells: novel strategies for labeling biomolecules.,Organic & biomolecular chemistry,10.1039/b412558d,15602593,MED
+BK0341,2005,Characterization of in vivo expanded OspA-specific human T-cell clones.,"Clinical immunology (Orlando, Fla.)",10.1016/j.clim.2005.02.015,15893699,MED
+BK0342,2005,Effects of PS-341 on the activity and composition of proteasomes in multiple myeloma cells.,Cancer research,10.1158/0008-5472.can-05-0506,16140960,MED
+BK0343,2005,Expression of PHA polymerase genes of Pseudomonas putida in Escherichia coli and its effect on PHA formation.,Antonie van Leeuwenhoek,10.1007/s10482-004-1360-x,15793618,MED
+BK0344,2004,Acetylation of the C terminus of Ku70 by CBP and PCAF controls Bax-mediated apoptosis.,Molecular cell,10.1016/s1097-2765(04)00094-2,15023334,MED
+BK0345,2004,Activity-based ubiquitin-specific protease (USP) profiling of virus-infected and malignant human cells.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.0308411100,14982996,MED
+BK0346,2004,Applications for chemical probes of proteolytic activity.,Current protocols in protein science,10.1002/0471140864.ps2117s36,18429259,MED
+BK0347,2004,Calorie restriction promotes mammalian cell survival by inducing the SIRT1 deacetylase.,"Science (New York, N.Y.)",10.1126/science.1099196,15205477,MED
+BK0348,2004,Chemistry-based functional proteomics: mechanism-based activity-profiling tools for ubiquitin and ubiquitin-like specific proteases.,Journal of proteome research,10.1021/pr0341080,15113103,MED
+BK0349,2004,Control of cross-presentation during dendritic cell maturation.,European journal of immunology,10.1002/eji.200324508,14768044,MED
+BK0350,2004,Development of an isotope-coded activity-based probe for the quantitative profiling of cysteine proteases.,Bioorganic & medicinal chemistry letters,10.1016/j.bmcl.2004.04.046,15149659,MED
+BK0351,2004,"Effects of proteasome inhibitors MG132, ZL3VS and AdaAhx3L3VS on protein metabolism in septic rats.",International journal of experimental pathology,10.1111/j.0959-9673.2004.00405.x,15566433,MED
+BK0352,2004,Identification of proteins associated with murine cytomegalovirus virions.,Journal of virology,10.1128/jvi.78.20.11187-11197.2004,15452238,MED
+BK0353,2004,Recognition of phosphodegron motifs in human cyclin E by the SCF(Fbw7) ubiquitin ligase.,The Journal of biological chemistry,10.1074/jbc.m409226200,15364936,MED
+BK0354,2004,Specific and covalent targeting of conjugating and deconjugating enzymes of ubiquitin-like proteins.,Molecular and cellular biology,10.1128/mcb.24.1.84-95.2004,14673145,MED
+BK0355,2003,"A single protease, Apg4B, is specific for the autophagy-related ubiquitin-like proteins GATE-16, MAP1-LC3, GABARAP, and Apg8L.",The Journal of biological chemistry,10.1074/jbc.m308762200,14530254,MED
+BK0356,2003,Functional proteomics of the active cysteine protease content in Drosophila S2 cells.,Molecular & cellular proteomics : MCP,10.1074/mcp.m300067-mcp200,13130081,MED
+BK0357,2003,Pathways accessory to proteasomal proteolysis are less efficient in major histocompatibility complex class I antigen production.,The Journal of biological chemistry,10.1074/jbc.m211221200,12488316,MED
+BK0358,2003,"Structure and reactivity of an asymmetric complex between HslV and I-domain deleted HslU, a prokaryotic homolog of the eukaryotic proteasome.",Journal of molecular biology,10.1016/s0022-2836(03)00580-1,12823960,MED
+BK0359,2002,Chemistry-based functional proteomics reveals novel members of the deubiquitinating enzyme family.,Chemistry & biology,10.1016/s1074-5521(02)00248-x,12401499,MED
+BK0360,2002,Crystal structure of HslUV complexed with a vinyl sulfone inhibitor: corroboration of a proposed mechanism of allosteric activation of HslV by HslU.,Journal of molecular biology,10.1016/s0022-2836(02)00145-6,12054822,MED
+BK0361,2002,MHC class I antigen processing regulated by cytosolic proteolysis-short cuts that alter peptide generation.,Molecular immunology,10.1016/s0161-5890(02)00100-1,12200049,MED
+BK0362,2002,Neuronal loss and brain atrophy in mice lacking cathepsins B and L.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.112632299,12048238,MED
+BK0363,2001,A novel active site-directed probe specific for deubiquitylating enzymes reveals proteasome association of USP14.,The EMBO journal,10.1093/emboj/20.18.5187,11566882,MED
+BK0364,2001,Extended peptide-based inhibitors efficiently target the proteasome and reveal overlapping specificities of the catalytic beta-subunits.,Chemistry & biology,10.1016/s1074-5521(01)00069-2,11564559,MED
+BK0365,2000,Integration of the ubiquitin-proteasome pathway with a cytosolic oligopeptidase activity.,Proceedings of the National Academy of Sciences of the United States of America,10.1073/pnas.180328897,10954757,MED
+BK0366,1999,T cell recognition of hapten. Anatomy of T cell receptor binding of a H-2kd-associated photoreactive peptide derivative.,The Journal of biological chemistry,10.1074/jbc.274.6.3622,9920911,MED
+BK0367,1998,"Peptide modification or blocking of CD8, resulting in weak TCR signaling, can activate CTL for Fas- but not perforin-dependent cytotoxicity or cytokine production.","Journal of immunology (Baltimore, Md. : 1950)",10.4049/jimmunol.161.12.6939,9862728,MED
+BK0368,1998,The efficiency of antigen recognition by CD8+ CTL clones is determined by the frequency of serial TCR engagement.,"Journal of immunology (Baltimore, Md. : 1950)",10.4049/jimmunol.161.2.553,9670927,MED
+BK0369,1997,Effects of epitope modification on T cell receptor-ligand binding and antigen recognition by seven H-2Kd-restricted cytotoxic T lymphocyte clones specific for a photoreactive peptide derivative.,The Journal of experimental medicine,10.1084/jem.185.4.629,9034142,MED
+BK0370,1997,Role of CD8 in aberrant function of cytotoxic T lymphocytes.,The Journal of experimental medicine,10.1084/jem.186.12.2033,9396772,MED
+BK0371,1996,Immunodominance of cytotoxic T lymphocyte epitopes co-injected in vivo and modulation by interleukin-12.,European journal of immunology,10.1002/eji.1830261124,8921959,MED
+BK0372,1994,A novel GTP-binding protein which is selectively repressed in SV40 transformed fibroblasts.,The Journal of biological chemistry,10.1016/s0021-9258(18)47271-7,7929244,MED
+BK0373,1993,Complete primary structure of chicken collagen XIV.,European journal of biochemistry,10.1111/j.1432-1033.1993.tb17685.x,8444186,MED

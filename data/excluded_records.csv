@@ -1,0 +1,65 @@
+﻿id,year,title,doi,reason
+PPR1111859,2025,Multidimensional proteomics and explainable AI feature selection identify cross-platform lung cancer molecular signature in blood plasma,10.21203/rs.3.rs-7660411/v1,preprint
+PPR1215029,2026,Menin maintains enhancer-promoter interactions in a leukemia-specific manner,10.64898/2026.01.16.698179,preprint
+PPR921604,2024,Integrative Proximal-Ubiquitomics Profiling for Deubiquitinase and E3 Ligase Substrate Discovery Applied to USP30,10.1101/2024.10.07.616967,preprint
+39971772,2025,Tracking E2-specific substrates.,10.1038/s41589-025-01848-w,no usable English abstract
+PPR926374,2024,Altered Hormone and Bioactive Lipid Plasma Profile in Rodent Models of Polycystic Ovarian Syndrome Revealed by Targeted Mass Spectrometry,10.1101/2024.10.14.618228,preprint
+PPR1226336,2026,Urine Recirculation During Normothermic Kidney Preservation Improves Energy Balance Involving the Urea and TCA Cycles,10.64898/2026.01.12.698950,preprint
+PPR1218316,2026,Refined USP25/28 inhibitors with enhanced selectivity towards c-Myc driven squamous lung cancer cells,10.64898/2026.03.17.712179,preprint
+PPR920574,2024,Identification of a new Plasmodium falciparum E2 ubiquitin conjugating enzyme,10.1101/2024.10.06.616869,preprint
+PPR718078,2023,Targeted Mass Spectrometry Reveals Interferon-Dependent Eicosanoid and Fatty Acid Alterations in Chronic Myeloid Leukaemia,10.20944/preprints202307.1356.v2,preprint
+PPR685446,2023,Exome-wide evidence of compound heterozygous effects across common phenotypes in the UK Biobank,10.1101/2023.06.29.23291992,preprint
+PPR965625,2025,The developmental environment mediates adult seminal proteome allocation in male Drosophila melanogaster,10.1101/2025.01.09.632097,preprint
+PPR635428,2023,Human USP18 protects diverse cancer lineages from Type I Interferon independently of its canonical catalytic function,10.1101/2023.03.23.533924,preprint
+PPR997995,2025,The ubiquitin E3 ligase Huwe1 facilitates viral and self RNA sensing by RIG-I-like receptors,10.1101/2025.03.27.645708,preprint
+33495366,2021,DUB esterase activity further decodes ubiquitin's enigma.,10.1073/pnas.2026389118,"excluded publication type: article-commentary, comment"
+PPR472034,2022,Targeted delivery of galunisertib attenuates fibrogenesis in an integrated ex vivo renal transplant and fibrosis model,10.1101/2022.03.22.485255,preprint
+PPR907401,2024,USP24 is an ISG15 cross-reactive deubiquitinase that mediates IFN-I production by de-ISGylating the RNA helicase MOV10,10.1101/2024.09.06.611391,preprint
+PPR444622,2022,Ubiquitinome analysis of articular cartilage post mechanical injury reveals a differential ubiquitination pattern of a subset of DUBs and proteins linked to the ERAD cellular response,10.1101/2022.01.19.476879,preprint
+PPR1001849,2025,Effect of a Laparoscopic Donor Nephrectomy as an Intermediate Surgical Procedure on the Acute Phase Response in Healthy Living Kidney Donors Using Either Propofol or Sevoflurane Anaesthesia,10.20944/preprints202504.0760.v1,preprint
+PPR571577,2022,USP18 is an essential regulator of muscle cell differentiation and maturation,10.21203/rs.3.rs-2172567/v1,preprint
+PMC7468445,2020,"In Memoriam: Professor Huib Ovaa (1973-2020): A Uniquely Brilliant and Enthusiastic Scientist, a Pioneer in Chemical Biology and the Ubiquitin Field",,excluded publication type: editorial
+PPR858036,2024,Syncytiotrophoblast extracellular vesicles contain functional kynurenine metabolising enzymes: potential implications for preeclampsia,10.1101/2024.05.25.24307626,preprint
+PPR316720,2021,Integrative Omics Reveals Subtle Molecular Perturbations Following Ischemic Conditioning in a Porcine Kidney Transplant Model,10.1101/2021.04.23.441109,preprint
+PPR739039,2023,Proximity proteomics reveals UCH-L1 as an NLRP3 interactor that modulates IL-1β production in human macrophages and microglia,10.1101/2023.10.09.561576,preprint
+30863963,2019,From herbal small RNAs to one medicine.,10.1007/s11427-019-9513-y,"excluded publication type: editorial, introductory journal article"
+PPR423959,2021,"Interplay Between KRAS and LZTR1 Protein Turnover, Controlled by CUL3/LZTR1 E3 Ubiquitin Ligase, is Disrupted by KRAS Mutations",10.1101/2021.11.23.469679,preprint
+32509738,2020,Editorial: Probing the Ubiquitin Landscape.,10.3389/fchem.2020.00449,excluded publication type: editorial
+PPR471150,2022,Deep topographic proteomics of a human brain tumour,10.1101/2022.03.21.485119,preprint
+PPR82361,2019,Distinct Contribution of DNA Methylation and Histone Acetylation to the Genomic Occupancy of Transcription Factors,10.1101/670307,preprint
+PPR648102,2023,Novel protein interaction network of human calcitonin receptor-like receptor revealed by label-free quantitative proteomics,10.1101/2023.04.18.537143,preprint
+PPR115280,2020,Integrated Plasma and Tissue Proteomics Reveals Attractin Release by Intraluminal Thrombus of Abdominal Aortic Aneurysms and Improves Aneurysm Growth Prediction in Humans,10.1101/2020.02.28.970483,preprint
+PPR645742,2023,Validation of Tau Antibodies for Use in Western Blotting and Immunohistochemistry,10.1101/2023.04.13.536711,preprint
+PPR199606,2020,"The chaperonin CCT8 controls proteostasis essential for T cell maturation, selection, and function",10.1101/2020.08.11.246215,preprint
+PPR359275,2021,Deceased donor kidney degradomics indicates cytoskeletal proteolytic alterations impacting post-transplant function,10.1101/2021.06.10.21254305,preprint
+PPR538753,2022,Structural basis for antagonism of the ubiquitin ligase BIRC6 by SMAC,10.1101/2022.08.30.505748,preprint
+PPR59081,2018,"An Activity-based Probe Targeting Non-catalytic, Highly Conserved Amino Acid Residues Within Bromodomains",10.26434/chemrxiv.7212836.v1,preprint
+PPR117973,2020,Interaction mapping of endoplasmic reticulum ubiquitin ligases identifies modulators of innate immune signalling,10.1101/2020.03.18.993998,preprint
+PPR14746,2018,FBXL19 recruits CDK-Mediator to the CpG islands of developmental genes to prime them for activation during lineage commitment,10.1101/299552,preprint
+PPR14969,2018,Quantitative proteomics identification of seminal fluid proteins in male Drosophila melanogaster,10.1101/296491,preprint
+PPR89770,2019,"BMP-signalling inhibition in Drosophila secondary cells remodels the seminal proteome, and self and rival ejaculate functions",10.1101/741587,preprint
+PPR138037,2020,Deep analysis of the USP18-dependent ISGylome and proteome unveils important roles for USP18 in tumour cell antigenicity and radiosensitivity,10.1101/2020.03.31.005629,preprint
+26187134,2015,Hypoxia metabolism in ageing.,10.18632/aging.100782,excluded publication type: editorial
+PPR638799,2023,Age modulates protein-outcome associations in deceased donor kidneys,10.1101/2023.03.31.23288011,preprint
+PPR59057,2018,Capturing the dynamics of genome replication on individual ultra-long nanopore sequence reads,10.1101/442814,preprint
+27440514,2016,Plasma Biomarker Profile Alterations during Variable Blood Storage.,10.1373/clinchem.2016.257246,excluded publication type: letter
+31609902,2020,First Report on Ex Vivo Delivery of Paracrine Active Human Mesenchymal Stromal Cells to Liver Grafts During Machine Perfusion.,10.1097/tp.0000000000002986,no usable English abstract
+28315950,2017,"INS-eGFP transgenic pigs: a novel reporter system for studying maturation, growth and vascularisation of neonatal islet-like cell clusters.",10.1007/s00125-017-4250-2,excluded publication type: letter
+25927722,2015,Erratum: OTUB1 de-ubiquitinating enzyme promotes prostate cancer cell invasion in vitro and tumorigenesis in vivo.,10.1186/s12943-015-0341-1,"excluded publication type: correction, published erratum"
+PMC3441553,2012,Apoptotic microparticles generated during acute HIV-1 infection inhibit human dendritic cells via CD44,10.1186/1742-4690-9-s2-p183,excluded publication type: abstract
+PPR55470,2018,"Design, Synthesis and Characterization of Covalent KDM5 Inhibitors",10.26434/chemrxiv.7072592.v1,preprint
+26343564,2015,Correction. The presence of prolines in the flanking region of an immunodominant HIV-2 gag epitope influences the quality and quantity of the epitope generated.,10.1002/eji.201570096,"excluded publication type: correction, published erratum"
+PMC3770788,2013,Correction: Protein Profiling in Hepatocellular Carcinoma by Label-Free Quantitative Proteomics in Two West African Populations,,excluded publication type: correction
+30601258,2019,Integrated Physiological and Biochemical Assessments for the Prediction of Growth of Abdominal Aortic Aneurysms in Humans.,10.1097/sla.0000000000003154,excluded publication type: letter
+16003388,2006,z-VAD-fmk inhibits peptide:N-glycanase and may result in ER stress.,10.1038/sj.cdd.4401716,excluded publication type: letter
+PMC2767622,2009,P10-05. Suppression of human dendritic cell function during acute HIV infection,10.1186/1742-4690-6-s3-p136,excluded publication type: abstract
+22689415,2012,Profiling ubiquitin linkage specificities of deubiquitinating enzymes with branched ubiquitin isopeptide probes.,10.1002/cbic.201200261,no usable English abstract
+12916032,2003,Chemistry in living cells: detection of active proteasomes by a two-step labeling strategy.,10.1002/anie.200351314,no usable English abstract
+28440749,2017,Correction: PCGF6-PRC1 suppresses premature differentiation of mouse embryonic stem cells by regulating germ cell-related genes.,10.7554/elife.27970,"excluded publication type: correction, published erratum"
+PMC2767927,2009,P17-28 LB. The antiviral efficacy of HIV-specific CD8+ T-cells to a conserved epitope is heavily dependent on the infecting HIV-1 isolate,10.1186/1742-4690-6-s3-p410,excluded publication type: abstract
+32205848,2020,Author Correction: Amine oxidase 3 is a novel pro-inflammatory marker of oxidative stress in peritoneal endometriosis lesions.,10.1038/s41598-020-62492-z,"excluded publication type: correction, published erratum"
+27846394,2016,Restoring p53 Function in Human Melanoma Cells by Inhibiting MDM2 and Cyclin B1/CDK1-Phosphorylated Nuclear iASPP.,10.1016/j.ccell.2016.09.019,excluded publication type: published erratum
+15651044,2005,Small-molecule inhibitors and probes for ubiquitin- and ubiquitin-like-specific proteases.,10.1002/cbic.200400236,no usable English abstract
+29950663,2018,Publisher Correction: The Jumonji-C oxygenase JMJD7 catalyzes (3S)-lysyl hydroxylation of TRAFAC GTPases.,10.1038/s41589-018-0104-6,excluded publication type: published erratum
+18972478,2008,Thioester hydrolysis and C-C bond formation by carboxymethylproline synthase from the crotonase superfamily.,10.1002/anie.200803906,no usable English abstract
+11017111,2000,LMP2 expression and proteasome activity in NOD mice.,10.1038/80346,excluded publication type: letter

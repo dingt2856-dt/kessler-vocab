@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#062b52" />
+    <meta name="description" content="从 Benedikt Kessler 论文语料构建的科研英语学习工具" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Kessler Research English</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-mark" aria-hidden="true">K</div>
+        <div class="brand-copy">
+          <strong>Kessler Research English</strong>
+          <span>丁涛的访学科研英语</span>
+        </div>
+        <button id="installButton" class="icon-button install-button" type="button" hidden aria-label="安装应用">
+          <span aria-hidden="true">↓</span>
+        </button>
+      </header>
+
+      <main id="mainContent">
+        <section id="view-home" class="view is-active" data-view="home">
+          <article class="hero-card">
+            <div>
+              <p class="eyebrow">TODAY · <span id="todayDate"></span></p>
+              <h1>今天，先把科研英语<br />说得更清楚一点。</h1>
+              <p class="hero-subtitle">会议必备层 · 10个单词 + 3个短语 + 2个句型</p>
+            </div>
+            <div class="progress-orbit" aria-label="今日进度">
+              <svg viewBox="0 0 120 120" role="img">
+                <circle class="orbit-track" cx="60" cy="60" r="50"></circle>
+                <circle id="progressOrbit" class="orbit-value" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <div class="orbit-label"><strong id="todayPercent">0%</strong><span>今日完成</span></div>
+            </div>
+          </article>
+
+          <div class="home-actions">
+            <button id="startTodayButton" class="primary-button" type="button">
+              <span class="button-icon" aria-hidden="true">▶</span>
+              <span><strong>开始今日学习</strong><small id="newItemsHint">15个新内容</small></span>
+            </button>
+            <button id="startReviewButton" class="secondary-button" type="button">
+              <span class="button-icon review-icon" aria-hidden="true">↻</span>
+              <span><strong>开始复习</strong><small><span id="dueReviewCount">0</span>项待复习</small></span>
+            </button>
+          </div>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <div><p class="eyebrow">YOUR PLAN</p><h2>今日任务</h2></div>
+              <span class="status-pill" id="planStatus">尚未开始</span>
+            </div>
+            <div class="task-grid">
+              <article class="task-card" data-task-type="word">
+                <span class="task-icon word-color">W</span>
+                <div><strong>单词</strong><span><b id="wordProgress">0</b> / 10</span></div>
+                <div class="mini-progress"><i id="wordBar"></i></div>
+              </article>
+              <article class="task-card" data-task-type="phrase">
+                <span class="task-icon phrase-color">P</span>
+                <div><strong>专业短语</strong><span><b id="phraseProgress">0</b> / 3</span></div>
+                <div class="mini-progress"><i id="phraseBar"></i></div>
+              </article>
+              <article class="task-card" data-task-type="sentence">
+                <span class="task-icon sentence-color">S</span>
+                <div><strong>会议句型</strong><span><b id="sentenceProgress">0</b> / 2</span></div>
+                <div class="mini-progress"><i id="sentenceBar"></i></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <div><p class="eyebrow">CORPUS</p><h2>Benedikt Kessler 论文语料</h2></div>
+              <button class="text-button" data-go="library" type="button">查看词库</button>
+            </div>
+            <article class="corpus-card">
+              <div class="corpus-number"><strong id="paperCount">373</strong><span>篇核验论文</span></div>
+              <div class="corpus-divider"></div>
+              <div class="corpus-copy">
+                <strong>ORCID 精确匹配</strong>
+                <span>题目与摘要 · 1993–2026</span>
+                <small>预印本、勘误、更正及无摘要记录已排除</small>
+              </div>
+            </article>
+          </section>
+
+          <aside class="backup-notice" id="backupNotice">
+            <span aria-hidden="true">◫</span>
+            <div><strong>学习进度保存在当前设备</strong><p>建议每周在“设置”中导出一次备份。</p></div>
+            <button id="dismissBackup" type="button" aria-label="关闭提示">×</button>
+          </aside>
+        </section>
+
+        <section id="view-learn" class="view" data-view="learn">
+          <div class="learn-header">
+            <button id="closeSessionButton" class="icon-button" type="button" aria-label="退出学习">×</button>
+            <div class="session-title"><strong id="sessionTitle">今日学习</strong><span id="sessionCounter">0 / 0</span></div>
+            <button id="flagButton" class="icon-button" type="button" aria-label="标记内容错误">⚑</button>
+          </div>
+          <div class="session-progress"><i id="sessionProgressBar"></i></div>
+
+          <article id="learningCard" class="learning-card">
+            <div class="card-meta">
+              <span id="cardTypeBadge" class="type-badge word-color">单词</span>
+              <span id="cardTheme">泛素</span>
+              <span id="cardFrequency"></span>
+            </div>
+            <div class="card-term-block">
+              <h2 id="cardTerm">ubiquitin</h2>
+              <p id="cardIpa" class="ipa">/juːˈbɪkwɪtɪn/</p>
+              <p id="cardSyllables" class="syllables">ubi·qui·tin</p>
+            </div>
+
+            <div class="audio-controls" aria-label="发音控制">
+              <button id="speakSlowButton" type="button"><span aria-hidden="true">◖</span>慢速</button>
+              <button id="speakNormalButton" class="audio-primary" type="button"><span aria-hidden="true">▶</span>正常</button>
+              <button id="speakLoopButton" type="button"><span aria-hidden="true">↻</span>循环</button>
+            </div>
+
+            <button id="revealButton" class="reveal-button" type="button">点击显示中文与例句</button>
+            <div id="cardAnswer" class="card-answer" hidden>
+              <p id="cardChinese" class="chinese-meaning"></p>
+              <div id="wordFamilyBlock" class="detail-row"><span>词族</span><p id="cardWordFamily"></p></div>
+              <div class="example-block">
+                <span>科研语境</span>
+                <p id="cardExampleEnglish"></p>
+                <p id="cardExampleChinese" class="example-chinese"></p>
+              </div>
+              <div id="sourceBlock" class="source-block">
+                <span>来源论文</span>
+                <a id="cardSourceLink" target="_blank" rel="noreferrer"><span id="cardSourceTitle"></span><small id="cardSourceDoi"></small></a>
+              </div>
+            </div>
+
+            <div class="practice-tools">
+              <button id="recordButton" type="button"><span aria-hidden="true">●</span><span id="recordLabel">录下我的发音</span></button>
+              <button id="playRecordingButton" type="button" disabled><span aria-hidden="true">▶</span>回听</button>
+              <button id="quizButton" type="button"><span aria-hidden="true">♪</span>听力小测</button>
+            </div>
+            <audio id="recordingPlayback" hidden></audio>
+          </article>
+
+          <div id="ratingPanel" class="rating-panel" hidden>
+            <p>这项内容你记得怎么样？</p>
+            <div class="rating-grid">
+              <button type="button" data-rating="again"><strong>忘记</strong><span>稍后再来</span></button>
+              <button type="button" data-rating="hard"><strong>困难</strong><span>明天</span></button>
+              <button type="button" data-rating="good"><strong>认识</strong><span>间隔复习</span></button>
+              <button type="button" data-rating="easy"><strong>熟练</strong><span>延长间隔</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section id="view-library" class="view" data-view="library">
+          <div class="page-heading"><p class="eyebrow">300 ITEMS</p><h1>会议必备词库</h1><p>来源可追溯，按会议相关性排序。</p></div>
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="librarySearch" type="search" placeholder="搜索英文、中文或主题" /></label>
+          <div class="filter-row" id="libraryFilters">
+            <button type="button" class="is-active" data-filter="all">全部</button>
+            <button type="button" data-filter="word">单词</button>
+            <button type="button" data-filter="phrase">短语</button>
+            <button type="button" data-filter="sentence">句型</button>
+            <button type="button" data-filter="flagged">已标记</button>
+          </div>
+          <div id="libraryList" class="library-list" aria-live="polite"></div>
+          <button id="loadMoreLibrary" class="load-more" type="button">显示更多</button>
+        </section>
+
+        <section id="view-stats" class="view" data-view="stats">
+          <div class="page-heading"><p class="eyebrow">PROGRESS</p><h1>学习统计</h1><p>关注是否真正听懂，而不只是点击次数。</p></div>
+          <div class="stats-grid">
+            <article><span>连续学习</span><strong><b id="streakCount">0</b> 天</strong></article>
+            <article><span>已接触</span><strong><b id="seenCount">0</b> 项</strong></article>
+            <article><span>已掌握</span><strong><b id="masteredCount">0</b> 项</strong></article>
+            <article><span>累计复习</span><strong><b id="reviewCount">0</b> 次</strong></article>
+          </div>
+          <section class="mastery-card">
+            <div class="section-heading"><div><p class="eyebrow">MEETING TIER</p><h2>会议必备层</h2></div><strong id="masteryPercent">0%</strong></div>
+            <div class="mastery-bar"><i id="masteryBar"></i></div>
+            <p>达到约80%后，再逐步引入领域核心层。</p>
+          </section>
+          <section class="section-block">
+            <div class="section-heading"><div><p class="eyebrow">BY TYPE</p><h2>分类掌握</h2></div></div>
+            <div id="typeStats" class="type-stats"></div>
+          </section>
+          <section class="section-block">
+            <div class="section-heading"><div><p class="eyebrow">RECENT</p><h2>最近7天</h2></div></div>
+            <div id="weeklyChart" class="weekly-chart"></div>
+          </section>
+        </section>
+
+        <section id="view-settings" class="view" data-view="settings">
+          <div class="page-heading"><p class="eyebrow">SETTINGS</p><h1>设置与备份</h1><p>发音取决于当前设备安装的系统语音。</p></div>
+          <section class="settings-card">
+            <label for="voiceSelect"><span>英式语音</span><small id="voiceStatus">正在读取设备声音…</small></label>
+            <select id="voiceSelect"></select>
+            <div class="settings-row"><label for="slowRate"><span>慢速语速</span><small id="slowRateValue">0.72×</small></label><input id="slowRate" type="range" min="0.5" max="0.9" step="0.02" value="0.72" /></div>
+            <button id="testVoiceButton" class="settings-action" type="button">试听当前语音</button>
+          </section>
+          <section class="settings-card">
+            <div class="settings-copy"><strong>学习进度</strong><p>无需账户；进度只保存在当前浏览器。</p></div>
+            <div class="settings-actions">
+              <button id="exportButton" type="button">导出备份</button>
+              <label class="file-button">导入备份<input id="importInput" type="file" accept="application/json" /></label>
+            </div>
+          </section>
+          <section class="settings-card">
+            <div class="settings-copy"><strong>内容质量</strong><p><span id="flaggedCount">0</span>项被标记。导出的备份中会保留标记。</p></div>
+            <button id="exportFlagsButton" class="settings-action" type="button">导出错误标记</button>
+          </section>
+          <section class="settings-card about-card">
+            <div class="settings-copy"><strong>语料与版权</strong><p>373篇论文由ORCID精确匹配并经类型、摘要和作者规则筛选。软件只展示派生学习内容，不批量转载摘要。部分英式音标来自Wiktionary（CC BY-SA 4.0），专业术语另经人工校正。</p></div>
+            <a href="https://orcid.org/0000-0002-8160-2446" target="_blank" rel="noreferrer">查看Kessler的ORCID</a>
+          </section>
+          <button id="resetButton" class="danger-button" type="button">清除本设备学习进度</button>
+          <p class="version-line">Kessler Research English · <span id="appVersion">2026.07.31</span></p>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <button class="is-active" type="button" data-go="home"><span aria-hidden="true">⌂</span><b>首页</b></button>
+        <button type="button" data-go="learn"><span aria-hidden="true">◉</span><b>学习</b></button>
+        <button type="button" data-go="library"><span aria-hidden="true">▤</span><b>词库</b></button>
+        <button type="button" data-go="stats"><span aria-hidden="true">▥</span><b>统计</b></button>
+        <button type="button" data-go="settings"><span aria-hidden="true">⚙</span><b>设置</b></button>
+      </nav>
+    </div>
+
+    <dialog id="quizDialog" class="quiz-dialog">
+      <form method="dialog">
+        <button class="dialog-close" value="cancel" aria-label="关闭">×</button>
+        <p class="eyebrow">LISTENING QUIZ</p>
+        <h2>你听到的是哪一项？</h2>
+        <button id="quizReplayButton" class="quiz-speaker" type="button"><span aria-hidden="true">▶</span>再听一遍</button>
+        <div id="quizOptions" class="quiz-options"></div>
+        <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

@@ -1,4 +1,3 @@
-
 # Kessler Research English
 
 为丁涛准备牛津访学线上会议而制作的科研英语 PWA。软件从可明确归属于 Oxford researcher **Benedikt M. Kessler**（ORCID `0000-0002-8160-2446`）的公开论文题目和摘要中提取学习内容。
