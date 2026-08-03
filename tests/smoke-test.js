@@ -20,10 +20,16 @@ const path = require("path");
   const errors = [];
   await page.addInitScript(() => {
     window.__spokenInterviewQuestions = [];
+    window.__playedInterviewAudio = [];
     const nativeSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
     window.speechSynthesis.speak = (utterance) => {
       window.__spokenInterviewQuestions.push({ text: utterance.text, rate: utterance.rate });
       return nativeSpeak(utterance);
+    };
+    const nativeMediaPlay = window.HTMLMediaElement.prototype.play;
+    window.HTMLMediaElement.prototype.play = function play() {
+      window.__playedInterviewAudio.push({ src: this.src, rate: this.playbackRate });
+      return nativeMediaPlay.call(this);
     };
     window.SpeechRecognition = class MockSpeechRecognition {
       start() {
@@ -43,8 +49,8 @@ const path = require("path");
   page.on("pageerror", (error) => errors.push(`pageerror: ${error.message}`));
 
   await page.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
-  await page.evaluate(() => localStorage.clear());
-  await page.reload({ waitUntil: "networkidle" });
+  await page.waitForTimeout(1_200);
+  await page.waitForLoadState("networkidle");
 
   if ((await page.locator("#paperCount").textContent()) !== "373") throw new Error("paper count mismatch");
   if (!(await page.locator("#newItemsHint").textContent()).includes("15")) throw new Error("daily plan missing");
@@ -60,13 +66,14 @@ const path = require("path");
   await page.locator("#interviewSession").waitFor({ state: "visible" });
   await page.waitForTimeout(500);
   if (!(await page.locator("#interviewQuestionText").isHidden())) throw new Error("interview question should start hidden");
-  const spoken = await page.evaluate(() => window.__spokenInterviewQuestions);
-  if (!spoken.length || Math.abs(spoken[0].rate - 0.5) > 0.01) throw new Error("interview did not use the selected 0.5 speed");
+  const playedAudio = await page.evaluate(() => window.__playedInterviewAudio);
+  if (!playedAudio.length || !playedAudio[0].src.includes("introduction.mp3")) throw new Error("bundled male interview audio did not play");
+  if (Math.abs(playedAudio[0].rate - 0.5) > 0.01) throw new Error("interview did not use the selected 0.5 speed");
   if ((await page.locator("#interviewSessionRateSelect").inputValue()) !== "0.5") throw new Error("session speed did not stay in sync");
   await page.selectOption("#interviewSessionRateSelect", "1");
   await page.click("#interviewRepeatButton");
   await page.waitForTimeout(100);
-  const replayRate = await page.evaluate(() => window.__spokenInterviewQuestions.at(-1).rate);
+  const replayRate = await page.evaluate(() => window.__playedInterviewAudio.at(-1).rate);
   if (Math.abs(replayRate - 1) > 0.01) throw new Error("interview did not switch to 1.0 speed");
   await page.click("#interviewShowTextButton");
   if (!(await page.locator("#interviewQuestionText").isVisible())) throw new Error("interview transcript did not reveal");
@@ -123,6 +130,8 @@ const path = require("path");
   const data = await page.request.get(`${baseUrl}/data/learning_items.json`);
   const payload = await data.json();
   if (payload.items.length !== 300) throw new Error("learning item count mismatch");
+  const interviewAudio = await page.request.get(`${baseUrl}/audio/interview/introduction.mp3`);
+  if (!interviewAudio.ok() || (await interviewAudio.body()).length < 1_000) throw new Error("bundled male interview audio missing");
 
   const serviceWorkerControlled = await page.evaluate(async () => {
     if (!("serviceWorker" in navigator)) return false;

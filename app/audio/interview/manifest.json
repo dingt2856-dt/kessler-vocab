@@ -1,0 +1,199 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "format": "audio/mpeg",
+  "generatedFiles": 32,
+  "items": [
+    {
+      "id": "preview",
+      "file": "preview.mp3",
+      "text": "Good morning, Tao. Thank you for meeting with me today.",
+      "bytes": 28944
+    },
+    {
+      "id": "introduction",
+      "file": "introduction.mp3",
+      "text": "Good morning, Tao. Thank you for meeting with me. Could you briefly introduce yourself and describe your current research?",
+      "bytes": 52560
+    },
+    {
+      "id": "lactylome-objective",
+      "file": "lactylome-objective.mp3",
+      "text": "Could you give me a short overview of your C. elegans lactylome study, and explain its main objective?",
+      "bytes": 37008
+    },
+    {
+      "id": "lactylome-methods",
+      "file": "lactylome-methods.mp3",
+      "text": "How did you prepare the samples and identify the lactylated peptides by mass spectrometry?",
+      "bytes": 33264
+    },
+    {
+      "id": "lactylome-findings",
+      "file": "lactylome-findings.mp3",
+      "text": "What was the most important finding, and how did you assess the reliability of the lactylation sites?",
+      "bytes": 37440
+    },
+    {
+      "id": "mass-spec-experience",
+      "file": "mass-spec-experience.mp3",
+      "text": "Which mass spectrometers and acquisition strategies have you used most independently?",
+      "bytes": 31248
+    },
+    {
+      "id": "technical-problem",
+      "file": "technical-problem.mp3",
+      "text": "Please describe one technical problem you encountered in a proteomics experiment, and explain how you solved it.",
+      "bytes": 39888
+    },
+    {
+      "id": "motivation",
+      "file": "motivation.mp3",
+      "text": "Why are you interested in visiting my group at Oxford?",
+      "bytes": 21888
+    },
+    {
+      "id": "visit-project",
+      "file": "visit-project.mp3",
+      "text": "What research question would you like to address during a three-to-six-month visit?",
+      "bytes": 29520
+    },
+    {
+      "id": "contribution",
+      "file": "contribution.mp3",
+      "text": "How would your experience in lactylation, phosphoproteomics, or single-cell multi-omics contribute to our work?",
+      "bytes": 46224
+    },
+    {
+      "id": "funding",
+      "file": "funding.mp3",
+      "text": "How would your visit be funded, and are there any conditions attached to that funding?",
+      "bytes": 30816
+    },
+    {
+      "id": "availability",
+      "file": "availability.mp3",
+      "text": "When would you be available to start, and how long could you stay in Oxford?",
+      "bytes": 27936
+    },
+    {
+      "id": "questions",
+      "file": "questions.mp3",
+      "text": "Finally, what questions would you like to ask me about the project or the group?",
+      "bytes": 29088
+    },
+    {
+      "id": "introduction-follow-up",
+      "file": "introduction-follow-up.mp3",
+      "text": "Could you tell me more specifically how your current work relates to mass spectrometry-based proteomics?",
+      "bytes": 37152
+    },
+    {
+      "id": "lactylome-objective-follow-up",
+      "file": "lactylome-objective-follow-up.mp3",
+      "text": "What biological question were you trying to answer with the lactylome study?",
+      "bytes": 27648
+    },
+    {
+      "id": "lactylome-methods-follow-up",
+      "file": "lactylome-methods-follow-up.mp3",
+      "text": "Which step in the experimental workflow was the most technically demanding for you?",
+      "bytes": 29520
+    },
+    {
+      "id": "lactylome-findings-follow-up",
+      "file": "lactylome-findings-follow-up.mp3",
+      "text": "How did you distinguish a reliable lactylation site from a possible false positive?",
+      "bytes": 31680
+    },
+    {
+      "id": "mass-spec-experience-follow-up",
+      "file": "mass-spec-experience-follow-up.mp3",
+      "text": "Could you name the instrument and software that you can operate most confidently?",
+      "bytes": 26496
+    },
+    {
+      "id": "motivation-follow-up",
+      "file": "motivation-follow-up.mp3",
+      "text": "Which aspect of our work on ubiquitin or protease biology is most relevant to your research goals?",
+      "bytes": 38448
+    },
+    {
+      "id": "visit-project-follow-up",
+      "file": "visit-project-follow-up.mp3",
+      "text": "What specific result would you hope to achieve by the end of a short visit?",
+      "bytes": 26928
+    },
+    {
+      "id": "funding-follow-up",
+      "file": "funding-follow-up.mp3",
+      "text": "Would the funding cover your travel, accommodation, and living costs in Oxford?",
+      "bytes": 30240
+    },
+    {
+      "id": "availability-follow-up",
+      "file": "availability-follow-up.mp3",
+      "text": "How flexible would you be if the laboratory needed to adjust the starting date?",
+      "bytes": 29088
+    },
+    {
+      "id": "practice-introduction",
+      "file": "practice-introduction.mp3",
+      "text": "My research focuses on mass spectrometry-based proteomics, particularly protein lactylation and phosphoproteomics.",
+      "bytes": 48384
+    },
+    {
+      "id": "practice-lactylome-objective",
+      "file": "practice-lactylome-objective.mp3",
+      "text": "The main objective of our study was to characterise the lactylome of C. elegans and explore its potential biological significance.",
+      "bytes": 46224
+    },
+    {
+      "id": "practice-lactylome-methods",
+      "file": "practice-lactylome-methods.mp3",
+      "text": "We prepared the samples carefully and used mass spectrometry-based analysis to identify lactylated peptides and modification sites.",
+      "bytes": 49392
+    },
+    {
+      "id": "practice-lactylome-findings",
+      "file": "practice-lactylome-findings.mp3",
+      "text": "Our most important finding was that lactylation may be associated with specific biological processes in C. elegans.",
+      "bytes": 39600
+    },
+    {
+      "id": "practice-mass-spec",
+      "file": "practice-mass-spec.mp3",
+      "text": "I have hands-on experience in proteomic sample preparation, mass spectrometry data acquisition, and downstream data analysis.",
+      "bytes": 50688
+    },
+    {
+      "id": "practice-motivation",
+      "file": "practice-motivation.mp3",
+      "text": "I am particularly interested in your group's expertise in ubiquitin biology, proteases, and mass spectrometry-based proteomics.",
+      "bytes": 49536
+    },
+    {
+      "id": "practice-visit-project",
+      "file": "practice-visit-project.mp3",
+      "text": "During the visit, I hope to develop a focused and feasible project that complements the group's current priorities.",
+      "bytes": 40896
+    },
+    {
+      "id": "practice-funding",
+      "file": "practice-funding.mp3",
+      "text": "I plan to apply for funding from the China Scholarship Council, subject to the relevant approval requirements.",
+      "bytes": 39024
+    },
+    {
+      "id": "practice-availability",
+      "file": "practice-availability.mp3",
+      "text": "I am flexible about the starting date and would be available for a research visit of three to six months.",
+      "bytes": 37296
+    },
+    {
+      "id": "practice-questions",
+      "file": "practice-questions.mp3",
+      "text": "Could you please advise me which research direction would be most useful for your group at present?",
+      "bytes": 32400
+    }
+  ]
+}

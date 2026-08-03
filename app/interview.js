@@ -139,42 +139,52 @@ const INTERVIEW_FOLLOW_UPS = {
 
 const IMPROVEMENT_SENTENCES = [
   {
+    id: "practice-introduction",
     topics: ["introduction"],
     text: "My research focuses on mass spectrometry-based proteomics, particularly protein lactylation and phosphoproteomics.",
   },
   {
+    id: "practice-lactylome-objective",
     topics: ["lactylome-objective"],
     text: "The main objective of our study was to characterise the lactylome of C. elegans and explore its potential biological significance.",
   },
   {
+    id: "practice-lactylome-methods",
     topics: ["lactylome-methods"],
     text: "We prepared the samples carefully and used mass spectrometry-based analysis to identify lactylated peptides and modification sites.",
   },
   {
+    id: "practice-lactylome-findings",
     topics: ["lactylome-findings"],
     text: "Our most important finding was that lactylation may be associated with specific biological processes in C. elegans.",
   },
   {
+    id: "practice-mass-spec",
     topics: ["mass-spec-experience", "technical-problem"],
     text: "I have hands-on experience in proteomic sample preparation, mass spectrometry data acquisition, and downstream data analysis.",
   },
   {
+    id: "practice-motivation",
     topics: ["motivation"],
     text: "I am particularly interested in your group's expertise in ubiquitin biology, proteases, and mass spectrometry-based proteomics.",
   },
   {
+    id: "practice-visit-project",
     topics: ["visit-project", "contribution"],
     text: "During the visit, I hope to develop a focused and feasible project that complements the group's current priorities.",
   },
   {
+    id: "practice-funding",
     topics: ["funding"],
     text: "I plan to apply for funding from the China Scholarship Council, subject to the relevant approval requirements.",
   },
   {
+    id: "practice-availability",
     topics: ["availability"],
     text: "I am flexible about the starting date and would be available for a research visit of three to six months.",
   },
   {
+    id: "practice-questions",
     topics: ["questions"],
     text: "Could you please advise me which research direction would be most useful for your group at present?",
   },
@@ -192,6 +202,9 @@ let recognitionActive = false;
 let recognitionBase = "";
 let answerTimer = null;
 let answerStartedAt = 0;
+let interviewAudio = null;
+
+const INTERVIEW_AUDIO_VERSION = "2026-08-04-6";
 
 const interviewElement = (id) => document.getElementById(id);
 
@@ -247,44 +260,16 @@ function setInterviewRate(value) {
 }
 
 function populateInterviewVoices() {
-  if (!("speechSynthesis" in window)) return;
   const select = interviewElement("interviewVoiceSelect");
-  const english = window.speechSynthesis.getVoices()
-    .filter((voice) => /^en/i.test(voice.lang))
-    .sort((a, b) => voicePriority(a) - voicePriority(b) || a.name.localeCompare(b.name));
-  const detectedMale = english.filter(isLikelyMaleVoice);
-  const unclassified = english.filter((voice) => !isLikelyMaleVoice(voice) && !isLikelyFemaleVoice(voice));
-  const choices = detectedMale.length ? detectedMale : (unclassified.length ? unclassified : english);
   select.innerHTML = "";
-
-  if (!english.length) {
-    const option = document.createElement("option");
-    option.value = "";
-    option.textContent = "未检测到英语系统语音";
-    select.append(option);
-    interviewElement("interviewVoiceStatus").textContent = "等待设备返回语音列表";
-    return;
-  }
-
-  for (const voice of choices) {
-    const option = document.createElement("option");
-    option.value = voice.voiceURI;
-    const maleLabel = isLikelyMaleVoice(voice) ? " · 男声优先" : "";
-    option.textContent = `${voice.name} (${voice.lang})${maleLabel}`;
-    select.append(option);
-  }
-
-  const saved = choices.find((voice) => voice.voiceURI === interviewVoiceURI);
-  const preferred = (saved && (!detectedMale.length || isLikelyMaleVoice(saved)))
-    ? saved
-    : choices.find((voice) => /^en-GB$/i.test(voice.lang)) || choices[0];
-  interviewVoiceURI = preferred.voiceURI;
-  select.value = preferred.voiceURI;
-  const male = isLikelyMaleVoice(preferred);
-  const british = /^en-GB$/i.test(preferred.lang);
-  interviewElement("interviewVoiceStatus").textContent = male
-    ? `${british ? "英式" : "英语"}男声：${preferred.name}`
-    : `未标注性别：${preferred.name}`;
+  const option = document.createElement("option");
+  option.value = "bundled-ryan";
+  option.textContent = "Ryan · British English · Male";
+  select.append(option);
+  select.value = option.value;
+  select.disabled = true;
+  interviewVoiceURI = option.value;
+  interviewElement("interviewVoiceStatus").textContent = "固定英国男声 · 不调用设备女声";
   saveInterviewPreferences();
 }
 
@@ -320,29 +305,67 @@ function setInterviewSpeaking(speaking) {
     : "Your turn · Please answer in English";
 }
 
-function speakInterviewQuestion(rate = interviewRate) {
-  const item = currentInterviewQuestion();
-  if (!item) return;
+function stopInterviewPlayback() {
+  if (interviewAudio) {
+    interviewAudio.pause();
+    interviewAudio.removeAttribute("src");
+    interviewAudio.load();
+    interviewAudio = null;
+  }
+  window.speechSynthesis?.cancel();
+}
+
+function playBundledMaleAudio(identifier, rate, onStart, onEnd, onFailure) {
+  stopInterviewPlayback();
+  const audio = new Audio(`./audio/interview/${identifier}.mp3?v=${INTERVIEW_AUDIO_VERSION}`);
+  interviewAudio = audio;
+  audio.preload = "auto";
+  audio.playbackRate = rate;
+  audio.defaultPlaybackRate = rate;
+  audio.preservesPitch = true;
+  audio.onplay = () => onStart?.();
+  audio.onended = () => {
+    if (interviewAudio === audio) interviewAudio = null;
+    onEnd?.();
+  };
+  let failed = false;
+  const fail = () => {
+    if (failed) return;
+    failed = true;
+    if (interviewAudio === audio) interviewAudio = null;
+    onFailure?.();
+  };
+  audio.onerror = fail;
+  audio.play().catch(fail);
+}
+
+function fallbackToDeviceSpeech(text, rate, onStart, onEnd) {
   if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-    interviewElement("interviewStatus").textContent = "当前浏览器不支持语音朗读，请显示英文原文";
-    interviewElement("interviewQuestionText").hidden = false;
+    onEnd?.();
     return;
   }
-
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(item.question);
+  const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "en-GB";
   utterance.rate = rate;
   const voice = getEnglishVoice();
   if (voice) utterance.voice = voice;
   utterance.pitch = voice && isLikelyMaleVoice(voice) ? 0.9 : 0.72;
-  utterance.onstart = () => setInterviewSpeaking(true);
-  utterance.onend = () => setInterviewSpeaking(false);
-  utterance.onerror = () => {
-    setInterviewSpeaking(false);
-    interviewElement("interviewStatus").textContent = "播放失败，请点击重播或在设置中更换英语声音";
-  };
+  utterance.onstart = onStart;
+  utterance.onend = onEnd;
+  utterance.onerror = onEnd;
   window.speechSynthesis.speak(utterance);
+}
+
+function speakInterviewQuestion(rate = interviewRate) {
+  const item = currentInterviewQuestion();
+  if (!item) return;
+  playBundledMaleAudio(
+    item.id,
+    rate,
+    () => setInterviewSpeaking(true),
+    () => setInterviewSpeaking(false),
+    () => fallbackToDeviceSpeech(item.question, rate, () => setInterviewSpeaking(true), () => setInterviewSpeaking(false)),
+  );
 }
 
 function supportForCurrentQuestion() {
@@ -451,7 +474,7 @@ function toggleInterviewMicrophone() {
     interviewElement("interviewAnswerInput").focus();
     return;
   }
-  window.speechSynthesis?.cancel();
+  stopInterviewPlayback();
   recognitionBase = interviewElement("interviewAnswerInput").value.trim();
   try {
     recognition.start();
@@ -478,11 +501,11 @@ function renderInterviewQuestion() {
   updateSubmitAvailability();
   interviewElement("interviewMicLabel").textContent = "点击开始回答";
   window.scrollTo({ top: 0, behavior: "smooth" });
-  window.setTimeout(() => speakInterviewQuestion(interviewRate), 180);
+  speakInterviewQuestion(interviewRate);
 }
 
 function startInterview() {
-  window.speechSynthesis?.cancel();
+  stopInterviewPlayback();
   interviewIndex = 0;
   interviewQueue = INTERVIEW_QUESTIONS.map((question) => ({ ...question }));
   interviewAnswers = [];
@@ -557,7 +580,7 @@ function fiveImprovementSentences(unclearRecords) {
     ...IMPROVEMENT_SENTENCES.filter((item) => item.topics.some((topic) => weakIds.includes(topic))),
     ...IMPROVEMENT_SENTENCES.filter((item) => !item.topics.some((topic) => weakIds.includes(topic))),
   ];
-  return [...new Map(priority.map((item) => [item.text, item])).values()].slice(0, 5).map((item) => item.text);
+  return [...new Map(priority.map((item) => [item.text, item])).values()].slice(0, 5);
 }
 
 function buildInterviewReport() {
@@ -592,7 +615,7 @@ function renderEmptyList(list, text) {
 
 function finishInterview() {
   stopRecognition();
-  window.speechSynthesis?.cancel();
+  stopInterviewPlayback();
   const report = buildInterviewReport();
   interviewElement("interviewSession").hidden = true;
   interviewElement("interviewIntro").hidden = true;
@@ -621,41 +644,36 @@ function finishInterview() {
   for (const sentence of report.sentences) {
     const item = document.createElement("li");
     const text = document.createElement("span");
-    text.textContent = sentence;
+    text.textContent = sentence.text;
     const play = document.createElement("button");
     play.type = "button";
     play.textContent = "▶ 慢速听";
-    play.addEventListener("click", () => speakPracticeSentence(sentence));
+    play.addEventListener("click", () => speakPracticeSentence(sentence.text, sentence.id));
     item.append(text, play);
     sentenceList.append(item);
   }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function speakPracticeSentence(text) {
-  if (!("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "en-GB";
-  utterance.rate = 0.68;
-  const voice = getEnglishVoice();
-  if (voice) utterance.voice = voice;
-  window.speechSynthesis.speak(utterance);
+function speakPracticeSentence(text, identifier) {
+  playBundledMaleAudio(
+    identifier,
+    0.68,
+    null,
+    null,
+    () => fallbackToDeviceSpeech(text, 0.68),
+  );
 }
 
 function previewInterviewVoice() {
-  if (!("speechSynthesis" in window)) {
-    interviewElement("interviewVoiceStatus").textContent = "当前浏览器不支持语音朗读";
-    return;
-  }
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance("Good morning, Tao. Thank you for meeting with me today.");
-  utterance.lang = "en-GB";
-  utterance.rate = interviewRate;
-  const voice = getEnglishVoice();
-  if (voice) utterance.voice = voice;
-  utterance.pitch = voice && isLikelyMaleVoice(voice) ? 0.9 : 0.72;
-  window.speechSynthesis.speak(utterance);
+  const status = interviewElement("interviewVoiceStatus");
+  playBundledMaleAudio(
+    "preview",
+    interviewRate,
+    () => (status.textContent = "正在试听固定英国男声 Ryan…"),
+    () => (status.textContent = "固定英国男声 Ryan · 不调用设备女声"),
+    () => (status.textContent = "男声音频加载失败，请检查网络后重试"),
+  );
 }
 
 function interviewReportText() {
@@ -666,7 +684,7 @@ function interviewReportText() {
   const unclear = report.unclear.length
     ? report.unclear.map((record, index) => `${index + 1}. ${record.question.topic}: ${record.issue}\n   ${record.answer}`).join("\n")
     : "None recorded.";
-  const sentences = report.sentences.map((sentence, index) => `${index + 1}. ${sentence}`).join("\n");
+  const sentences = report.sentences.map((sentence, index) => `${index + 1}. ${sentence.text}`).join("\n");
   return `Kessler Research English — Mock Interview Review\n\nQuestions not understood\n${misunderstood}\n\nAnswers that were unclear\n${unclear}\n\nFive sentences to improve\n${sentences}`;
 }
 
@@ -691,7 +709,7 @@ function exitInterview() {
   const hasProgress = interviewAnswers.length || interviewElement("interviewAnswerInput").value.trim();
   if (hasProgress && !window.confirm("退出后，本轮尚未完成的模拟面试不会保存。确定退出吗？")) return;
   stopRecognition();
-  window.speechSynthesis?.cancel();
+  stopInterviewPlayback();
   interviewElement("interviewSession").hidden = true;
   interviewElement("interviewResult").hidden = true;
   interviewElement("interviewIntro").hidden = false;
@@ -702,21 +720,10 @@ function initInterview() {
   loadInterviewPreferences();
   updateRateControls();
   populateInterviewVoices();
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.addEventListener("voiceschanged", populateInterviewVoices);
-  }
   document.querySelectorAll("[data-interview-rate]").forEach((button) => {
     button.addEventListener("click", () => setInterviewRate(button.dataset.interviewRate));
   });
   interviewElement("interviewSessionRateSelect").addEventListener("change", (event) => setInterviewRate(event.target.value));
-  interviewElement("interviewVoiceSelect").addEventListener("change", (event) => {
-    interviewVoiceURI = event.target.value;
-    const chosen = window.speechSynthesis?.getVoices().find((voice) => voice.voiceURI === interviewVoiceURI);
-    interviewElement("interviewVoiceStatus").textContent = chosen && isLikelyMaleVoice(chosen)
-      ? `${/^en-GB$/i.test(chosen.lang) ? "英式" : "英语"}男声：${chosen.name}`
-      : `未标注性别：${chosen?.name || "请试听确认"}`;
-    saveInterviewPreferences();
-  });
   interviewElement("interviewVoicePreviewButton").addEventListener("click", previewInterviewVoice);
   interviewElement("interviewStartButton").addEventListener("click", startInterview);
   interviewElement("interviewRestartButton").addEventListener("click", startInterview);
@@ -737,7 +744,7 @@ function initInterview() {
     button.addEventListener("click", () => {
       if (button.dataset.go !== "interview" && !interviewElement("interviewSession").hidden) {
         stopRecognition();
-        window.speechSynthesis?.cancel();
+        stopInterviewPlayback();
       }
     });
   });

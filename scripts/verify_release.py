@@ -23,6 +23,7 @@ def main() -> None:
     corpus = json.loads((DATA / "publications.json").read_text(encoding="utf-8"))
     learning = json.loads((APP / "data" / "learning_items.json").read_text(encoding="utf-8"))
     manifest = json.loads((APP / "manifest.webmanifest").read_text(encoding="utf-8"))
+    interview_audio = json.loads((APP / "audio" / "interview" / "manifest.json").read_text(encoding="utf-8"))
     items = learning["items"]
 
     require(corpus["meta"]["orcid"] == "0000-0002-8160-2446", "wrong ORCID")
@@ -71,6 +72,11 @@ def main() -> None:
         require((APP / asset).exists(), f"missing app asset: {asset}")
     require(manifest["display"] == "standalone", "manifest is not standalone")
     require(manifest["start_url"] == "./", "manifest start_url is not Pages-safe")
+    require(interview_audio["voice"] == "en-GB-RyanNeural", "unexpected interview voice")
+    require(interview_audio["generatedFiles"] == 32, "unexpected interview audio count")
+    for audio in interview_audio["items"]:
+        audio_path = APP / "audio" / "interview" / audio["file"]
+        require(audio_path.exists() and audio_path.stat().st_size > 1_000, f"invalid interview audio: {audio['file']}")
 
     service_worker = (APP / "sw.js").read_text(encoding="utf-8")
     for asset in [value for value in assets if value not in {".nojekyll", "sw.js"}]:
@@ -95,6 +101,7 @@ def main() -> None:
         "- The deployable PWA contains no abstract fields.",
         "- Manifest, icons, service worker, offline data, and GitHub Pages workflow are present.",
         "- The browser-only mock interview module provides spoken questions, speech recognition fallback, and end-of-session review.",
+        "- All interview questions and practice sentences include bundled en-GB-RyanNeural male audio.",
         "",
     ]
     (DATA / "release_verification.md").write_text("\n".join(report), encoding="utf-8")
