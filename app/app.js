@@ -688,12 +688,6 @@ async function init() {
     populateVoices();
     if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged", populateVoices);
     if ("serviceWorker" in navigator) {
-      let reloadingForUpdate = false;
-      navigator.serviceWorker.addEventListener("controllerchange", () => {
-        if (reloadingForUpdate) return;
-        reloadingForUpdate = true;
-        window.location.reload();
-      });
       navigator.serviceWorker
         .register("./sw.js", { updateViaCache: "none" })
         .then((registration) => registration.update())

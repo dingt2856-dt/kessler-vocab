@@ -1,10 +1,10 @@
-const CACHE_NAME = "kessler-research-english-2026-08-04-v6";
+const CACHE_NAME = "kessler-research-english-2026-08-04-v7";
 const APP_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=2026-08-04-6",
-  "./app.js?v=2026-08-04-6",
-  "./interview.js?v=2026-08-04-6",
+  "./styles.css?v=2026-08-04-7",
+  "./app.js?v=2026-08-04-7",
+  "./interview.js?v=2026-08-04-7",
   "./manifest.webmanifest",
   "./data/learning_items.json",
   "./audio/interview/manifest.json",
@@ -54,8 +54,6 @@ self.addEventListener("activate", (event) => {
     const keys = await caches.keys();
     await Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)));
     await self.clients.claim();
-    const windows = await self.clients.matchAll({ type: "window" });
-    await Promise.all(windows.map((client) => client.navigate(client.url).catch(() => null)));
   })());
 });
 
