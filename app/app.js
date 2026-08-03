@@ -688,7 +688,16 @@ async function init() {
     populateVoices();
     if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged", populateVoices);
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./sw.js").catch(() => showToast("离线缓存注册失败，联网功能仍可使用"));
+      let reloadingForUpdate = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (reloadingForUpdate) return;
+        reloadingForUpdate = true;
+        window.location.reload();
+      });
+      navigator.serviceWorker
+        .register("./sw.js", { updateViaCache: "none" })
+        .then((registration) => registration.update())
+        .catch(() => showToast("离线缓存注册失败，联网功能仍可使用"));
     }
   } catch (error) {
     console.error(error);
