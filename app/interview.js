@@ -1,5 +1,9 @@
 "use strict";
 
+const INTERVIEW_PREFS_KEY = "kessler-interview-preferences-v1";
+const INTERVIEW_RATES = [1, 0.75, 0.5];
+const MALE_VOICE_PATTERN = /\b(male|george|ryan|guy|david|mark|james|daniel|thomas|arthur|oliver|roger|aaron|fred|alex|rishi|lee|reed|ralph)\b/i;
+
 const INTERVIEW_QUESTIONS = [
   {
     id: "introduction",
@@ -180,6 +184,8 @@ let interviewQueue = [];
 let interviewAnswers = [];
 let interviewSupport = {};
 let interviewStartedAt = 0;
+let interviewRate = 0.75;
+let interviewVoiceURI = "";
 let recognition = null;
 let recognitionActive = false;
 let recognitionBase = "";
@@ -188,6 +194,94 @@ let answerStartedAt = 0;
 
 const interviewElement = (id) => document.getElementById(id);
 
+function loadInterviewPreferences() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(INTERVIEW_PREFS_KEY) || "null");
+    const savedRate = Number(saved?.rate);
+    if (INTERVIEW_RATES.includes(savedRate)) interviewRate = savedRate;
+    interviewVoiceURI = String(saved?.voiceURI || "");
+  } catch {
+    interviewRate = 0.75;
+    interviewVoiceURI = "";
+  }
+}
+
+function saveInterviewPreferences() {
+  localStorage.setItem(INTERVIEW_PREFS_KEY, JSON.stringify({
+    rate: interviewRate,
+    voiceURI: interviewVoiceURI,
+  }));
+}
+
+function isLikelyMaleVoice(voice) {
+  return MALE_VOICE_PATTERN.test(voice?.name || "");
+}
+
+function voicePriority(voice) {
+  const british = /^en-GB$/i.test(voice.lang);
+  const likelyMale = isLikelyMaleVoice(voice);
+  if (british && likelyMale) return 0;
+  if (likelyMale) return 1;
+  if (british) return 2;
+  return 3;
+}
+
+function updateRateControls() {
+  document.querySelectorAll("[data-interview-rate]").forEach((button) => {
+    button.classList.toggle("is-active", Number(button.dataset.interviewRate) === interviewRate);
+  });
+  interviewElement("interviewSessionRateSelect").value = String(interviewRate);
+}
+
+function setInterviewRate(value) {
+  const rate = Number(value);
+  if (!INTERVIEW_RATES.includes(rate)) return;
+  interviewRate = rate;
+  updateRateControls();
+  saveInterviewPreferences();
+}
+
+function populateInterviewVoices() {
+  if (!("speechSynthesis" in window)) return;
+  const select = interviewElement("interviewVoiceSelect");
+  const english = window.speechSynthesis.getVoices()
+    .filter((voice) => /^en/i.test(voice.lang))
+    .sort((a, b) => voicePriority(a) - voicePriority(b) || a.name.localeCompare(b.name));
+  select.innerHTML = "";
+
+  if (!english.length) {
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = "未检测到英语系统语音";
+    select.append(option);
+    interviewElement("interviewVoiceStatus").textContent = "等待设备返回语音列表";
+    return;
+  }
+
+  for (const voice of english) {
+    const option = document.createElement("option");
+    option.value = voice.voiceURI;
+    const maleLabel = isLikelyMaleVoice(voice) ? " · 男声优先" : "";
+    option.textContent = `${voice.name} (${voice.lang})${maleLabel}`;
+    select.append(option);
+  }
+
+  const saved = english.find((voice) => voice.voiceURI === interviewVoiceURI);
+  const preferred = saved
+    || english.find((voice) => /^en-GB$/i.test(voice.lang) && isLikelyMaleVoice(voice))
+    || english.find(isLikelyMaleVoice)
+    || english.find((voice) => /^en-GB$/i.test(voice.lang))
+    || english[0];
+  interviewVoiceURI = preferred.voiceURI;
+  select.value = preferred.voiceURI;
+  const male = isLikelyMaleVoice(preferred);
+  const british = /^en-GB$/i.test(preferred.lang);
+  interviewElement("interviewVoiceStatus").textContent = male
+    ? `已选择${british ? "英式" : "英语"}男声`
+    : "设备未标注男声，请试听确认";
+  saveInterviewPreferences();
+}
+
 function currentInterviewQuestion() {
   return interviewQueue[interviewIndex];
 }
@@ -195,14 +289,17 @@ function currentInterviewQuestion() {
 function getEnglishVoice() {
   if (!("speechSynthesis" in window)) return null;
   const voices = window.speechSynthesis.getVoices();
-  let preferredUri = "";
+  let appVoiceUri = "";
   try {
     const saved = JSON.parse(localStorage.getItem("kessler-vocab-progress-v1") || "null");
-    preferredUri = saved?.settings?.voiceURI || "";
+    appVoiceUri = saved?.settings?.voiceURI || "";
   } catch {
-    preferredUri = "";
+    appVoiceUri = "";
   }
-  return voices.find((voice) => voice.voiceURI === preferredUri)
+  return voices.find((voice) => voice.voiceURI === interviewVoiceURI)
+    || voices.find((voice) => /^en-GB$/i.test(voice.lang) && isLikelyMaleVoice(voice))
+    || voices.find((voice) => /^en/i.test(voice.lang) && isLikelyMaleVoice(voice))
+    || voices.find((voice) => voice.voiceURI === appVoiceUri)
     || voices.find((voice) => /^en-GB$/i.test(voice.lang))
     || voices.find((voice) => /^en/i.test(voice.lang))
     || null;
@@ -215,7 +312,7 @@ function setInterviewSpeaking(speaking) {
     : "Your turn · Please answer in English";
 }
 
-function speakInterviewQuestion(rate = 0.75) {
+function speakInterviewQuestion(rate = interviewRate) {
   const item = currentInterviewQuestion();
   if (!item) return;
   if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
@@ -373,7 +470,7 @@ function renderInterviewQuestion() {
   updateSubmitAvailability();
   interviewElement("interviewMicLabel").textContent = "点击开始回答";
   window.scrollTo({ top: 0, behavior: "smooth" });
-  window.setTimeout(() => speakInterviewQuestion(0.75), 180);
+  window.setTimeout(() => speakInterviewQuestion(interviewRate), 180);
 }
 
 function startInterview() {
@@ -434,7 +531,7 @@ function markNotUnderstood() {
   const support = supportForCurrentQuestion();
   support.didNotUnderstand += 1;
   support.slowRepeats += 1;
-  speakInterviewQuestion(0.58);
+  speakInterviewQuestion(0.5);
 }
 
 function toggleQuestionText() {
@@ -538,6 +635,21 @@ function speakPracticeSentence(text) {
   window.speechSynthesis.speak(utterance);
 }
 
+function previewInterviewVoice() {
+  if (!("speechSynthesis" in window)) {
+    interviewElement("interviewVoiceStatus").textContent = "当前浏览器不支持语音朗读";
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance("Good morning, Tao. Thank you for meeting with me today.");
+  utterance.lang = "en-GB";
+  utterance.rate = interviewRate;
+  utterance.pitch = 0.94;
+  const voice = getEnglishVoice();
+  if (voice) utterance.voice = voice;
+  window.speechSynthesis.speak(utterance);
+}
+
 function interviewReportText() {
   const report = buildInterviewReport();
   const misunderstood = report.misunderstood.length
@@ -579,15 +691,30 @@ function exitInterview() {
 }
 
 function initInterview() {
+  loadInterviewPreferences();
+  updateRateControls();
+  populateInterviewVoices();
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.addEventListener("voiceschanged", populateInterviewVoices);
+  }
+  document.querySelectorAll("[data-interview-rate]").forEach((button) => {
+    button.addEventListener("click", () => setInterviewRate(button.dataset.interviewRate));
+  });
+  interviewElement("interviewSessionRateSelect").addEventListener("change", (event) => setInterviewRate(event.target.value));
+  interviewElement("interviewVoiceSelect").addEventListener("change", (event) => {
+    interviewVoiceURI = event.target.value;
+    const chosen = window.speechSynthesis?.getVoices().find((voice) => voice.voiceURI === interviewVoiceURI);
+    interviewElement("interviewVoiceStatus").textContent = chosen && isLikelyMaleVoice(chosen)
+      ? `已选择${/^en-GB$/i.test(chosen.lang) ? "英式" : "英语"}男声`
+      : "请点击试听确认声音";
+    saveInterviewPreferences();
+  });
+  interviewElement("interviewVoicePreviewButton").addEventListener("click", previewInterviewVoice);
   interviewElement("interviewStartButton").addEventListener("click", startInterview);
   interviewElement("interviewRestartButton").addEventListener("click", startInterview);
   interviewElement("interviewRepeatButton").addEventListener("click", () => {
     supportForCurrentQuestion().repeats += 1;
-    speakInterviewQuestion(0.75);
-  });
-  interviewElement("interviewSlowerButton").addEventListener("click", () => {
-    supportForCurrentQuestion().slowRepeats += 1;
-    speakInterviewQuestion(0.6);
+    speakInterviewQuestion(interviewRate);
   });
   interviewElement("interviewShowTextButton").addEventListener("click", toggleQuestionText);
   interviewElement("interviewDidNotUnderstandButton").addEventListener("click", markNotUnderstood);

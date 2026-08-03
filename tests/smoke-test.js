@@ -52,12 +52,22 @@ const path = require("path");
   await page.screenshot({ path: path.join(out, "01-home-mobile.png") });
 
   await page.click('.bottom-nav [data-go="interview"]');
+  if ((await page.locator("[data-interview-rate]").count()) !== 3) throw new Error("interview speed choices missing");
+  if ((await page.locator("#interviewVoiceSelect option").count()) < 1) throw new Error("interview voice selector missing");
+  await page.click('[data-interview-rate="0.5"]');
+  await page.screenshot({ path: path.join(out, "07-interview-setup.png"), fullPage: true });
   await page.click("#interviewStartButton");
   await page.locator("#interviewSession").waitFor({ state: "visible" });
   await page.waitForTimeout(500);
   if (!(await page.locator("#interviewQuestionText").isHidden())) throw new Error("interview question should start hidden");
   const spoken = await page.evaluate(() => window.__spokenInterviewQuestions);
-  if (!spoken.length || spoken[0].rate !== 0.75) throw new Error("interview did not start at 0.75 speed");
+  if (!spoken.length || Math.abs(spoken[0].rate - 0.5) > 0.01) throw new Error("interview did not use the selected 0.5 speed");
+  if ((await page.locator("#interviewSessionRateSelect").inputValue()) !== "0.5") throw new Error("session speed did not stay in sync");
+  await page.selectOption("#interviewSessionRateSelect", "1");
+  await page.click("#interviewRepeatButton");
+  await page.waitForTimeout(100);
+  const replayRate = await page.evaluate(() => window.__spokenInterviewQuestions.at(-1).rate);
+  if (Math.abs(replayRate - 1) > 0.01) throw new Error("interview did not switch to 1.0 speed");
   await page.click("#interviewShowTextButton");
   if (!(await page.locator("#interviewQuestionText").isVisible())) throw new Error("interview transcript did not reveal");
   await page.click("#interviewMicButton");
@@ -66,7 +76,7 @@ const path = require("path");
   await page.click("#interviewSubmitButton");
   if (!(await page.locator("#interviewQuestionNumber").textContent()).includes("Question 2")) throw new Error("interview did not advance");
   await page.waitForTimeout(350);
-  await page.screenshot({ path: path.join(out, "07-interview-mobile.png"), fullPage: true });
+  await page.screenshot({ path: path.join(out, "08-interview-mobile.png"), fullPage: true });
   for (let index = 1; index < 24 && await page.locator("#interviewResult").isHidden(); index += 1) {
     await page.fill("#interviewAnswerInput", "I would like to explain my experience and discuss a focused research project with your group.");
     await page.click("#interviewSubmitButton");
@@ -74,7 +84,7 @@ const path = require("path");
   await page.locator("#interviewResult").waitFor({ state: "visible" });
   if ((await page.locator("#interviewSentenceList li").count()) !== 5) throw new Error("interview review did not provide five sentences");
   if ((await page.locator("#interviewMisunderstoodList li").count()) < 1) throw new Error("interview listening support was not recorded");
-  await page.screenshot({ path: path.join(out, "08-interview-result.png"), fullPage: true });
+  await page.screenshot({ path: path.join(out, "09-interview-result.png"), fullPage: true });
   await page.click('.bottom-nav [data-go="home"]');
 
   await page.click("#startTodayButton");
@@ -133,7 +143,7 @@ const path = require("path");
     console.error(JSON.stringify({ ok: false, errors }, null, 2));
     process.exit(1);
   }
-  console.log(JSON.stringify({ ok: true, screenshots: 8, items: payload.items.length }, null, 2));
+  console.log(JSON.stringify({ ok: true, screenshots: 9, items: payload.items.length }, null, 2));
 })().catch((error) => {
   console.error(error.stack || error);
   process.exit(1);

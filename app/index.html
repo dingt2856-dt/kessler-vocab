@@ -8,7 +8,7 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
-    <link rel="stylesheet" href="./styles.css?v=2026-08-04-3" />
+    <link rel="stylesheet" href="./styles.css?v=2026-08-04-4" />
     <title>Kessler Research English</title>
   </head>
   <body>
@@ -128,9 +128,26 @@
 
             <div class="interview-brief">
               <div><strong>约 12–16 个问题</strong><span>会根据回答追问</span></div>
-              <div><strong>0.75× 语速</strong><span>可随时慢速重播</span></div>
+              <div><strong>三档语速</strong><span>1.0× / 0.75× / 0.50×</span></div>
               <div><strong>不打断纠错</strong><span>结束后统一复盘</span></div>
             </div>
+
+            <section class="interview-voice-options" aria-labelledby="interviewVoiceOptionsTitle">
+              <div class="interview-option-heading">
+                <div><p class="eyebrow">VOICE & SPEED</p><h3 id="interviewVoiceOptionsTitle">选择面试声音</h3></div>
+                <span id="interviewVoiceStatus">正在读取英语男声…</span>
+              </div>
+              <div class="interview-speed-picker" id="interviewSpeedPicker" aria-label="面试语速">
+                <button type="button" data-interview-rate="1">1.0×<small>正常</small></button>
+                <button type="button" class="is-active" data-interview-rate="0.75">0.75×<small>推荐</small></button>
+                <button type="button" data-interview-rate="0.5">0.50×<small>慢速</small></button>
+              </div>
+              <div class="interview-voice-picker">
+                <label for="interviewVoiceSelect"><span>英语男声</span><select id="interviewVoiceSelect" aria-label="选择英语男声"></select></label>
+                <button id="interviewVoicePreviewButton" type="button"><span aria-hidden="true">▶</span> 试听</button>
+              </div>
+              <p class="interview-voice-help">已优先排列常见英式男声；请试听后选择最接近外导的声音。</p>
+            </section>
 
             <div class="interview-topic-list">
               <strong>本轮覆盖</strong>
@@ -171,8 +188,8 @@
               <div id="interviewQuestionText" class="interview-question-text" hidden></div>
 
               <div class="interview-listen-controls">
-                <button id="interviewRepeatButton" type="button"><span aria-hidden="true">↻</span> 0.75× 重播</button>
-                <button id="interviewSlowerButton" type="button"><span aria-hidden="true">◖</span> 更慢重播</button>
+                <button id="interviewRepeatButton" type="button"><span aria-hidden="true">↻</span> 按所选语速重播</button>
+                <label class="interview-session-rate" for="interviewSessionRateSelect"><span>语速</span><select id="interviewSessionRateSelect"><option value="1">1.0×</option><option value="0.75" selected>0.75×</option><option value="0.5">0.50×</option></select></label>
                 <button id="interviewShowTextButton" type="button"><span aria-hidden="true">Aa</span> 显示原文</button>
               </div>
 
@@ -379,7 +396,7 @@
     </dialog>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="./app.js?v=2026-08-04-3" defer></script>
-    <script src="./interview.js?v=2026-08-04-3" defer></script>
+    <script src="./app.js?v=2026-08-04-4" defer></script>
+    <script src="./interview.js?v=2026-08-04-4" defer></script>
   </body>
 </html>
