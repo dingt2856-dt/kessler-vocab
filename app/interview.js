@@ -2,7 +2,8 @@
 
 const INTERVIEW_PREFS_KEY = "kessler-interview-preferences-v1";
 const INTERVIEW_RATES = [1, 0.75, 0.5];
-const MALE_VOICE_PATTERN = /\b(male|george|ryan|guy|david|mark|james|daniel|thomas|arthur|oliver|roger|aaron|fred|alex|rishi|lee|reed|ralph)\b/i;
+const MALE_VOICE_PATTERN = /\b(male|george|ryan|guy|david|mark|james|daniel|thomas|arthur|oliver|roger|aaron|fred|alex|rishi|lee|reed|ralph|andrew|brian|christopher|eric|stef+an|aiden|jacob|jason|brandon|justin|kevin|matthew|william|davis|tony|jackson|robert|ethan|henry|liam|mason|noah|gordon|malcolm)\b/i;
+const FEMALE_VOICE_PATTERN = /\b(female|aria|ava|emma|jenny|michelle|monica|nancy|sara|sonia|libby|abbi|maisie|olivia|amy|joanna|samantha|susan|victoria|karen|moira|fiona|serena|tessa|veena|kate|hazel|zira)\b/i;
 
 const INTERVIEW_QUESTIONS = [
   {
@@ -217,6 +218,10 @@ function isLikelyMaleVoice(voice) {
   return MALE_VOICE_PATTERN.test(voice?.name || "");
 }
 
+function isLikelyFemaleVoice(voice) {
+  return FEMALE_VOICE_PATTERN.test(voice?.name || "");
+}
+
 function voicePriority(voice) {
   const british = /^en-GB$/i.test(voice.lang);
   const likelyMale = isLikelyMaleVoice(voice);
@@ -247,6 +252,9 @@ function populateInterviewVoices() {
   const english = window.speechSynthesis.getVoices()
     .filter((voice) => /^en/i.test(voice.lang))
     .sort((a, b) => voicePriority(a) - voicePriority(b) || a.name.localeCompare(b.name));
+  const detectedMale = english.filter(isLikelyMaleVoice);
+  const unclassified = english.filter((voice) => !isLikelyMaleVoice(voice) && !isLikelyFemaleVoice(voice));
+  const choices = detectedMale.length ? detectedMale : (unclassified.length ? unclassified : english);
   select.innerHTML = "";
 
   if (!english.length) {
@@ -258,7 +266,7 @@ function populateInterviewVoices() {
     return;
   }
 
-  for (const voice of english) {
+  for (const voice of choices) {
     const option = document.createElement("option");
     option.value = voice.voiceURI;
     const maleLabel = isLikelyMaleVoice(voice) ? " · 男声优先" : "";
@@ -266,19 +274,17 @@ function populateInterviewVoices() {
     select.append(option);
   }
 
-  const saved = english.find((voice) => voice.voiceURI === interviewVoiceURI);
-  const preferred = saved
-    || english.find((voice) => /^en-GB$/i.test(voice.lang) && isLikelyMaleVoice(voice))
-    || english.find(isLikelyMaleVoice)
-    || english.find((voice) => /^en-GB$/i.test(voice.lang))
-    || english[0];
+  const saved = choices.find((voice) => voice.voiceURI === interviewVoiceURI);
+  const preferred = (saved && (!detectedMale.length || isLikelyMaleVoice(saved)))
+    ? saved
+    : choices.find((voice) => /^en-GB$/i.test(voice.lang)) || choices[0];
   interviewVoiceURI = preferred.voiceURI;
   select.value = preferred.voiceURI;
   const male = isLikelyMaleVoice(preferred);
   const british = /^en-GB$/i.test(preferred.lang);
   interviewElement("interviewVoiceStatus").textContent = male
-    ? `已选择${british ? "英式" : "英语"}男声`
-    : "设备未标注男声，请试听确认";
+    ? `${british ? "英式" : "英语"}男声：${preferred.name}`
+    : `未标注性别：${preferred.name}`;
   saveInterviewPreferences();
 }
 
@@ -296,7 +302,9 @@ function getEnglishVoice() {
   } catch {
     appVoiceUri = "";
   }
-  return voices.find((voice) => voice.voiceURI === interviewVoiceURI)
+  const maleEnglish = voices.filter((voice) => /^en/i.test(voice.lang) && isLikelyMaleVoice(voice));
+  const selected = voices.find((voice) => voice.voiceURI === interviewVoiceURI);
+  return (selected && (!maleEnglish.length || isLikelyMaleVoice(selected)) ? selected : null)
     || voices.find((voice) => /^en-GB$/i.test(voice.lang) && isLikelyMaleVoice(voice))
     || voices.find((voice) => /^en/i.test(voice.lang) && isLikelyMaleVoice(voice))
     || voices.find((voice) => voice.voiceURI === appVoiceUri)
@@ -325,9 +333,9 @@ function speakInterviewQuestion(rate = interviewRate) {
   const utterance = new SpeechSynthesisUtterance(item.question);
   utterance.lang = "en-GB";
   utterance.rate = rate;
-  utterance.pitch = 0.94;
   const voice = getEnglishVoice();
   if (voice) utterance.voice = voice;
+  utterance.pitch = voice && isLikelyMaleVoice(voice) ? 0.9 : 0.72;
   utterance.onstart = () => setInterviewSpeaking(true);
   utterance.onend = () => setInterviewSpeaking(false);
   utterance.onerror = () => {
@@ -644,9 +652,9 @@ function previewInterviewVoice() {
   const utterance = new SpeechSynthesisUtterance("Good morning, Tao. Thank you for meeting with me today.");
   utterance.lang = "en-GB";
   utterance.rate = interviewRate;
-  utterance.pitch = 0.94;
   const voice = getEnglishVoice();
   if (voice) utterance.voice = voice;
+  utterance.pitch = voice && isLikelyMaleVoice(voice) ? 0.9 : 0.72;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -705,8 +713,8 @@ function initInterview() {
     interviewVoiceURI = event.target.value;
     const chosen = window.speechSynthesis?.getVoices().find((voice) => voice.voiceURI === interviewVoiceURI);
     interviewElement("interviewVoiceStatus").textContent = chosen && isLikelyMaleVoice(chosen)
-      ? `已选择${/^en-GB$/i.test(chosen.lang) ? "英式" : "英语"}男声`
-      : "请点击试听确认声音";
+      ? `${/^en-GB$/i.test(chosen.lang) ? "英式" : "英语"}男声：${chosen.name}`
+      : `未标注性别：${chosen?.name || "请试听确认"}`;
     saveInterviewPreferences();
   });
   interviewElement("interviewVoicePreviewButton").addEventListener("click", previewInterviewVoice);
