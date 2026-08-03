@@ -52,6 +52,16 @@
             </button>
           </div>
 
+          <button id="openInterviewButton" class="interview-entry" type="button" data-go="interview">
+            <span class="interview-entry-icon" aria-hidden="true">🎧</span>
+            <span class="interview-entry-copy">
+              <small>NEW · LISTENING PRACTICE</small>
+              <strong>与“外导”进行英语模拟面试</strong>
+              <span>语音提问 · 口头回答 · 逐题追问 · 结束复盘</span>
+            </span>
+            <span class="interview-entry-arrow" aria-hidden="true">›</span>
+          </button>
+
           <section class="section-block">
             <div class="section-heading">
               <div><p class="eyebrow">YOUR PLAN</p><h2>今日任务</h2></div>
@@ -97,6 +107,129 @@
             <div><strong>学习进度保存在当前设备</strong><p>建议每周在“设置”中导出一次备份。</p></div>
             <button id="dismissBackup" type="button" aria-label="关闭提示">×</button>
           </aside>
+        </section>
+
+        <section id="view-interview" class="view" data-view="interview">
+          <div class="page-heading interview-page-heading">
+            <p class="eyebrow">OXFORD VISIT · LISTENING</p>
+            <h1>英语模拟面试</h1>
+            <p>Professor Kessler 角色模拟。问题默认不显示文字，请先听再回答。</p>
+          </div>
+
+          <section id="interviewIntro" class="interview-intro">
+            <article class="interviewer-card">
+              <div class="interviewer-avatar" aria-hidden="true">BK</div>
+              <div>
+                <p class="eyebrow">AI PRACTICE ROLE</p>
+                <h2>Professor Benedikt Kessler</h2>
+                <p>University of Oxford · Research-visit interview</p>
+              </div>
+            </article>
+
+            <div class="interview-brief">
+              <div><strong>约 12–16 个问题</strong><span>会根据回答追问</span></div>
+              <div><strong>0.75× 语速</strong><span>可随时慢速重播</span></div>
+              <div><strong>不打断纠错</strong><span>结束后统一复盘</span></div>
+            </div>
+
+            <div class="interview-topic-list">
+              <strong>本轮覆盖</strong>
+              <p>C. elegans lactylome · mass spectrometry · motivation · proposed visit · funding · availability</p>
+            </div>
+
+            <aside class="interview-device-note">
+              <span aria-hidden="true">●</span>
+              <p><strong>建议佩戴耳机</strong><br />首次使用麦克风时，请允许浏览器访问。语音转写不支持时仍可听题并手动输入。</p>
+            </aside>
+
+            <button id="interviewStartButton" class="interview-start-button" type="button">
+              <span aria-hidden="true">▶</span> 开始模拟面试
+            </button>
+          </section>
+
+          <section id="interviewSession" class="interview-session" hidden>
+            <div class="interview-session-top">
+              <button id="interviewExitButton" class="icon-button" type="button" aria-label="退出模拟面试">×</button>
+              <div>
+                <strong id="interviewQuestionNumber">Question 1</strong>
+                <span id="interviewTopic">Introduction</span>
+              </div>
+              <button id="interviewEndButton" class="interview-end-button" type="button">结束</button>
+            </div>
+            <div class="session-progress interview-progress"><i id="interviewProgressBar"></i></div>
+
+            <article class="interview-stage">
+              <div class="interviewer-live">
+                <div class="interviewer-avatar is-live" aria-hidden="true">BK</div>
+                <div>
+                  <strong>Professor Kessler</strong>
+                  <span id="interviewStatus" aria-live="polite">准备提问…</span>
+                </div>
+                <div id="interviewWave" class="voice-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+
+              <div id="interviewQuestionText" class="interview-question-text" hidden></div>
+
+              <div class="interview-listen-controls">
+                <button id="interviewRepeatButton" type="button"><span aria-hidden="true">↻</span> 0.75× 重播</button>
+                <button id="interviewSlowerButton" type="button"><span aria-hidden="true">◖</span> 更慢重播</button>
+                <button id="interviewShowTextButton" type="button"><span aria-hidden="true">Aa</span> 显示原文</button>
+              </div>
+
+              <div class="answer-panel">
+                <div class="answer-panel-heading">
+                  <div><p class="eyebrow">YOUR ANSWER</p><strong>请用英语口头回答</strong></div>
+                  <span id="interviewTimer">00:00</span>
+                </div>
+
+                <button id="interviewMicButton" class="interview-mic-button" type="button">
+                  <span class="mic-symbol" aria-hidden="true">●</span>
+                  <strong id="interviewMicLabel">点击开始回答</strong>
+                  <small>再次点击结束录音</small>
+                </button>
+
+                <label class="interview-transcript-label" for="interviewAnswerInput">
+                  <span>语音转写（可以手动修改）</span>
+                  <textarea id="interviewAnswerInput" rows="4" lang="en" spellcheck="true" placeholder="Your spoken answer will appear here…"></textarea>
+                </label>
+                <p id="interviewRecognitionNote" class="recognition-note"></p>
+
+                <div class="interview-answer-actions">
+                  <button id="interviewDidNotUnderstandButton" type="button">没听懂，再慢一点</button>
+                  <button id="interviewSubmitButton" type="button" disabled>提交并听下一题 <span aria-hidden="true">›</span></button>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section id="interviewResult" class="interview-result" hidden>
+            <article class="result-hero">
+              <span aria-hidden="true">✓</span>
+              <p class="eyebrow">INTERVIEW COMPLETE</p>
+              <h2>本轮模拟完成</h2>
+              <p id="interviewResultSummary"></p>
+            </article>
+
+            <article class="result-card">
+              <p class="eyebrow">1 · LISTENING</p>
+              <h3>没有听懂的问题</h3>
+              <ul id="interviewMisunderstoodList"></ul>
+            </article>
+            <article class="result-card">
+              <p class="eyebrow">2 · CLARITY</p>
+              <h3>表达不够清楚的回答</h3>
+              <ul id="interviewUnclearList"></ul>
+            </article>
+            <article class="result-card improve-card">
+              <p class="eyebrow">3 · SENTENCES TO IMPROVE</p>
+              <h3>建议重点练习的五句话</h3>
+              <ol id="interviewSentenceList"></ol>
+            </article>
+            <div class="result-actions">
+              <button id="interviewCopyButton" type="button">复制本轮复盘</button>
+              <button id="interviewRestartButton" class="interview-start-button" type="button">再练一次</button>
+            </div>
+          </section>
         </section>
 
         <section id="view-learn" class="view" data-view="learn">
@@ -227,6 +360,7 @@
       <nav class="bottom-nav" aria-label="主导航">
         <button class="is-active" type="button" data-go="home"><span aria-hidden="true">⌂</span><b>首页</b></button>
         <button type="button" data-go="learn"><span aria-hidden="true">◉</span><b>学习</b></button>
+        <button type="button" data-go="interview"><span aria-hidden="true">🎧</span><b>面试</b></button>
         <button type="button" data-go="library"><span aria-hidden="true">▤</span><b>词库</b></button>
         <button type="button" data-go="stats"><span aria-hidden="true">▥</span><b>统计</b></button>
         <button type="button" data-go="settings"><span aria-hidden="true">⚙</span><b>设置</b></button>
@@ -246,5 +380,6 @@
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script src="./app.js" defer></script>
+    <script src="./interview.js" defer></script>
   </body>
 </html>

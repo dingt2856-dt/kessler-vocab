@@ -18,6 +18,25 @@ const path = require("path");
   });
   const page = await context.newPage();
   const errors = [];
+  await page.addInitScript(() => {
+    window.__spokenInterviewQuestions = [];
+    const nativeSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
+    window.speechSynthesis.speak = (utterance) => {
+      window.__spokenInterviewQuestions.push({ text: utterance.text, rate: utterance.rate });
+      return nativeSpeak(utterance);
+    };
+    window.SpeechRecognition = class MockSpeechRecognition {
+      start() {
+        this.onstart?.();
+        const result = [{ transcript: "My research focuses on mass spectrometry based proteomics and protein lactylation." }];
+        result.isFinal = true;
+        window.setTimeout(() => this.onresult?.({ resultIndex: 0, results: [result] }), 20);
+      }
+      stop() {
+        this.onend?.();
+      }
+    };
+  });
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(`console: ${message.text()}`);
   });
@@ -31,6 +50,32 @@ const path = require("path");
   if (!(await page.locator("#newItemsHint").textContent()).includes("15")) throw new Error("daily plan missing");
   await page.waitForTimeout(350);
   await page.screenshot({ path: path.join(out, "01-home-mobile.png") });
+
+  await page.click('.bottom-nav [data-go="interview"]');
+  await page.click("#interviewStartButton");
+  await page.locator("#interviewSession").waitFor({ state: "visible" });
+  await page.waitForTimeout(500);
+  if (!(await page.locator("#interviewQuestionText").isHidden())) throw new Error("interview question should start hidden");
+  const spoken = await page.evaluate(() => window.__spokenInterviewQuestions);
+  if (!spoken.length || spoken[0].rate !== 0.75) throw new Error("interview did not start at 0.75 speed");
+  await page.click("#interviewShowTextButton");
+  if (!(await page.locator("#interviewQuestionText").isVisible())) throw new Error("interview transcript did not reveal");
+  await page.click("#interviewMicButton");
+  await page.waitForFunction(() => document.getElementById("interviewAnswerInput").value.includes("mass spectrometry"));
+  await page.click("#interviewMicButton");
+  await page.click("#interviewSubmitButton");
+  if (!(await page.locator("#interviewQuestionNumber").textContent()).includes("Question 2")) throw new Error("interview did not advance");
+  await page.waitForTimeout(350);
+  await page.screenshot({ path: path.join(out, "07-interview-mobile.png"), fullPage: true });
+  for (let index = 1; index < 24 && await page.locator("#interviewResult").isHidden(); index += 1) {
+    await page.fill("#interviewAnswerInput", "I would like to explain my experience and discuss a focused research project with your group.");
+    await page.click("#interviewSubmitButton");
+  }
+  await page.locator("#interviewResult").waitFor({ state: "visible" });
+  if ((await page.locator("#interviewSentenceList li").count()) !== 5) throw new Error("interview review did not provide five sentences");
+  if ((await page.locator("#interviewMisunderstoodList li").count()) < 1) throw new Error("interview listening support was not recorded");
+  await page.screenshot({ path: path.join(out, "08-interview-result.png"), fullPage: true });
+  await page.click('.bottom-nav [data-go="home"]');
 
   await page.click("#startTodayButton");
   await page.locator("#cardTerm").waitFor({ state: "visible" });
@@ -88,7 +133,7 @@ const path = require("path");
     console.error(JSON.stringify({ ok: false, errors }, null, 2));
     process.exit(1);
   }
-  console.log(JSON.stringify({ ok: true, screenshots: 6, items: payload.items.length }, null, 2));
+  console.log(JSON.stringify({ ok: true, screenshots: 8, items: payload.items.length }, null, 2));
 })().catch((error) => {
   console.error(error.stack || error);
   process.exit(1);
