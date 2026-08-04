@@ -1,4 +1,4 @@
-const CACHE_NAME = "kessler-research-english-2026-08-04-v7";
+const CACHE_NAME = "kessler-research-english-2026-08-04-v8";
 const APP_ASSETS = [
   "./",
   "./index.html",
@@ -40,6 +40,10 @@ const APP_ASSETS = [
   "./audio/interview/practice-funding.mp3",
   "./audio/interview/practice-availability.mp3",
   "./audio/interview/practice-questions.mp3",
+  "./self-introduction/",
+  "./self-introduction/index.html",
+  "./self-introduction/self-introduction.mp3",
+  "./self-introduction/self-introduction.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
 ];

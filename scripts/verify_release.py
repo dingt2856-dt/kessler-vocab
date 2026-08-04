@@ -24,6 +24,7 @@ def main() -> None:
     learning = json.loads((APP / "data" / "learning_items.json").read_text(encoding="utf-8"))
     manifest = json.loads((APP / "manifest.webmanifest").read_text(encoding="utf-8"))
     interview_audio = json.loads((APP / "audio" / "interview" / "manifest.json").read_text(encoding="utf-8"))
+    introduction = json.loads((APP / "self-introduction" / "self-introduction.json").read_text(encoding="utf-8"))
     items = learning["items"]
 
     require(corpus["meta"]["orcid"] == "0000-0002-8160-2446", "wrong ORCID")
@@ -66,6 +67,9 @@ def main() -> None:
         "data/learning_items.json",
         "icons/icon-192.png",
         "icons/icon-512.png",
+        "self-introduction/index.html",
+        "self-introduction/self-introduction.mp3",
+        "self-introduction/self-introduction.json",
         ".nojekyll",
     ]
     for asset in assets:
@@ -77,6 +81,12 @@ def main() -> None:
     for audio in interview_audio["items"]:
         audio_path = APP / "audio" / "interview" / audio["file"]
         require(audio_path.exists() and audio_path.stat().st_size > 1_000, f"invalid interview audio: {audio['file']}")
+    require(introduction["voice"] == "en-GB-RyanNeural", "unexpected self-introduction voice")
+    require(introduction["wordCount"] == 288, "unexpected self-introduction word count")
+    require(len(introduction["words"]) == 288, "self-introduction word list mismatch")
+    require(all(item["ipa"].strip() for item in introduction["words"]), "self-introduction has missing IPA")
+    introduction_audio = APP / "self-introduction" / "self-introduction.mp3"
+    require(introduction_audio.stat().st_size > 700_000, "self-introduction audio is incomplete")
 
     service_worker = (APP / "sw.js").read_text(encoding="utf-8")
     for asset in [value for value in assets if value not in {".nojekyll", "sw.js"}]:
@@ -102,6 +112,7 @@ def main() -> None:
         "- Manifest, icons, service worker, offline data, and GitHub Pages workflow are present.",
         "- The browser-only mock interview module provides spoken questions, speech recognition fallback, and end-of-session review.",
         "- All interview questions and practice sentences include bundled en-GB-RyanNeural male audio.",
+        "- The self-introduction player provides 288 word-level British IPA annotations and bundled en-GB-RyanNeural male audio.",
         "",
     ]
     (DATA / "release_verification.md").write_text("\n".join(report), encoding="utf-8")
