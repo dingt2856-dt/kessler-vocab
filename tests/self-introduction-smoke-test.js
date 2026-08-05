@@ -18,7 +18,7 @@ const path = require("path");
   });
 
   await page.goto(`${baseUrl}/self-introduction/`, { waitUntil: "networkidle" });
-  if ((await page.locator(".word-unit").count()) !== 298) throw new Error("word count mismatch");
+  if ((await page.locator(".word-unit").count()) !== 332) throw new Error("word count mismatch");
   if ((await page.locator(".word-ipa:empty").count()) !== 0) throw new Error("missing IPA");
   if ((await page.locator(".paragraph-card").count()) !== 10) throw new Error("paragraph count mismatch");
   if (!(await page.locator(".badge").first().textContent()).includes("Ryan")) throw new Error("male voice label missing");
@@ -30,13 +30,13 @@ const path = require("path");
   const response = await page.request.get(`${baseUrl}/self-introduction/self-introduction.mp3`);
   if (!response.ok() || (await response.body()).length < 700_000) throw new Error("audio missing or incomplete");
   const data = await (await page.request.get(`${baseUrl}/self-introduction/self-introduction.json`)).json();
-  if (data.voice !== "en-GB-RyanNeural" || data.wordCount !== 298) throw new Error("metadata mismatch");
+  if (data.voice !== "en-GB-RyanNeural" || data.wordCount !== 332) throw new Error("metadata mismatch");
 
-  await page.locator('.paragraph-card[data-paragraph="2"]').scrollIntoViewIfNeeded();
+  await page.locator('.paragraph-card[data-paragraph="3"]').scrollIntoViewIfNeeded();
   await page.screenshot({ path: path.join(output, "11-self-introduction-words.png"), fullPage: false });
   await browser.close();
   if (errors.length) throw new Error(errors.join("\n"));
-  console.log(JSON.stringify({ ok: true, words: 298, voice: data.voice, screenshots: 2 }, null, 2));
+  console.log(JSON.stringify({ ok: true, words: 332, voice: data.voice, screenshots: 2 }, null, 2));
 })().catch((error) => {
   console.error(error.stack || error);
   process.exit(1);

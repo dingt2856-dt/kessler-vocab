@@ -53,10 +53,12 @@ PARAGRAPHS = [
         "title": "Research achievements",
         "title_zh": "研究成果",
         "text": (
-            "To date, my research achievements include being the co-first author of a paper titled "
-            '"Global profiling of protein lactylation in Caenorhabditis elegans," published in the '
-            "journal Proteomics (Impact Factor: 3.4). Additionally, I was honoured with the first-class "
-            "scholarship at Peking Union Medical College for the academic year 2022-2023."
+            "To date, I have published two papers as a first or co-first author. I was a co-first author "
+            'of "Global profiling of protein lactylation in Caenorhabditis elegans," published in '
+            "Proteomics, with an impact factor of 3.4. More recently, I was the first author of \"The Mechanism of "
+            "Omicron Variant-Associated Cardiac Injury in Rhesus Macaques Was Revealed by Proteomic and "
+            'Phosphoproteomic Analyses," published in MedComm in 2025. I also received a first-class '
+            "scholarship at Peking Union Medical College for the 2022-2023 academic year."
         ),
     },
     {
@@ -126,6 +128,11 @@ IPA_OVERRIDES = {
     "bleomycin-induced": "ˌbliːəʊˈmaɪsɪn ɪnˈdjuːst",
     "pulmonary": "ˈpʊlmənəri",
     "fibrosis": "faɪˈbrəʊsɪs",
+    "omicron": "ˈɒmɪkrɒn",
+    "variant-associated": "ˈveəriənt əˈsəʊsieɪtɪd",
+    "macaques": "məˈkɑːks",
+    "phosphoproteomic": "ˌfɒsfəʊprəʊtiˈɒmɪk",
+    "medcomm": "ˈmed kɒm",
     "multi-omics": "ˌmʌltiˈəʊmɪks",
     "caenorhabditis": "ˌsiːnəʊræbˈdaɪtɪs",
     "elegans": "ˈelɪɡænz",
