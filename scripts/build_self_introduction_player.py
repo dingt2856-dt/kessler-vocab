@@ -32,8 +32,8 @@ PARAGRAPHS = [
         "title_zh": "教育背景",
         "text": (
             "My name is Ding Tao, and I was born in April 1998 in Guiyang, Guizhou Province. "
-            "Currently, I am pursuing my graduate degree at the Basic Medical Research Institute "
-            "of Peking Union Medical College. Throughout my academic journey, I have maintained "
+            "I am currently a PhD student at the Institute of Basic Medical Sciences, Chinese Academy "
+            "of Medical Sciences and Peking Union Medical College. Throughout my academic journey, I have maintained "
             "a passion and dedication to my major courses, which has led to outstanding "
             "achievements across various disciplines."
         ),
@@ -116,6 +116,7 @@ IPA_OVERRIDES = {
     "lc-ms": "ˌel siː ˌem ˈes",
     "timstof": "ˌtɪmz tiː əʊ ˈef",
     "sci": "ˌes siː ˈaɪ",
+    "phd": "ˌpiː eɪtʃ ˈdiː",
     "proteomics": "ˌprəʊtiˈɒmɪks",
     "lactylation": "ˌlæktɪlˈeɪʃən",
     "multi-omics": "ˌmʌltiˈəʊmɪks",

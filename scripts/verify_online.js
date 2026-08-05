@@ -31,7 +31,7 @@ async function get(path) {
     indexFixedMale:
       index.includes("男声音频随网站提供") &&
       interviewScript.includes("Ryan · British English · Male"),
-    serviceWorkerV9: serviceWorker.includes("2026-08-05-v9"),
+    serviceWorkerV10: serviceWorker.includes("2026-08-05-v10"),
     voice: manifest.voice,
     manifestCount: manifest.generatedFiles,
     items: manifest.items.length,
@@ -45,7 +45,7 @@ async function get(path) {
   if (
     !result.indexV7 ||
     !result.indexFixedMale ||
-    !result.serviceWorkerV9 ||
+    !result.serviceWorkerV10 ||
     result.voice !== "en-GB-RyanNeural" ||
     result.manifestCount !== 32 ||
     bad.length
