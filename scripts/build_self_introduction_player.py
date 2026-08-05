@@ -25,7 +25,7 @@ PARAGRAPHS = [
     {
         "title": "Opening",
         "title_zh": "开场",
-        "text": "Good morning, esteemed members of the interview panel.",
+        "text": "Good morning, Professor Kessler.",
     },
     {
         "title": "Education and background",
@@ -111,6 +111,7 @@ IPA_OVERRIDES = {
     "guizhou": "ɡweɪˈdʒəʊ",
     "yang": "jɑːŋ",
     "juntao": "dʒuːnˈtaʊ",
+    "kessler": "ˈkeslə",
     "peking": "ˌpiːˈkɪŋ",
     "lc-ms": "ˌel siː ˌem ˈes",
     "timstof": "ˌtɪmz tiː əʊ ˈef",

@@ -9,4 +9,4 @@
 - Manifest, icons, service worker, offline data, and GitHub Pages workflow are present.
 - The browser-only mock interview module provides spoken questions, speech recognition fallback, and end-of-session review.
 - All interview questions and practice sentences include bundled en-GB-RyanNeural male audio.
-- The self-introduction player provides 288 word-level British IPA annotations and bundled en-GB-RyanNeural male audio.
+- The self-introduction player provides 284 word-level British IPA annotations and bundled en-GB-RyanNeural male audio.
