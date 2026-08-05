@@ -42,10 +42,11 @@ PARAGRAPHS = [
         "title": "Research focus",
         "title_zh": "研究方向",
         "text": (
-            "Under the guidance of Professor Yang Juntao, my research focuses on investigating "
-            "therapeutic targets and their underlying mechanisms in pulmonary fibrosis. I use "
-            "mass spectrometry-based proteomics and multi-omics approaches to study disease mechanisms "
-            "and evaluate candidate targets."
+            "Under the guidance of Professor Yang Juntao, my research focuses on the biological "
+            "mechanisms underlying potential therapeutic targets for pulmonary fibrosis. I am "
+            "currently conducting multi-omics studies of silica-induced silicosis and bleomycin-induced pulmonary fibrosis. Both "
+            "studies include drug treatment, and my work focuses on treatment responses, underlying "
+            "molecular mechanisms, and potential therapeutic targets."
         ),
     },
     {
@@ -120,6 +121,9 @@ IPA_OVERRIDES = {
     "proteomics": "ˌprəʊtiˈɒmɪks",
     "lactylation": "ˌlæktɪlˈeɪʃən",
     "therapeutic": "ˌθerəˈpjuːtɪk",
+    "silica-induced": "ˈsɪlɪkə ɪnˈdjuːst",
+    "silicosis": "ˌsɪlɪˈkəʊsɪs",
+    "bleomycin-induced": "ˌbliːəʊˈmaɪsɪn ɪnˈdjuːst",
     "pulmonary": "ˈpʊlmənəri",
     "fibrosis": "faɪˈbrəʊsɪs",
     "multi-omics": "ˌmʌltiˈəʊmɪks",

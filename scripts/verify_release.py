@@ -82,8 +82,8 @@ def main() -> None:
         audio_path = APP / "audio" / "interview" / audio["file"]
         require(audio_path.exists() and audio_path.stat().st_size > 1_000, f"invalid interview audio: {audio['file']}")
     require(introduction["voice"] == "en-GB-RyanNeural", "unexpected self-introduction voice")
-    require(introduction["wordCount"] == 282, "unexpected self-introduction word count")
-    require(len(introduction["words"]) == 282, "self-introduction word list mismatch")
+    require(introduction["wordCount"] == 298, "unexpected self-introduction word count")
+    require(len(introduction["words"]) == 298, "self-introduction word list mismatch")
     require(all(item["ipa"].strip() for item in introduction["words"]), "self-introduction has missing IPA")
     introduction_audio = APP / "self-introduction" / "self-introduction.mp3"
     require(introduction_audio.stat().st_size > 700_000, "self-introduction audio is incomplete")
@@ -112,7 +112,7 @@ def main() -> None:
         "- Manifest, icons, service worker, offline data, and GitHub Pages workflow are present.",
         "- The browser-only mock interview module provides spoken questions, speech recognition fallback, and end-of-session review.",
         "- All interview questions and practice sentences include bundled en-GB-RyanNeural male audio.",
-        "- The self-introduction player provides 282 word-level British IPA annotations and bundled en-GB-RyanNeural male audio.",
+        "- The self-introduction player provides 298 word-level British IPA annotations and bundled en-GB-RyanNeural male audio.",
         "",
     ]
     (DATA / "release_verification.md").write_text("\n".join(report), encoding="utf-8")
