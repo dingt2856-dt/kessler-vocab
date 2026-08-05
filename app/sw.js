@@ -1,4 +1,4 @@
-const CACHE_NAME = "kessler-research-english-2026-08-05-v10";
+const CACHE_NAME = "kessler-research-english-2026-08-06-v11";
 const APP_ASSETS = [
   "./",
   "./index.html",

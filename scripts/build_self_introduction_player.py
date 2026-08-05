@@ -42,10 +42,10 @@ PARAGRAPHS = [
         "title": "Research focus",
         "title_zh": "研究方向",
         "text": (
-            "Under the meticulous guidance of Professor Yang Juntao, I have been engaged in the "
-            "application of liquid chromatography-mass spectrometry (LC-MS) technology in "
-            "proteomics. My focus has been on experimental design, detection analysis, and "
-            "translational research, with a commitment to exploring disease mechanisms and biomarkers."
+            "Under the guidance of Professor Yang Juntao, my research focuses on investigating "
+            "therapeutic targets and their underlying mechanisms in pulmonary fibrosis. I use "
+            "mass spectrometry-based proteomics and multi-omics approaches to study disease mechanisms "
+            "and evaluate candidate targets."
         ),
     },
     {
@@ -119,6 +119,9 @@ IPA_OVERRIDES = {
     "phd": "ˌpiː eɪtʃ ˈdiː",
     "proteomics": "ˌprəʊtiˈɒmɪks",
     "lactylation": "ˌlæktɪlˈeɪʃən",
+    "therapeutic": "ˌθerəˈpjuːtɪk",
+    "pulmonary": "ˈpʊlmənəri",
+    "fibrosis": "faɪˈbrəʊsɪs",
     "multi-omics": "ˌmʌltiˈəʊmɪks",
     "caenorhabditis": "ˌsiːnəʊræbˈdaɪtɪs",
     "elegans": "ˈelɪɡænz",
