@@ -2,7 +2,8 @@
 
 const STORAGE_KEY = "kessler-vocab-progress-v1";
 const DAY_MS = 86_400_000;
-const TYPE_TARGETS = { word: 10, phrase: 3, sentence: 2 };
+const DAILY_PLAN_VERSION = 2;
+const TYPE_TARGETS = { word: 50, phrase: 3, sentence: 2 };
 const TYPE_LABELS = { word: "单词", phrase: "专业短语", sentence: "会议句型" };
 const TYPE_LETTERS = { word: "W", phrase: "P", sentence: "S" };
 const THEME_LABELS = {
@@ -46,7 +47,7 @@ function defaultState() {
     createdAt: new Date().toISOString(),
     items: {},
     history: [],
-    daily: { date: "", newIds: [], completedNewIds: [] },
+    daily: { date: "", newIds: [], completedNewIds: [], planVersion: 0 },
     flags: [],
     settings: { voiceURI: "", slowRate: 0.72 },
     dismissedBackup: false,
@@ -110,23 +111,43 @@ async function loadContent() {
   content = await response.json();
   itemMap = new Map(content.items.map((item) => [item.id, item]));
   $("paperCount").textContent = content.meta.publicationCount || 373;
-  $("appVersion").textContent = content.meta.version || "2026.07.31";
+  $("appVersion").textContent = content.meta.version || "2026.08.08";
 }
 
 function ensureDailyPlan() {
   const today = localDateKey();
-  if (state.daily.date === today && Array.isArray(state.daily.newIds)) return;
+  const sameDay = state.daily.date === today && Array.isArray(state.daily.newIds);
+  const originalIds = sameDay
+    ? state.daily.newIds.filter((id) => itemMap.has(id))
+    : [];
+  const newIds = [...new Set(originalIds)];
+  const selected = new Set(newIds);
 
-  const newIds = [];
   for (const [type, target] of Object.entries(TYPE_TARGETS)) {
+    const selectedCount = newIds.filter((id) => itemMap.get(id)?.type === type).length;
+    const needed = Math.max(0, target - selectedCount);
     const available = content.items
-      .filter((item) => item.type === type && !state.items[item.id])
-      .sort((a, b) => a.rank - b.rank)
-      .slice(0, target)
+      .filter((item) => item.type === type && !selected.has(item.id) && !state.items[item.id])
+      .sort((a, b) => {
+        const priority = Number(a.dailyPriority ?? 1) - Number(b.dailyPriority ?? 1);
+        return priority || Number(a.rank ?? 0) - Number(b.rank ?? 0);
+      })
+      .slice(0, needed)
       .map((item) => item.id);
     newIds.push(...available);
+    available.forEach((id) => selected.add(id));
   }
-  state.daily = { date: today, newIds, completedNewIds: [] };
+
+  const completedNewIds = sameDay && Array.isArray(state.daily.completedNewIds)
+    ? [...new Set(state.daily.completedNewIds.filter((id) => selected.has(id)))]
+    : [];
+  const planIsCurrent = sameDay
+    && state.daily.planVersion === DAILY_PLAN_VERSION
+    && newIds.length === originalIds.length
+    && newIds.every((id, index) => id === originalIds[index]);
+  if (planIsCurrent) return;
+
+  state.daily = { date: today, newIds, completedNewIds, planVersion: DAILY_PLAN_VERSION };
   saveState();
 }
 

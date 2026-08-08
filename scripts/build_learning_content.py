@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build the manually reviewed 300-item meeting-ready learning tier."""
+"""Build the reviewed paper- and presentation-based learning content."""
 
 from __future__ import annotations
 
 import csv
 import json
 import re
+from collections import Counter
 from pathlib import Path
 
 import pyphen
@@ -14,6 +15,7 @@ import pyphen
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 APP_DATA = ROOT / "app" / "data"
+PRESENTATION_VOCAB = DATA / "presentation_vocabulary.psv"
 
 WORD_DATA = """
 protein|蛋白质|noun|proteomics
@@ -487,6 +489,11 @@ def normalize(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", value).strip()
 
 
+def write_text_lf(path: Path, value: str) -> None:
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(value)
+
+
 def phonetic(term: str) -> str:
     if term in CUSTOM_IPA:
         return CUSTOM_IPA[term]
@@ -576,6 +583,7 @@ def main() -> None:
             "type": "word",
             "tier": "meeting",
             "rank": index,
+            "dailyPriority": 1,
             "term": term,
             "displayTerm": term,
             "chinese": zh,
@@ -611,6 +619,7 @@ def main() -> None:
                 "type": "phrase",
                 "tier": "meeting",
                 "rank": index,
+                "dailyPriority": 1,
                 "term": term,
                 "displayTerm": term,
                 "chinese": zh,
@@ -641,6 +650,7 @@ def main() -> None:
                 "type": "sentence",
                 "tier": "meeting",
                 "rank": index,
+                "dailyPriority": 1,
                 "term": sentence,
                 "displayTerm": sentence,
                 "chinese": zh,
@@ -661,35 +671,96 @@ def main() -> None:
             }
         )
 
+    existing_word_terms = {
+        normalize(item["term"]) for item in items if item["type"] == "word"
+    }
+    with PRESENTATION_VOCAB.open(encoding="utf-8", newline="") as handle:
+        presentation_rows = list(csv.DictReader(handle, delimiter="|"))
+    if len(presentation_rows) != 70:
+        raise ValueError(
+            f"Expected 70 presentation words; got {len(presentation_rows)}"
+        )
+
+    presentation_terms = [normalize(row["term"]) for row in presentation_rows]
+    duplicate_terms = sorted(
+        term for term in presentation_terms if term in existing_word_terms
+    )
+    if duplicate_terms or len(set(presentation_terms)) != len(presentation_terms):
+        raise ValueError(
+            "Presentation vocabulary contains duplicate word terms: "
+            + ", ".join(duplicate_terms)
+        )
+
+    for index, row in enumerate(presentation_rows, start=1):
+        term = row["term"].strip()
+        source_slides = row["sourceSlides"].strip()
+        items.append(
+            {
+                "id": f"PPT-W{index:03d}",
+                "type": "word",
+                "tier": "presentation",
+                "rank": index,
+                "dailyPriority": 0,
+                "term": term,
+                "displayTerm": term,
+                "chinese": row["chinese"].strip(),
+                "partOfSpeech": row["partOfSpeech"].strip(),
+                "theme": row["theme"].strip(),
+                "ipa": row["ipa"].strip(),
+                "syllables": hyphenator.inserted(term.lower(), hyphen="·"),
+                "wordFamily": [term],
+                "exampleEnglish": row["exampleEnglish"].strip(),
+                "exampleChinese": row["exampleChinese"].strip(),
+                "pronounceAs": row["pronounceAs"].strip() or term,
+                "documentFrequency": 0,
+                "corpusFrequency": 0,
+                "reviewStatus": "manually-reviewed-presentation-tier",
+                "sourceType": "presentation",
+                "sourceIds": ["PPT-2026-08"],
+                "sourceTitle": "Research Progress and Proposed Oxford Visit",
+                "sourceDoi": "",
+                "sourceSlides": source_slides,
+            }
+        )
+
+    counts = Counter(item["type"] for item in items)
+    expected_counts = {"word": 270, "phrase": 60, "sentence": 40}
+    if dict(counts) != expected_counts:
+        raise ValueError(f"Unexpected item counts: {dict(counts)}")
+
     payload = {
         "meta": {
-            "version": "2026.07.31-meeting-1",
+            "version": "2026.08.08-presentation-1",
             "title": "Kessler Research English",
             "targetAuthor": bundle["meta"]["targetAuthor"],
             "orcid": bundle["meta"]["orcid"],
             "publicationCount": len(publications),
             "itemCount": len(items),
-            "counts": {"word": 200, "phrase": 60, "sentence": 40},
-            "dailyPlan": {"word": 10, "phrase": 3, "sentence": 2, "reviews": 30},
-            "contentPolicy": "Vocabulary derived from titles/abstracts; examples paraphrased; abstracts not republished.",
-            "qa": "All meeting-tier items manually reviewed; automated source and schema validation applied.",
+            "counts": expected_counts,
+            "dailyPlan": {"word": 50, "phrase": 3, "sentence": 2, "reviews": 30},
+            "contentPolicy": "Vocabulary is derived from verified paper titles/abstracts and the user's research presentation; examples are paraphrased and abstracts are not republished.",
+            "qa": "Paper-derived and presentation-derived items were reviewed; automated source and schema validation applied.",
         },
         "items": items,
     }
-    (APP_DATA / "learning_items.json").write_text(
-        json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+    write_text_lf(
+        APP_DATA / "learning_items.json",
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
     )
-    (DATA / "meeting_items.pretty.json").write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+    write_text_lf(
+        DATA / "meeting_items.pretty.json",
+        json.dumps(payload, ensure_ascii=False, indent=2),
     )
 
-    with (DATA / "meeting_items.csv").open("w", encoding="utf-8-sig", newline="") as handle:
+    with (DATA / "meeting_items.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(
             handle,
+            lineterminator="\n",
             fieldnames=[
                 "id",
                 "type",
                 "rank",
+                "dailyPriority",
                 "term",
                 "chinese",
                 "partOfSpeech",
@@ -700,6 +771,8 @@ def main() -> None:
                 "exampleChinese",
                 "sourceTitle",
                 "sourceDoi",
+                "sourceType",
+                "sourceSlides",
                 "documentFrequency",
                 "corpusFrequency",
             ],
@@ -716,6 +789,7 @@ def main() -> None:
         f"- Phrases: {sum(item['type'] == 'phrase' for item in items)}",
         f"- Scientific communication sentences: {sum(item['type'] == 'sentence' for item in items)}",
         f"- Verified publication corpus: {len(publications)} papers",
+        f"- Presentation-derived words: {len(presentation_rows)}",
         f"- Items without corpus source: {len(missing_sources)}",
         "",
         "## Source exceptions",
@@ -724,28 +798,30 @@ def main() -> None:
     if missing_sources:
         report.extend(f"- {term}" for term in missing_sources)
     else:
-        report.append("- None. Every word and phrase maps to at least one verified paper.")
+        report.append("- None. Every paper-derived word and phrase maps to at least one verified paper.")
     report.extend(
         [
             "",
             "## Review statement",
             "",
             "- Chinese meanings were selected for the Kessler research context.",
+            "- Presentation vocabulary was extracted from the user's English research-progress slides.",
             "- Examples are short learning sentences and are not abstract quotations.",
             "- Special abbreviations have explicit speech text.",
             "- Browser audio remains the authoritative pronunciation playback; IPA is a learning aid.",
             "",
         ]
     )
-    (DATA / "meeting_content_qa.md").write_text("\n".join(report), encoding="utf-8")
+    write_text_lf(DATA / "meeting_content_qa.md", "\n".join(report))
 
     print(
         json.dumps(
             {
                 "items": len(items),
-                "words": 200,
-                "phrases": 60,
-                "sentences": 40,
+                "words": counts["word"],
+                "phrases": counts["phrase"],
+                "sentences": counts["sentence"],
+                "presentationWords": len(presentation_rows),
                 "missingSources": missing_sources,
             },
             ensure_ascii=False,

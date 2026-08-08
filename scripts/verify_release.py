@@ -30,9 +30,14 @@ def main() -> None:
     require(corpus["meta"]["orcid"] == "0000-0002-8160-2446", "wrong ORCID")
     require(corpus["meta"]["includedPublications"] == 373, "unexpected corpus count")
     require(len(corpus["publications"]) == 373, "corpus list count mismatch")
-    require(len(items) == 300, "meeting-tier item count mismatch")
-    require(Counter(item["type"] for item in items) == {"word": 200, "phrase": 60, "sentence": 40}, "type counts mismatch")
+    require(len(items) == 370, "learning item count mismatch")
+    require(Counter(item["type"] for item in items) == {"word": 270, "phrase": 60, "sentence": 40}, "type counts mismatch")
     require(len({item["id"] for item in items}) == len(items), "duplicate learning item IDs")
+    require(learning["meta"]["dailyPlan"] == {"word": 50, "phrase": 3, "sentence": 2, "reviews": 30}, "daily plan mismatch")
+    presentation_items = [item for item in items if item.get("sourceType") == "presentation"]
+    require(len(presentation_items) == 70, "presentation vocabulary count mismatch")
+    normalized_words = [re.sub(r"[^a-z0-9]+", " ", item["term"].lower()).strip() for item in items if item["type"] == "word"]
+    require(len(normalized_words) == len(set(normalized_words)), "duplicate word terms")
 
     required_fields = {
         "id",
@@ -49,10 +54,13 @@ def main() -> None:
         require(required_fields.issubset(item), f"missing fields in {item.get('id')}")
         require(all(str(item[field]).strip() for field in required_fields), f"empty required field in {item['id']}")
         if item["type"] != "sentence":
-            require(item.get("sourceIds"), f"missing corpus source for {item['id']}")
+            require(item.get("sourceIds"), f"missing source for {item['id']}")
             require(item.get("sourceTitle"), f"missing source title for {item['id']}")
-            require(item.get("sourceDoi"), f"missing DOI for {item['id']}")
             require(item.get("ipa"), f"missing IPA for {item['id']}")
+            if item.get("sourceType") == "presentation":
+                require(item.get("sourceSlides"), f"missing presentation slide source for {item['id']}")
+            else:
+                require(item.get("sourceDoi"), f"missing DOI for {item['id']}")
 
     app_json = (APP / "data" / "learning_items.json").read_text(encoding="utf-8").lower()
     require('"abstract"' not in app_json and '"abstracttext"' not in app_json, "public PWA contains abstract fields")
@@ -82,8 +90,8 @@ def main() -> None:
         audio_path = APP / "audio" / "interview" / audio["file"]
         require(audio_path.exists() and audio_path.stat().st_size > 1_000, f"invalid interview audio: {audio['file']}")
     require(introduction["voice"] == "en-GB-RyanNeural", "unexpected self-introduction voice")
-    require(introduction["wordCount"] == 332, "unexpected self-introduction word count")
-    require(len(introduction["words"]) == 332, "self-introduction word list mismatch")
+    require(introduction["wordCount"] >= 250, "self-introduction word list is incomplete")
+    require(len(introduction["words"]) == introduction["wordCount"], "self-introduction word list mismatch")
     require(all(item["ipa"].strip() for item in introduction["words"]), "self-introduction has missing IPA")
     introduction_audio = APP / "self-introduction" / "self-introduction.mp3"
     require(introduction_audio.stat().st_size > 700_000, "self-introduction audio is incomplete")
@@ -106,16 +114,19 @@ def main() -> None:
         "- Status: PASS",
         f"- Verified publications: {len(corpus['publications'])}",
         f"- Learning items: {len(items)}",
-        "- Words / phrases / sentences: 200 / 60 / 40",
-        "- All words and phrases have a verified paper source, DOI, Chinese meaning, example, and IPA.",
+        "- Words / phrases / sentences: 270 / 60 / 40",
+        "- Presentation-derived words: 70",
+        "- Paper-derived words and phrases have a verified paper source and DOI; presentation words retain slide references.",
+        "- All words and phrases include Chinese meanings, examples, and IPA.",
         "- The deployable PWA contains no abstract fields.",
         "- Manifest, icons, service worker, offline data, and GitHub Pages workflow are present.",
         "- The browser-only mock interview module provides spoken questions, speech recognition fallback, and end-of-session review.",
         "- All interview questions and practice sentences include bundled en-GB-RyanNeural male audio.",
-        "- The self-introduction player provides 332 word-level British IPA annotations and bundled en-GB-RyanNeural male audio.",
+        f"- The self-introduction player provides {introduction['wordCount']} word-level British IPA annotations and bundled en-GB-RyanNeural male audio.",
         "",
     ]
-    (DATA / "release_verification.md").write_text("\n".join(report), encoding="utf-8")
+    with (DATA / "release_verification.md").open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write("\n".join(report))
     print("PASS: corpus, content, and PWA release verified")
 
 

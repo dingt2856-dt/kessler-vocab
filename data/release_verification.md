@@ -2,9 +2,11 @@
 
 - Status: PASS
 - Verified publications: 373
-- Learning items: 300
-- Words / phrases / sentences: 200 / 60 / 40
-- All words and phrases have a verified paper source, DOI, Chinese meaning, example, and IPA.
+- Learning items: 370
+- Words / phrases / sentences: 270 / 60 / 40
+- Presentation-derived words: 70
+- Paper-derived words and phrases have a verified paper source and DOI; presentation words retain slide references.
+- All words and phrases include Chinese meanings, examples, and IPA.
 - The deployable PWA contains no abstract fields.
 - Manifest, icons, service worker, offline data, and GitHub Pages workflow are present.
 - The browser-only mock interview module provides spoken questions, speech recognition fallback, and end-of-session review.

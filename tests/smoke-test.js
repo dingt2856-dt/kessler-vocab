@@ -53,7 +53,36 @@ const path = require("path");
   await page.waitForLoadState("networkidle");
 
   if ((await page.locator("#paperCount").textContent()) !== "373") throw new Error("paper count mismatch");
-  if (!(await page.locator("#newItemsHint").textContent()).includes("15")) throw new Error("daily plan missing");
+  if (!(await page.locator("#newItemsHint").textContent()).includes("55")) throw new Error("daily plan missing");
+
+  const migrationResult = await page.evaluate(() => {
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+    const legacyIds = [
+      ...Array.from({ length: 10 }, (_, index) => `ME-W${String(index + 1).padStart(3, "0")}`),
+      ...Array.from({ length: 3 }, (_, index) => `ME-P${String(index + 1).padStart(3, "0")}`),
+      ...Array.from({ length: 2 }, (_, index) => `ME-S${String(index + 1).padStart(3, "0")}`),
+    ];
+    localStorage.setItem("kessler-vocab-progress-v1", JSON.stringify({
+      schemaVersion: 1,
+      createdAt: new Date().toISOString(),
+      items: {},
+      history: [],
+      daily: { date: today, newIds: legacyIds, completedNewIds: ["ME-W001"] },
+      flags: [],
+      settings: { voiceURI: "", slowRate: 0.72 },
+      dismissedBackup: false,
+    }));
+    return legacyIds.length;
+  });
+  if (migrationResult !== 15) throw new Error("legacy plan fixture mismatch");
+  await page.reload({ waitUntil: "networkidle" });
+  const migratedPlan = await page.evaluate(() => JSON.parse(localStorage.getItem("kessler-vocab-progress-v1")).daily);
+  if (migratedPlan.newIds.length !== 55 || migratedPlan.planVersion !== 2) throw new Error("legacy daily plan was not extended");
+  if (!migratedPlan.completedNewIds.includes("ME-W001")) throw new Error("legacy daily progress was not preserved");
+  await page.evaluate(() => localStorage.removeItem("kessler-vocab-progress-v1"));
+  await page.reload({ waitUntil: "networkidle" });
+  if (!(await page.locator("#newItemsHint").textContent()).includes("55")) throw new Error("reset daily plan missing");
   await page.waitForTimeout(350);
   await page.screenshot({ path: path.join(out, "01-home-mobile.png") });
 
@@ -96,7 +125,7 @@ const path = require("path");
 
   await page.click("#startTodayButton");
   await page.locator("#cardTerm").waitFor({ state: "visible" });
-  if ((await page.locator("#sessionCounter").textContent()).trim() !== "1 / 15") throw new Error("session queue mismatch");
+  if ((await page.locator("#sessionCounter").textContent()).trim() !== "1 / 55") throw new Error("session queue mismatch");
   await page.waitForTimeout(350);
   await page.screenshot({ path: path.join(out, "02-learning-card.png") });
 
@@ -105,7 +134,7 @@ const path = require("path");
   await page.waitForTimeout(350);
   await page.screenshot({ path: path.join(out, "03-learning-answer.png"), fullPage: true });
   await page.click('[data-rating="good"]');
-  if ((await page.locator("#sessionCounter").textContent()).trim() !== "2 / 15") throw new Error("rating did not advance");
+  if ((await page.locator("#sessionCounter").textContent()).trim() !== "2 / 55") throw new Error("rating did not advance");
 
   await page.click('.bottom-nav [data-go="library"]');
   await page.locator(".library-item").first().waitFor({ state: "visible" });
@@ -129,7 +158,12 @@ const path = require("path");
   if (!manifest.ok()) throw new Error("manifest missing");
   const data = await page.request.get(`${baseUrl}/data/learning_items.json`);
   const payload = await data.json();
-  if (payload.items.length !== 300) throw new Error("learning item count mismatch");
+  if (payload.items.length !== 370) throw new Error("learning item count mismatch");
+  if (payload.meta.counts.word !== 270 || payload.meta.dailyPlan.word !== 50) throw new Error("word target mismatch");
+  const presentationWords = payload.items.filter((item) => item.sourceType === "presentation");
+  if (presentationWords.length !== 70 || !presentationWords.some((item) => item.term === "fibrosis")) {
+    throw new Error("presentation vocabulary missing");
+  }
   const interviewAudio = await page.request.get(`${baseUrl}/audio/interview/introduction.mp3`);
   if (!interviewAudio.ok() || (await interviewAudio.body()).length < 1_000) throw new Error("bundled male interview audio missing");
 

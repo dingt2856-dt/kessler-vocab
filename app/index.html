@@ -8,7 +8,7 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
-    <link rel="stylesheet" href="./styles.css?v=2026-08-04-7" />
+    <link rel="stylesheet" href="./styles.css?v=2026-08-08-1" />
     <title>Kessler Research English</title>
   </head>
   <body>
@@ -30,7 +30,7 @@
             <div>
               <p class="eyebrow">TODAY · <span id="todayDate"></span></p>
               <h1>今天，先把科研英语<br />说得更清楚一点。</h1>
-              <p class="hero-subtitle">会议必备层 · 10个单词 + 3个短语 + 2个句型</p>
+              <p class="hero-subtitle">会议必备层 · 50个单词 + 3个短语 + 2个句型</p>
             </div>
             <div class="progress-orbit" aria-label="今日进度">
               <svg viewBox="0 0 120 120" role="img">
@@ -44,7 +44,7 @@
           <div class="home-actions">
             <button id="startTodayButton" class="primary-button" type="button">
               <span class="button-icon" aria-hidden="true">▶</span>
-              <span><strong>开始今日学习</strong><small id="newItemsHint">15个新内容</small></span>
+              <span><strong>开始今日学习</strong><small id="newItemsHint">55个新内容</small></span>
             </button>
             <button id="startReviewButton" class="secondary-button" type="button">
               <span class="button-icon review-icon" aria-hidden="true">↻</span>
@@ -70,7 +70,7 @@
             <div class="task-grid">
               <article class="task-card" data-task-type="word">
                 <span class="task-icon word-color">W</span>
-                <div><strong>单词</strong><span><b id="wordProgress">0</b> / 10</span></div>
+                <div><strong>单词</strong><span><b id="wordProgress">0</b> / 50</span></div>
                 <div class="mini-progress"><i id="wordBar"></i></div>
               </article>
               <article class="task-card" data-task-type="phrase">
@@ -310,7 +310,7 @@
         </section>
 
         <section id="view-library" class="view" data-view="library">
-          <div class="page-heading"><p class="eyebrow">300 ITEMS</p><h1>会议必备词库</h1><p>来源可追溯，按会议相关性排序。</p></div>
+          <div class="page-heading"><p class="eyebrow">370 ITEMS</p><h1>会议必备词库</h1><p>来源可追溯，按会议相关性排序。</p></div>
           <label class="search-box"><span aria-hidden="true">⌕</span><input id="librarySearch" type="search" placeholder="搜索英文、中文或主题" /></label>
           <div class="filter-row" id="libraryFilters">
             <button type="button" class="is-active" data-filter="all">全部</button>
@@ -370,7 +370,7 @@
             <a href="https://orcid.org/0000-0002-8160-2446" target="_blank" rel="noreferrer">查看Kessler的ORCID</a>
           </section>
           <button id="resetButton" class="danger-button" type="button">清除本设备学习进度</button>
-          <p class="version-line">Kessler Research English · <span id="appVersion">2026.07.31</span></p>
+          <p class="version-line">Kessler Research English · <span id="appVersion">2026.08.08</span></p>
         </section>
       </main>
 
@@ -396,7 +396,7 @@
     </dialog>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="./app.js?v=2026-08-04-7" defer></script>
-    <script src="./interview.js?v=2026-08-04-7" defer></script>
+    <script src="./app.js?v=2026-08-08-1" defer></script>
+    <script src="./interview.js?v=2026-08-08-1" defer></script>
   </body>
 </html>

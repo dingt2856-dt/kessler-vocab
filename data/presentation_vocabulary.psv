@@ -1,0 +1,71 @@
+term|chinese|partOfSpeech|theme|ipa|pronounceAs|exampleEnglish|exampleChinese|sourceSlides
+fibrosis|纤维化|noun|clinical|/faɪˈbrəʊsɪs/|fibrosis|Our work studies drug targets in lung fibrosis.|我们的研究探索肺纤维化中的药物靶点。|2,4-19
+fibrotic|纤维化的|adjective|clinical|/faɪˈbrɒtɪk/|fibrotic|The combined treatment reduced fibrotic changes.|联合治疗减轻了纤维化改变。|11,15
+silicosis|矽肺|noun|clinical|/ˌsɪlɪˈkəʊsɪs/|silicosis|This project examines silica-induced silicosis.|该项目研究二氧化硅诱导的矽肺。|2,4,9-12
+bleomycin|博来霉素|noun|clinical|/ˌbliːəˈmaɪsɪn/|bleomycin|We use bleomycin to induce pulmonary fibrosis.|我们使用博来霉素诱导肺纤维化。|2,13-17
+fostamatinib|福坦替尼|noun|drug-discovery|/ˌfɒstəˈmætɪnɪb/|fostamatinib|Fostamatinib is used to test the role of Syk.|福坦替尼用于检验Syk的作用。|6-11
+samuraciclib|Samuraciclib|noun|drug-discovery|/ˌsæmjʊrəˈsɪklɪb/|samuraciclib|Samuraciclib is used in the later treatment window.|Samuraciclib用于较晚的治疗窗口。|6
+macrophage|巨噬细胞|noun|immunology|/ˈmækrəʊfeɪdʒ/|macrophage|Macrophages may start an inflammatory loop.|巨噬细胞可能启动炎症循环。|5,9,12-16
+neutrophil|中性粒细胞|noun|immunology|/ˈnjuːtrəfɪl/|neutrophil|IL-1 beta may recruit neutrophils to the lung.|IL-1β可能将中性粒细胞募集到肺部。|9,12
+epithelial|上皮的|adjective|cell-biology|/ˌepɪˈθiːliəl/|epithelial|Early PKR activation may cause epithelial injury.|早期PKR激活可能导致上皮损伤。|13-17
+alveolar|肺泡的|adjective|cell-biology|/ælˈviːələ/|alveolar|We focus on alveolar macrophages and AT2 cells.|我们关注肺泡巨噬细胞和AT2细胞。|9,12-16
+ferroptosis|铁死亡|noun|cell-biology|/ˌferɒpˈtəʊsɪs/|ferroptosis|Lip-1 is used to block ferroptosis.|Lip-1用于阻断铁死亡。|18-20
+ischemia|缺血|noun|clinical|/ɪˈskiːmiə/|ischemia|Cold ischemia causes strong cellular stress.|冷缺血会造成强烈的细胞应激。|18-19
+reperfusion|再灌注|noun|clinical|/ˌriːpəˈfjuːʒən/|reperfusion|Reperfusion may increase oxidative injury.|再灌注可能加重氧化损伤。|18-19
+phosphoproteome|磷酸化蛋白质组|noun|proteomics|/ˌfɒsfəʊˈprəʊtiəʊm/|phosphoproteome|The phosphoproteome helps us study active signalling.|磷酸化蛋白质组帮助我们研究活跃的信号通路。|3-6,19-20
+longitudinal|纵向的|adjective|methods|/ˌlɒndʒɪˈtjuːdɪnəl/|longitudinal|The longitudinal data cover several disease stages.|纵向数据覆盖多个疾病阶段。|5,8
+metabolic|代谢的|adjective|metabolism|/ˌmetəˈbɒlɪk/|metabolic|Week ten is a major metabolic change point.|第10周是重要的代谢变化节点。|5,7-8
+trigger|触发因素|noun|molecular-biology|/ˈtrɪɡə/|trigger|Syk may act as an early trigger.|Syk可能是早期触发因素。|5,8
+amplifier|放大因素|noun|molecular-biology|/ˈæmplɪfaɪə/|amplifier|CDK7 may act as a later amplifier.|CDK7可能是后期放大因素。|5,8
+prevention|预防|noun|drug-discovery|/prɪˈvenʃən/|prevention|Fostamatinib is tested in the prevention window.|福坦替尼在预防窗口中进行测试。|6
+readout|检测指标|noun|methods|/ˈriːdaʊt/|readout|Histology is one of our main readouts.|组织学是我们的主要检测指标之一。|6-7,10-11
+preliminary|初步的|adjective|communication|/prɪˈlɪmɪnəri/|preliminary|These are preliminary results and need validation.|这些是初步结果，仍需验证。|7,11,15,17-18
+causality|因果关系|noun|methods|/kɔːˈzæləti/|causality|The knockout experiment provides a stronger test of causality.|敲除实验能更有力地检验因果关系。|8,17
+cytokine|细胞因子|noun|immunology|/ˈsaɪtəkaɪn/|cytokine|IL-1 beta is an important inflammatory cytokine.|IL-1β是一种重要的炎症细胞因子。|9,12
+inflammasome|炎症小体|noun|immunology|/ɪnˈflæməsəʊm/|inflammasome|NLRP3 is a key inflammasome in this model.|NLRP3是该模型中的关键炎症小体。|9,12
+NETosis|中性粒细胞胞外诱捕网形成|noun|immunology|/neˈtəʊsɪs/|netosis|NETosis may connect inflammation with fibrosis.|NETosis可能连接炎症与纤维化。|9-12
+histology|组织学|noun|methods|/hɪˈstɒlədʒi/|histology|Histology shows a reduction in lung damage.|组织学显示肺损伤有所减轻。|6-7,10-11,15,18
+pathology|病理学|noun|clinical|/pəˈθɒlədʒi/|pathology|We will complete blinded pathology scoring.|我们将完成盲法病理评分。|6,11,17
+combination|联合方案|noun|drug-discovery|/ˌkɒmbɪˈneɪʃən/|combination|The combination showed the strongest effect.|联合方案显示出最强的效果。|10-12
+nucleus|细胞核|noun|cell-biology|/ˈnjuːkliəs/|nucleus|Single-nucleus sequencing is suitable for frozen lung tissue.|单核测序适用于冻存肺组织。|3,10,12
+annotation|注释|noun|methods|/ˌænəˈteɪʃən/|annotation|Cell annotation is the first analysis step.|细胞注释是分析的第一步。|12
+communication|细胞通讯|noun|cell-biology|/kəˌmjuːnɪˈkeɪʃən/|communication|We will analyse communication between immune cells.|我们将分析免疫细胞之间的通讯。|12
+injury|损伤|noun|clinical|/ˈɪndʒəri/|injury|The project studies lung injury and repair.|该项目研究肺损伤与修复。|4,13-19
+knockout|基因敲除|noun|molecular-biology|/ˈnɒkaʊt/|knockout|The global knockout provides a genetic test.|全身敲除提供了遗传学检验。|17
+peroxidation|过氧化|noun|metabolism|/pəˌrɒksɪˈdeɪʃən/|peroxidation|Lipid peroxidation is a feature of ferroptosis.|脂质过氧化是铁死亡的特征。|19
+feasibility|可行性|noun|communication|/ˌfiːzəˈbɪləti/|feasibility|We need to assess the feasibility of the visit project.|我们需要评估访学项目的可行性。|20,22
+intervention|干预|noun|drug-discovery|/ˌɪntəˈvenʃən/|intervention|The intervention starts after disease induction.|干预在疾病诱导后开始。|6,10
+transition|转变阶段|noun|clinical|/trænˈzɪʃən/|transition|Week ten may represent a disease transition.|第10周可能代表疾病转变阶段。|6
+exercise|运动|noun|clinical|/ˈeksəsaɪz/|exercise|Fostamatinib improved an exercise measure.|福坦替尼改善了一项运动指标。|6-7
+glucose|葡萄糖|noun|metabolism|/ˈɡluːkəʊs/|glucose|We measured the glucose response at week five.|我们在第5周检测了葡萄糖反应。|6-7
+phagocytosis|吞噬作用|noun|immunology|/ˌfæɡəsaɪˈtəʊsɪs/|phagocytosis|Syk is linked to macrophage phagocytosis.|Syk与巨噬细胞吞噬作用相关。|5
+glycolytic|糖酵解的|adjective|metabolism|/ˌɡlaɪkəˈlɪtɪk/|glycolytic|The model includes a glycolytic change.|该模型包括糖酵解变化。|5
+signal|信号|noun|molecular-biology|/ˈsɪɡnəl/|signal|We need to validate the phosphorylation signal.|我们需要验证磷酸化信号。|5,8,13-19
+disease|疾病|noun|clinical|/dɪˈziːz/|disease|The four projects cover different disease models.|这四个课题涵盖不同的疾病模型。|4-20
+pharmacology|药理学|noun|drug-discovery|/ˌfɑːməˈkɒlədʒi/|pharmacology|The pharmacology result supports PKR as a target.|药理学结果支持PKR作为靶点。|15,17
+inflammatory|炎症性的|adjective|immunology|/ɪnˈflæmətri/|inflammatory|PKR may maintain an inflammatory loop.|PKR可能维持炎症循环。|9,13-16
+scoring|评分|noun|methods|/ˈskɔːrɪŋ/|scoring|Blinded scoring will reduce observer bias.|盲法评分将减少观察者偏倚。|11,17
+redox|氧化还原|noun|proteomics|/ˈriːdɒks/|redox|Redox proteomics can detect oxidative modifications.|氧化还原蛋白质组学可以检测氧化修饰。|19-20
+multi-omics|多组学|noun|proteomics|/ˌmʌltiˈəʊmɪks/|multi omics|Multi-omics helps us connect targets with cell states.|多组学帮助我们连接靶点与细胞状态。|1-4,19
+cell-state|细胞状态|noun|cell-biology|/ˈsel steɪt/|cell state|We will identify the cell state reversed by treatment.|我们将识别被治疗逆转的细胞状态。|11-12
+echocardiography|超声心动图|noun|methods|/ˌekəʊˌkɑːdiˈɒɡrəfi/|echocardiography|Echocardiography was performed at week five.|第5周进行了超声心动图检查。|6-7
+treadmill|跑台|noun|methods|/ˈtredmɪl/|treadmill|The treadmill test measures exercise capacity.|跑台实验用于测量运动能力。|7
+instillation|滴注|noun|methods|/ˌɪnstɪˈleɪʃən/|instillation|Bleomycin was given by intratracheal instillation.|博来霉素通过气管内滴注给药。|17
+co-staining|共染色|noun|methods|/ˌkəʊ ˈsteɪnɪŋ/|co staining|Early co-staining will identify the active cell type.|早期共染色将识别活跃的细胞类型。|16
+paraffin|石蜡|noun|methods|/ˈpærəfɪn/|paraffin|More paraffin samples will be added.|后续将增加更多石蜡样本。|18
+frozen|冻存的|adjective|methods|/ˈfrəʊzən/|frozen|The frozen mouse tissues are ready for analysis.|冻存小鼠组织已准备好进行分析。|18
+cohort|队列|noun|clinical|/ˈkəʊhɔːt/|cohort|The human cohort is still being expanded.|人类样本队列仍在扩充。|18
+visit|访学|noun|communication|/ˈvɪzɪt/|visit|The visit should focus on one clear question.|访学应聚焦于一个明确问题。|1,20-24
+invitation|邀请函|noun|communication|/ˌɪnvɪˈteɪʃən/|invitation|The department may issue the official invitation.|院系可以出具正式邀请函。|22-24
+confirmation|证明|noun|communication|/ˌkɒnfəˈmeɪʃən/|confirmation|I also need written language confirmation.|我还需要书面的语言能力证明。|22-23
+supervisor|导师|noun|communication|/ˈsuːpəvaɪzə/|supervisor|The invitation should name the Oxford supervisor.|邀请函应注明牛津导师。|22-23
+duration|期限|noun|communication|/djʊˈreɪʃən/|duration|The visit duration will be three to six months.|访学期限为三至六个月。|20,22-24
+department|院系|noun|communication|/dɪˈpɑːtmənt/|department|The relevant department will follow the Oxford process.|相关院系将遵循牛津的流程。|22-23
+requirement|要求|noun|communication|/rɪˈkwaɪəmənt/|requirement|The letter should confirm the host unit's language requirement.|信函应确认外方单位的语言要求。|22-23
+sufficient|足够的|adjective|communication|/səˈfɪʃənt/|sufficient|My English should be sufficient for the research visit.|我的英语应足以完成此次科研访学。|22-23
+focused|聚焦的|adjective|communication|/ˈfəʊkəst/|focused|We aim to develop a focused project.|我们的目标是制定一个聚焦的项目。|20-21
+answerable|可回答的|adjective|communication|/ˈɑːnsərəbəl/|answerable|The visit needs one answerable research question.|访学需要一个可回答的科研问题。|20
+contribution|贡献|noun|communication|/ˌkɒntrɪˈbjuːʃən/|contribution|My contribution includes proteomics and data analysis.|我的贡献包括蛋白质组学和数据分析。|21
+readiness|准备程度|noun|communication|/ˈredinəs/|readiness|Sample readiness is important for project selection.|样本准备程度对项目选择很重要。|18,20
+manuscript|论文稿件|noun|communication|/ˈmænjʊskrɪpt/|manuscript|The project should lead to a clear manuscript plan.|该项目应形成清晰的论文计划。|21
+output|产出|noun|communication|/ˈaʊtpʊt/|output|We need a realistic output for a short visit.|短期访学需要现实可行的产出。|20-21
