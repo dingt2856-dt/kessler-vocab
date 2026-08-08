@@ -106,7 +106,7 @@ function showToast(message) {
 }
 
 async function loadContent() {
-  const response = await fetch("./data/learning_items.json", { cache: "no-cache" });
+  const response = await fetch("./data/learning_items.json?v=2026-08-08-1", { cache: "no-cache" });
   if (!response.ok) throw new Error(`学习数据加载失败：${response.status}`);
   content = await response.json();
   itemMap = new Map(content.items.map((item) => [item.id, item]));

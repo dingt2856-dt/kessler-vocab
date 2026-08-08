@@ -6,7 +6,7 @@ const APP_ASSETS = [
   "./app.js?v=2026-08-08-1",
   "./interview.js?v=2026-08-08-1",
   "./manifest.webmanifest",
-  "./data/learning_items.json",
+  "./data/learning_items.json?v=2026-08-08-1",
   "./audio/interview/manifest.json",
   "./audio/interview/preview.mp3",
   "./audio/interview/introduction.mp3",
